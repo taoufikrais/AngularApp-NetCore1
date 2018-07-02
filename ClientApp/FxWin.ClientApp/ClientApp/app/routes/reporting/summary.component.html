@@ -1,0 +1,38 @@
+<div class="content-heading">
+    Summary view
+    <small></small>
+</div>
+<div class="container-fluid">
+        <div>
+                <customtabset #tabset  (onSelect)="customtabClicked($event)">
+                  <customtab title="FXHedge Audit">
+                        FXHedge Audit
+                        <ag-grid-angular #agGrid class="ag-blue" [gridOptions]="gridOptions" 
+                        (gridReady)="onGridReady($event)"
+                        style="padding: 0px !important">
+                      </ag-grid-angular>
+                  </customtab>
+                  <customtab title="CommidityHedge Audit">
+                      CommidityHedge Audit
+                      <ag-grid-angular #agGrid class="ag-blue" [gridOptions]="CommogridOptions" 
+                         (gridReady)="onCommoGridReady($event)"
+                         style="padding: 0px !important">
+                       </ag-grid-angular>
+                  </customtab>
+                  <customtab title="Other Underlying Audit">
+                      Other Underlying Audit
+                      <ag-grid-angular #agGrid class="ag-blue" [gridOptions]="undergridOptions" 
+                      (gridReady)="onUnderGridReady($event)"
+                       style="padding: 0px !important">
+                    </ag-grid-angular>
+                  </customtab>
+                  <customtab title="Cargo Audit">
+                      Cargo Audit
+                      <ag-grid-angular #agGrid class="ag-blue" [gridOptions]="CargogridOptions" 
+                         (gridReady)="onCargoGridReady($event)"
+                          style="padding: 0px !important">
+                       </ag-grid-angular>
+                  </customtab>
+                </customtabset>
+        </div>
+</div>

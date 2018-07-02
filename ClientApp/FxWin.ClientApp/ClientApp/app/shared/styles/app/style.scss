@@ -1,0 +1,225 @@
+$bleuMarine: blue; //rgb(58, 63, 81);
+$font-size: 12px;
+$input-height: 24px;
+$direction: down !default;
+
+@mixin arrow($direction) {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    display: inline-block;
+
+    @if $direction==up {
+        border-bottom: 5px solid blue;
+    }
+    @else {
+        border-top: 5px solid blue;
+    }
+}
+
+
+.panel {
+    margin-bottom: 10px !important;
+}
+
+.panel-body {
+    padding: 20px 10px 5px 10px !important;
+}
+
+.row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.form-control {
+    color: #000 !important;
+    border-color: #1f89ce !important;
+}
+
+select, input {
+    box-shadow: 0 0 0 #000 !important;
+    padding: 2px 2px !important;
+    display: block;
+    width: 100%;
+    //width:inherit;
+    height: $input-height !important;
+    //padding: 6px 16px;
+    font-size: $font-size !important;
+    line-height: 1.52857;
+    color: #000;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid;
+    border-color: #1f89ce !important;
+    border-radius: 4px;
+    webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+select, input {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    //padding: 3px 0px 3px 3px;
+    //margin: 5px 1px 3px 0px;
+}
+
+select:focus, input:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    //padding: 3px 0px 3px 3px;
+    //margin: 5px 1px 3px 0px;
+    border: 1px solid #67afe9;
+}
+
+select {
+    padding-top: 1px !important;
+    min-width: 120px;
+    //arrow select
+    -webkit-appearance: none; /* remove default arrow */
+    -moz-appearance: none; /* remove default arrow */
+    /*background-image:*/
+    //content: '\f078';
+    //font: normal normal normal 17px/1  96% / 15% no-repeat #eee;   /* add custom arrow */
+}
+/*arrows for select */
+select {
+    background-image: linear-gradient(45deg, transparent 50%, blue 50%), linear-gradient(135deg, blue 50%, transparent 50%), linear-gradient(to right, skyblue, skyblue) !important;
+    background-position: calc(100% - 10px) calc(1em + 0.5px), calc(100% - 5px) calc(1em + 0.5px), 100% 0;
+    background-size: 5px 5px, 5px 5px, 2em 2em;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+
+/** fin arrows select css ***/
+
+
+input.ng-invalid {
+    border: 1px solid red !important;
+}
+
+select.ng-invalid {
+    border: 1px solid red !important;
+}
+
+//ng-touched, ng-untouched
+input.ng-touched {
+    // border-color:red !important;
+}
+
+input.ng-valid {
+    //border-color:green !important;
+}
+
+input[type="number"] {
+    height: $input-height !important;
+}
+
+input[type="button"] {
+    height: $input-height !important;
+}
+
+input[type="checkbox"] {
+    margin: 0 0 0 !important;
+    width: auto !important;
+}
+
+.arrow-down {
+    //@include arrow(($direction));
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    display: inline-block;
+    border-top: 5px solid blue;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    display: inline-block;
+    border-bottom: 5px solid blue;
+}
+
+.arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    display: inline-block;
+    border-left: 5px solid blue;
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    display: inline-block;
+    border-right: 5px solid blue;
+}
+
+
+
+.action {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    padding-bottom: 10px !important;
+    background-color: transparent;
+    background-size: 24px, 24px, cover;
+}
+
+.add {
+    background-image: url('assets\\img\\icon\\list-add-128.png');
+}
+
+.warning {
+    content:url('assets\\img\\icon\\icons-warning.png'); 
+}
+
+
+.save {
+    background-image: url('assets\\img\\icon\\floppy-128.png');
+}
+
+.reset {
+    background-image: url('assets\\img\\icon\\reset.png');
+}
+
+.exit {
+    background-image: url('assets\\img\\icon\\exit.png');
+}
+
+.ktp {
+    background-image: url('assets\\img\\icon\\ktp.png');
+}
+
+.minHeight-ContractDetail {
+    min-height: 260px;
+}
+
+.yes {
+    background-image: url('assets\\img\\icon\\yes.png');
+}
+
+.no {
+    background-image: url('assets\\img\\icon\\no.png');
+}
+
+.signal {
+    background-image: url('assets\\img\\icon\\signal.png');
+    width: 48px !important;
+    background-size: 48px, 24px, cover !important;
+}
+
+/*input[readonly].readOnlyTransparent {
+    background-color: white;
+}*/

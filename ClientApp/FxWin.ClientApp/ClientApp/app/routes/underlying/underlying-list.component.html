@@ -1,0 +1,76 @@
+﻿<div class="content-heading">
+    GNL Underlying List
+</div>
+<div class="container-fluid">
+    <button class="btn action add" data-toggle="tooltip" title="Add new subjacent !"
+            (click)="AddNewSubjacent()"></button>
+    <div class="row-fluid" *ngIf="listSubjacentView$ | async as listSubjacentView">
+        <ag-grid-angular #agGrid class="ag-blue"
+                         [gridOptions]="gridUnderlyingView"
+                         (gridReady)="onReadyGridUnderlyingView($event)"
+                         [rowSelection]="rowSelection"
+                         (rowClicked)="onRowClicked($event)"
+                         [rowData]="listSubjacentView">
+        </ag-grid-angular>
+        <!-- <ng-template #modalTemplate>
+                <div class="modal-header">
+                  <h4 class="modal-title pull-left">Modal</h4>
+                  <button type="button" class="close pull-right" aria-label="Close23366" (click)="modalRef.hide()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Just a modal with a bunch of words inside, nothing serious.
+                </div>
+        </ng-template> -->
+    </div>
+</div>
+
+<ng-template #alertConfirmationDelete>
+    <div class="modal-body">
+        <div class="row" *ngIf="link">
+            <div class="col">
+                <font color="red">
+                    <label>This Subjacent " {{selectedSubjacentView.Code}} " is associated with one or more Maturity !</label>
+                </font>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <font color="red">
+                    <label>Are you sure you want to delete this subjacent ?</label>
+                </font>
+            </div>
+            <div class="col">
+                <button class="btn action yes"
+                        data-toggle="tooltip"
+                        title="Yes !"
+                        (click)="confirmation(true)"></button>
+            </div>
+            <div class="col">
+                <button class="btn action no"
+                        data-toggle="tooltip"
+                        title="No !"
+                        (click)="confirmation(false)"></button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #alertCannotDelete>
+    <div class="modal-body">
+        <div class="col">
+            <font color="red">
+                <label>{{cannotDeleteMessage}}</label>
+            </font>
+        </div>
+        <div class="col">
+            <button class="btn action exit"
+                    data-toggle="tooltip"
+                    title="Close !"
+                    (click)="closeAlertCannotDelete()"></button>
+        </div>
+    </div>
+</ng-template>
+
+

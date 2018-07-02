@@ -1,0 +1,170 @@
+.agridHeight1
+{
+    height: 30vh !important;
+}
+
+.agridHeight2
+{
+    height: 15vh !important;
+}
+
+// .customClass{
+//     width: 500px !important;
+//     background-color: antiquewhite !important;
+// }
+ /****Popover override****/
+:host {
+    /deep/ .popover {
+      background-color: transparent;
+      //background-image: -webkit-gradient(linear, left top, left bottom, from(#e7f2f7), to(#ebf2f5));
+      border-color: transparent;
+      width: 555px !important;
+      max-width: 555px !important;
+    }
+    /deep/ .popover-content{
+        padding: 0px !important;
+    }
+    /deep/ .popover-body{
+        padding: 0px !important;
+    }
+    
+    /deep/ .popover.right > .arrow 
+    {
+        border-right-color: #67afe9 !important;
+        //box-shadow: 2px -2px 0 0 !important;
+        // box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+        //transform: rotate(-45deg) !important;
+    }
+    /*ovveride arrow position */
+    /deep/ .popover.bottom {
+        //position: absolute;
+        top: 8px !important;
+        left: 0px !important;
+    }
+    //hide arrow  in buttom position*/
+    /deep/ .popover.bottom > .arrow
+    {
+        display: none;
+    }
+ }
+
+ .input-group-addon{
+     //color:#3e9c46;
+     padding: 0px 5px 0px 5px;
+     margin: 0px !important;
+     background-color: #87ceeb ;
+     border-color:  #1f89ce !important; 
+     min-width: 26px;
+}
+
+input.currency {
+    text-align: right;
+    padding-right: 15px;
+}
+
+.pull-left {float: left; width: 50%;}
+.text-right {text-align: right;}
+
+$font-size-base:          14px !default;
+$line-height-base:        1.428571429 !default; // 20/14
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+$panel-heading-padding:       10px 15px !default;
+$border-radius-base:        4px !default;
+$panel-border-radius:         $border-radius-base !default;
+
+.custom-panel {
+    margin-bottom: $line-height-computed;
+  //  background-color: $panel-bg;
+    border: 1px solid #b0ced6;
+    border-radius: $panel-border-radius;
+   // @include box-shadow(0 1px 1px rgba(0,0,0,.05));
+    background-image: -moz-linear-gradient(top, #ffffff, #f4f4f4);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#d1e1f1));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#f4f4f4);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#f4f4f4)";
+  }
+  
+  // Optional heading
+  .custom-panel .panel-heading {
+    padding: $panel-heading-padding;
+    border-bottom: 1px solid transparent;
+    //@include border-top-radius(($panel-border-radius - 1));
+    //background: -webkit-gradient(linear, left top, left bottom, from(#d1e1f1), to(#ffffff));/*#5bccf6 ;*/
+    //border-bottom: 1px solid $grisFonce;
+    font-size: 12px ;
+    font-weight: bold;
+    height: 20px;
+    > .dropdown .dropdown-toggle {
+      color: inherit;
+    }
+  }
+
+  .panel-primary > .panel-heading {
+    color: #fff;
+    background-color: #4b5a6e;
+    border-color: #cfdbe2;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    font-size: 16px;
+    height: 15px;
+}
+  .ag-root
+  {
+      padding: 0px !important;
+  }
+
+  .btn
+  {
+      margin: 0px 3px 0px 3px !important;
+  }
+
+  .btn-group > a
+  {
+    margin: 0px 3px 0px 3px !important;
+  }
+  .btn-group > span
+  {
+    padding-right: 10px;
+  }
+
+ .fakeButton{
+    display:none;
+}
+
+.enableOrdrerGenerate{
+    color:blue !important;
+    background-color: #87ceeb !important;
+    cursor: pointer !important;
+}
+
+.disableOrdrerGenerate {
+    color:black !important;
+    background-color: lightgray !important;
+    cursor: not-allowed !important;
+    //pointer-events:none;
+}
+
+//for bsdatepiker change select year combobox style
+:host
+ /deep/ .custom-select {
+//  background-image:none !important;
+  height: inherit;
+  width: 50% !important;
+  min-width: 50% !important;
+  display: inline-block;
+  background-image: none !important;
+  background-position: none !important;
+  background-size: inherit !important;
+  background-position: inherit !important;
+  //min-width: 50px !important;
+}
+
+// ngb-datepicker.dropdown-menu {
+//     display: inline-block;
+//     width: -webkit-fill-available;
+// }
+
+// 
+// .theme-blue .bs-datepicker-body table td span.selected{
+
+// }

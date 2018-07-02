@@ -1,0 +1,473 @@
+﻿<div class="container-fluid">
+    {{diagnostic}}
+    <div *ngIf="hedge$ | async ; let hedge$; else loading">
+        <form (ngSubmit)="onSubmit(hedge$,hedgeForm)" #hedgeForm="ngForm" id="hedgeForm" name="hedgeForm" ngNativeValidate><!--novalidate or ngNativeValidate(html5 default validator) --> 
+            <div class="modal-header">
+                <h5 class="modal-title pull-left">{{title}}</h5>
+                <button class="btn action exit pull-right" (click)="exit($event)" data-toggle="tooltip" title="Close !"></button>
+                <button class="btn action save pull-right" id="submit" #submit type="submit"  data-toggle="tooltip" title="Submit"></button> <!-- [disabled]="!hedgeForm.form.valid" -->
+                <!-- <button class="fakeButton pull-right" id="fakeButton" type="submit"  data-toggle="tooltip" title="Submit"></button> -->
+            </div>
+            <div class="modal-body">
+                <fieldset>
+                    <legend>Hedge</legend>
+                    <div class="row">
+                        <!-- <form role="form"> -->
+                        <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+                            <label for="Code">Order Number(*):</label>
+                            <div class="input-group">
+                                <!-- <div class="input-group-addon" style="border-right:0px !important;background-color: white !important ; ">
+                                    <span class="fa fa-check" style="color:green;"></span>
+                                </div> --><!--si tu ajoute ce span , il faut ajouter border-left-color:transparent !important ; class à l'input ci-dessous-->
+                                <!-- [disabled]="(viewOpenMode == ViewOpenMode.EditionMode)" [disabled]="(hedge$.WorkflowState?.Id == enumWorkFlowStatus.VALIDE)"  -->
+                                <input class="form-control" type="text" required #Code="ngModel" name="Code"
+                                  [(ngModel)]="hedge$.Code" 
+                                  [disabled]="!AllowEditAll"
+                                   id="Code" placeholder="Order Number"
+                                    style="border-right-color:transparent !important ;" />
+                                    <!-- <div *ngIf="!Code.valid">{{Code.errors| json}}</div> -->
+                                <div class="input-group-addon"
+                                   [ngClass]="{'enableOrdrerGenerate' : activateOrderNumberGen && AllowEditAll , 'disableOrdrerGenerate': (activateOrderNumberGen == false) && !AllowEditAll }" >
+                                    <span class="fa fa-refresh" (click)="generateOrderNumber()" [ngStyle]= "{'pointer-events': (activateOrderNumberGen == false) || !AllowEditAll ? 'none' :''  }"></span>
+                                </div>
+                                <!-- <div *ngIf="Code.invalid && (Code.dirty || Code.touched)" class="validity-alert"> order number is required</div> -->
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+                            <label for="currencyInput">Currency(*) </label>
+                            <select class="form-control " id="currencyInput" required #Currency="ngModel" name="Currency" placeholder="Currency"
+                                 [(ngModel)]="hedge$.Currency"  
+                                 [disabled]="!AllowEditAll"
+                                 [compareWith]="comparator" 
+                                 [ngModelOptions]="{standalone: true}" (ngModelChange)="currencyChange(hedge$); defaultHedgeIsChanged = true">
+                                <!-- <option value="">-- select --</option> -->
+                                <option *ngFor="let currencyItem of currencies$" [ngValue]="currencyItem">
+                                    {{currencyItem.Code}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+                            <label for="internalStateinput">Status(*)</label>
+                            <select class="form-control" id="internalStateinput" required #InternalState="ngModel" name="InternalState" placeholder="InternalState"
+                                [(ngModel)]="hedge$.InternalState" [compareWith]="comparator" 
+                                [ngModelOptions]="{standalone: true}"
+                                [disabled]="!AllowEditAll"
+                                (ngModelChange)="internalStateChange(hedge$); defaultHedgeIsChanged = true">
+                                <!-- <option value="">-- select --</option> -->
+                                <option *ngFor="let internalStateItem of internalStates$" [ngValue]="internalStateItem">
+                                    {{internalStateItem.Name}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+                            <label for="ManagementIntentInput">Management Intent (*)</label>
+                            <select class="form-control" id="ManagementIntentInput" required 
+                                placeholder="ManagementIntent" [(ngModel)]="hedge$.ManagementIntent"
+                                [compareWith]="comparator" [ngModelOptions]="{standalone: true}" 
+                                [disabled]="!AllowEditAll"
+                                (ngModelChange)="ManagementIntentChange(hedge$); defaultHedgeIsChanged = true">
+                                <!-- <option value="" selected >-- select --</option> -->
+                                <option *ngFor="let ManagementIntentItem of ManagementIntents$" [ngValue]="ManagementIntentItem">
+                                    {{ManagementIntentItem.Code}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+                            <label for="QualificationInput">Qualification (*)</label>
+                            <input class="form-control" id="QualificationInput"  name="Qualification" readonly type="text" [value]="hedge$.ManagementIntent?.Qualification?.Code" />
+                        </div>
+                        <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+                            <!-- <div class="col-sm-6 col-md-6 col-lg-6" style="padding: 0px !important">
+                                    <label for="CurrentWorkFlowStatusInput">Current Workflow Status(*)</label>
+                                    <input class="form-control" id="CurrentWorkFlowStatusInput"  name="CurrentWorkFlowStatus" readonly type="text" [value]="hedge$.WorkflowState?.Code" />
+                            </div> -->
+                            <!-- <div class="col-sm-6 col-md-6 col-lg-6"> -->
+                                    <label for="WorkflowStateInput">Next Workflow Status(*)</label>
+                                    <select class="form-control" id="WorkflowStateInput" 
+                                        required #WorkflowState="ngModel" name="WorkflowState" placeholder="WorkflowState"
+                                        [disabled]="!AllowEditAll"
+                                        [compareWith]="comparator" 
+                                        [ngModelOptions]="{standalone: true}"
+                                        [(ngModel)]="hedge$.WorkflowState" 
+                                        (ngModelChange)="workflowStateChange(hedge$); defaultHedgeIsChanged = true">
+                                        <!-- <option value="" selected>-- select --</option> -->
+                                        <option *ngFor="let workflowStateItem of workflowStates$" [ngValue]="workflowStateItem">
+                                            {{workflowStateItem.Code}}
+                                        </option>
+                                    </select>
+                            <!-- </div> -->
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+                            <label for="hedgeTypeInput">Type (*)</label>
+                            <select class="form-control" id="hedgeTypeInput" required #hedgeType="ngModel" name="hedgeType" placeholder="hedgeType" 
+                                 [disabled]="!AllowEditAll"
+                                 [(ngModel)]="hedge$.HedgeType" [compareWith]="comparator" [ngModelOptions]="{standalone: true}" 
+                                 (ngModelChange)="HedgeTypeChange(hedge$); defaultHedgeIsChanged = true">
+                                <!-- <option value="">-- select --</option> -->
+                                <option *ngFor="let HedgeTypeItem of hedgeTypes$" [ngValue]="HedgeTypeItem">
+                                    {{HedgeTypeItem.Code}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+                            <label for="ExecutionDateInput">Execution Date</label>
+                            <!-- <input class="form-control" id="ExecutionDateInput" #ExecutionDate="ngModel" name="ExecutionDate" placeholder="ExecutionDate"
+                                                        type="date" 
+                                                        [ngModel]="hedge$.ExecutionDate| date:'dd/MM/yyyy'"
+                                                        (ngModelChange)="hedge$.ExecutionDate = $event; defaultHedgeIsChanged = true"
+                                                        />   bsDatepicker #dp="bsDatepicker" [bsConfig]="bsConfig" type="text" -->
+                            <div class="input-group">
+                                <input class="form-control" 
+                                    type="text" 
+                                    value="{{hedge$.ExecutionDate | date:'MM/dd/yyyy HH:mm'}}" 
+                                    readonly
+                                    />
+                                <div class="input-group-addon">
+                                    <span class="icon-calendar" (click)="dp.toggle()" style="cursor: pointer;"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-10 col-sm-4 col-md-4 col-lg-4">
+                            <label for="ModificationDateInput">Last Modification</label>
+                            <input class="form-control" 
+                                id="ModificationDateInput" 
+                                 name="ModificationDate" 
+                                 type="text" 
+                                 value="{{hedge$.ModificationDate | date:'MM/dd/yyyy HH:mm'}}" 
+                                 readonly />
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <label for="CommentInput">Comment</label>
+                            <textarea class="form-control" id="CommentInput" #Comment="ngModel" name="Comment" placeholder="Comment" rows="2" type="text"
+                                [(ngModel)]="hedge$.Comment" name="Comment" (ngModelChange)="defaultHedgeIsChanged = true"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- LEGs(Achat /Vente)-->
+                <fieldset style="background-image: none !important;">
+                    <legend>Hedge LEG </legend>
+                    <div *ngFor="let leg$ of hedge$.HedgeLegs ;let index = index;trackBy:trackByIndex; " 
+                         [ngClass]="{'col-lg-6 col-xs-6': hedge$.HedgeLegs.length > 1, 'col-lg-12 col-xs-12':hedge$.HedgeLegs.length == 1}">
+                        <div class="custom-panel">
+                            <div class="panel-heading align-top">
+                                <div *ngIf="leg$.PurchaseSaleId == 1; then BuyLegTitle else SaleLegTitle"></div>
+                                <ng-template #BuyLegTitle><legend>Buy Leg</legend></ng-template>
+                                <ng-template #SaleLegTitle><legend>Sale Leg</legend></ng-template>
+                            </div>
+                            <div class="panel-body"> <!--leg$.Maturity=dateChange($event)  dateInputFormat: 'DD/MM/YYYY'-->
+                                <div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
+                                    <label [attr.for]="'legMaturity-' + index">Maturity:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon" style="border-right:0px !important;background-color: white !important ; ">
+                                               <div *ngIf="CompareMaturityMonth(leg$); then MaturityValidatedOk else MaturityValidatedNotOk">
+                                               </div>
+                                                   <ng-template #MaturityValidatedOk>
+                                                            <span class="fa fa-check" style="color:green;"></span>
+                                                        </ng-template>
+                                                        <ng-template #MaturityValidatedNotOk>
+                                                            <img class="warning" title="maturity and underlying we do not have the same month" />
+                                                        </ng-template>
+                                        </div>
+                                        <input class="form-control" placeholder="MM/dd/yyyy" 
+                                            [attr.name]="'legMaturity-' + index" [attr.id]="'legMaturity-' + index"
+                                            bsDatepicker #dp="bsDatepicker" 
+                                            [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY' }"
+                                            type="text" [ngModelOptions]="{standalone: true}" 
+                                            [ngModel]="leg$.Maturity"
+                                            (ngModelChange)="leg$.Maturity=$event; setUnderlyingMaturity(leg$);"
+                                            [disabled]="!AllowEditAll"
+                                            customDate required 
+                                            style="border-left-color:transparent !important ;"
+                                            />
+                                        <div class="input-group-addon">
+                                            <span class="icon-calendar" (click)="dp.toggle()" style="cursor: pointer;"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-xs-10  col-sm-6 col-md-6 col-lg-6">
+                                    <label for="Amount">Amount</label>
+                                    <!-- [ngModel]="leg$.Amount | numberfr: '3.2' "  type="text"    value="{{leg$.Amount}}" 
+                                         [(ngModel)]="hedge$.HedgeLegs[index].Amount"   (ngModelChange)="unmask($event,index)" -->
+                                    <input class="form-control currency" 
+                                         [ngModelOptions]="{standalone: true}" 
+                                         [attr.name]="'Amount-' + index"
+                                         [attr.id]="'Amount-' + index"
+                                         [ngModel]="leg$.Amount"
+                                         (ngModelChange)="leg$.Amount=$event ; computeExposure(leg$)"
+                                         [textMask]="{mask: numberMask}"
+                                         [disabled]="!AllowEditAll"
+                                         numeric
+                                    />
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-xs-10  col-sm-6 col-md-6 col-lg-6">
+                                   <!--<label for="underlyingMaturity">Und.Maturity : {{leg$.UnderlyingMaturity}}</label>-->
+                                </div>
+                                <div class="form-group col-xs-10  col-sm-6 col-md-6 col-lg-6">
+                                    <div class="row" style="padding:  0px">
+                                        <div class="col-sm-12 col-md-12 col-lg-12" style="padding:  0px">
+                                            <!--<label  class="pull-left">Und.Amount :</label>-->
+                                            <!--<label class="pull-left text-right">{{leg$.UnderlyingAmount}} </label>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-xs-10  col-sm-6 col-md-6 col-lg-6">
+                                 <label  [attr.for]="'legFxContract' + index " >Contract:</label>
+                                  <select class="form-control"   #legFxContract="ngModel" 
+                                          [attr.id]="'legFxContract' + index " 
+                                          [attr.name]="'legFxContract' + index " 
+                                         [(ngModel)]="leg$.FxContract"
+                                         (ngModelChange)="contractChange(leg$,index); defaultHedgeIsChanged = true"   [compareWith]="comparator"
+                                         [ngModelOptions]="{standalone: true}" 
+                                         [disabled]="!AllowEditAll"
+                                        >
+                                        <option value="">-- select --</option>
+                                        <option *ngFor="let contractItem of contracts$" [ngValue]="contractItem">
+                                            {{contractItem.Code}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-xs-10  col-sm-6 col-md-6 col-lg-6">
+                                    <label for="BookInput">Book</label>
+                                    <input class="form-control" id="BookInput" name="legBook" readonly type="text" [value]="leg$.FxContract?.Book?.Code" />
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-xs-10  col-sm-6 col-md-6 col-lg-6">
+                                    <label for="UnderlyingMonthInput">Month</label>
+                                        <div class="input-group">
+                                                <input class="form-control" placeholder="MM/dd/yyyy" 
+                                                    [attr.name]="'UnderlyingMonth-' + index" [attr.id]="'UnderlyingMonthInput-' + index"
+                                                    bsDatepicker #dp1="bsDatepicker" 
+                                                    [bsConfig]="{ dateInputFormat: 'MMM YYYY' }"
+                                                    type="text" [ngModelOptions]="{standalone: true}" 
+                                                    [ngModel]="leg$.UnderlyingMonth"
+                                                    (ngModelChange)="tofirstDayInMonth(leg$,$event); getActivateOrderNumberGen();defaultHedgeIsChanged = true"
+                                                    [disabled]="!AllowEditAll"
+                                                    monthDate required />
+                                                <div class="input-group-addon">
+                                                    <span class="icon-calendar" (click)="dp1.toggle()" style="cursor: pointer;"></span>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="form-group col-xs-10  col-sm-6 col-md-6 col-lg-6">
+                                        <label [attr.for]="'OtherUnderlying-' + i">Other Underlying</label>
+                                        <div class="input-group">
+                                                    <div class="input-group-addon" style="border-right:0px !important;background-color: white !important ; ">
+                                                        <div *ngIf="leg$.LinkLegHedgeCommoHedge && leg$.LinkLegHedgeCommoHedge.IsBOValidated >= 0 ">
+                                                            <div *ngIf="leg$.LinkLegHedgeCommoHedge.IsBOValidated == 2; then BOValidatedOk else BOValidatedNotOk">
+                                                            </div>
+                                                            <ng-template #BOValidatedOk>
+                                                                <span class="fa fa-check" style="color:green;"></span>
+                                                            </ng-template>
+                                                            <ng-template #BOValidatedNotOk>
+                                                                <span class="fa fa-times-circle" style="color:red;"></span>
+                                                            </ng-template>
+                                                        </div>
+                                                    </div>
+                                                    <!-- (document:click)=insideclick close -->
+                                                    <input class="form-control" 
+                                                        #legSubjacentList="ngModel" 
+                                                        [attr.name]="'legSubjacentList-' + i"
+                                                        [attr.id]="'legSubjacentList-' + i"
+                                                        style="border-right-color:transparent !important ; border-left-color: transparent !important ; cursor: pointer !important;"
+                                                        type="text" 
+                                                        [ngModel]="leg$.Subjacent?.Code" 
+                                                        (ngModelChange)="leg$.Subjacent.Code=$event"
+                                                        #popSubjacentList1="bs-popover" 
+                                                        [popover]="templateSubjacentList" 
+                                                        [placement]="getPlacement(leg)"
+                                                        outsideClick= true 
+                                                        (document:click)="popSubjacentList1.hide(); defaultHedgeIsChanged = true"    
+                                                        (click)="SubjacentListPopoverClick($event,leg$.Id,leg$.UnderlyingMonth,$event.target,index )"
+                                                        (focus)="SubjacentListPopoverClick($event,leg$.Id,leg$.UnderlyingMonth,$event.target,index )"
+                                                        (keypress)="onDeleteKeyPress($event)" 
+                                                        (keyup)="onDeleteSubjacentkeyUp($event,leg$.Id)"
+                                                        [ngModelOptions]="{standalone: true}"
+                                                        [disabled]="!AllowEditAll"
+                                                    />
+                                                    <div class="input-group-addon" 
+                                                         #popSubjacentList2="bs-popover"
+                                                        [placement]="getPlacement(leg)" 
+                                                        outsideClick= true 
+                                                        (document:click)="popSubjacentList2.hide()" 
+                                                        [popover]="templateSubjacentList"
+                                                        (click)="SubjacentListPopoverClick($event,leg$.Id,leg$.UnderlyingMonth,$event.target,index)"
+                                                        [ngStyle]= "{'pointer-events': !AllowEditAll ? 'none' :''  }"
+                                                        >
+                                                        <span class="arrow-down"></span>
+                                                    </div>  
+                                                    <ng-template #templateSubjacentList>
+                                                        <ag-grid-angular #agGrid class="ag-blue agridHeight2" style="width: 550px"
+                                                                         [gridOptions]="agSubjacentList" 
+                                                                         (gridReady)="agSubjacentListOnGridReady($event)" >
+                                                        </ag-grid-angular>
+                                                    </ng-template>
+                                                </div>
+                                    
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-xs-10  col-sm-6 col-md-6 col-lg-6">
+                                    <label [attr.for]="'OpeartionInput-' + i">Cargo</label>
+                                    <!-- triggers="focus" -->
+                                    <div class="input-group">
+                                        <div class="input-group-addon" style="border-right:0px !important;background-color: white !important ; ">
+                                            <div *ngIf="leg$.Operation && leg$.Operation.IsBOValidated >= 0 ">
+                                                <div *ngIf="leg$.Operation.IsBOValidated == 2; then BOValidatedOk else BOValidatedNotOk"></div>
+                                                <ng-template #BOValidatedOk>
+                                                    <span class="fa fa-check" style="color:green;"></span>
+                                                </ng-template>
+                                                <ng-template #BOValidatedNotOk>
+                                                    <span class="fa fa-times-circle" style="color:red;"></span>
+                                                </ng-template>
+                                            </div>
+                                        </div>
+                                            <!-- (document:click)=insideclick close -->
+                                        <input class="form-control" 
+                                            #legOpeartion="ngModel" 
+                                            [attr.name]="'OpeartionInput-' + i"
+                                            [attr.id]="'OpeartionInput-' + i"
+                                            style="border-right-color:transparent !important ; border-left-color: transparent !important ; cursor: pointer !important;"
+                                            type="text" 
+                                            [(ngModel)]="leg$.Operation?.Cargo.Code"
+                                            [ngModelOptions]="{standalone: true}"
+                                            #popOpeartion1="bs-popover" 
+                                            [popover]="templateOperations" 
+                                            [placement]="getPlacement(leg)"
+                                            (keypress)="onDeleteKeyPress($event)" 
+                                            (keyup)="onDeleteOperationkeyUp($event,leg$.Id)"
+                                             outsideClick= true
+                                            (document:click)="popOpeartion1.hide(); defaultHedgeIsChanged = true" 
+                                            (click)="OperationPopoverClick($event,leg$.Id,leg$.FxContractId,leg$.UnderlyingMonth,$event.target,index )"
+                                            [disabled]="!AllowEditAll"
+                                            />
+                                        <!-- (focusout)="focusOutFunction()" -->
+                                        <div class="input-group-addon" 
+                                             #popOpeartion2="bs-popover" 
+                                             [placement]="getPlacement(leg)"
+                                             (document:click)="popOpeartion2.hide(); defaultHedgeIsChanged = true" 
+                                             outsideClick= true 
+                                             (click)="OperationPopoverClick($event,leg$.Id,leg$.FxContractId,leg$.UnderlyingMonth,$event.target,index )"
+                                             [popover]="templateOperations"
+                                             [ngStyle]= "{'pointer-events': !AllowEditAll ? 'none' :''  }"
+                                             >
+                                            <span class="arrow-down"  ></span>
+                                        </div>
+                                        <ng-template #templateOperations>
+                                            <!-- <div (click)="$event.stopPropagation()" > -->
+                                            <!-- <div class="popover-header">
+                                            <button type="button" class="close" (click)="pop.hide()">&times;</button>
+                                        </div> -->
+                                            <ag-grid-angular #agGrid class="ag-blue agridHeight2" style="width: 550px"
+                                                             [gridOptions]="agOperations" 
+                                                             (gridReady)="agOperationOnGridReady($event)">
+                                            </ag-grid-angular>
+                                            <!-- <div class="popover-footer">
+                                              <button type="button" class="btn btn-primary btn-xs" (click)="cleanOperation($event,leg$.Id)">Clear</button>
+                                           </div>  -->
+                                            <!-- </div> -->
+                                        </ng-template>
+                                    </div>
+                                </div>
+                                <div class="form-group col-xs-10  col-sm-6 col-md-6 col-lg-6">
+                                    <div class="form-check form-check-inline">
+                                        <label for="SignalContractInput">Signal Conract</label>
+                                        <input class="form-control" id="SignalContractInput" name="legSignalContract" readonly type="text" value="{{leg$.SignalContract}}"
+                                            name="SignalContract" />
+                                        <!-- <input class="form-control" id="SignalContractInput" readonly type="text" [value]="getSignalContract(leg)" name="SignalContract" /> -->
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-xs-10  col-sm-6 col-md-6 col-lg-6">
+                                        <div class="checkbox checkbox-primary">
+                                            <input class="styled" type="checkbox" 
+                                                  #legMulticargo="ngModel" name="legMulticargo" 
+                                                  [attr.id]="'multicargoinput-' + i"
+                                                  [attr.name]="'multicargoinput-' + i"
+                                                  [(ngModel)]="leg$.MultipleCargoes"
+                                                  [ngModelOptions]="{standalone: true}"
+                                                  [disabled]="!AllowEditAll"
+                                            >
+                                            <label [attr.for]="'multicargoinput-' + i ">
+                                                Multi. Cargoes
+                                            </label>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <!--Grid SIAM ExecutionFXes  -->
+                <fieldset>
+                    <legend>
+                        SIAM
+                        <button id="addExecutionFx" 
+                                *ngIf="AllowEditSiam" 
+                                class="btn action add" (click)="$event.preventDefault();addItemsAtIndex();" 
+                                data-toggle="tooltip" title="Add new ExecutionFX !"
+                                >
+                        </button>
+                    </legend>
+                    <div class="row-fluid">
+                        <!-- event (click) à l'interieur de la grid -->
+                        <!--  (document:click) à l'exterieur de la grid et à l'interieur de la grid casseé par le regle au dessus -->
+                        <ag-grid-angular class="ag-blue agridHeight2" id="agExecutionFx"
+                            [gridOptions]="agExecutionFXes" 
+                            [rowData]="hedge$.ExecutionFXes"
+                            (gridReady)="agExecutiononGridReady($event)"
+                            (rowValueChanged)="onRowValueChangedAgExecution($event)"
+                            (rowDoubleClicked)="rowDoubleClicked($event)"
+                            (cellValueChanged)="onCellValueChanged($event)"
+                        >
+                        </ag-grid-angular>
+                        <!-- (click)="agGridClick($event)"  
+                             (focusout)="documentClick($event)"
+                           (document:click)="documentClick($event)"
+                              editType = 'fullRow'
+                           (rowValueChanged)="onRowValueChangedAgExecution($event)"
+                          suppressHorizontalScroll 
+                        -->
+                        
+                    </div>
+                </fieldset>
+                <!--Actions Buttons-->
+                <!-- <div class="modal-footer">
+               <button class="btn btn-default" (click)="close()">Close</button>
+               <button class="btn btn-default" (click)="save(hedge$)">Save</button></div> -->
+            </div>
+        </form>
+    </div>
+
+    <ng-template #alertConfirmSave>
+        <div class="modal-body">
+            <div class="col">
+                <font color="red">
+                    <label>Data saved successfully !</label>
+                </font>
+            </div>
+            <div class="col">
+                <button class="btn action exit" data-toggle="tooltip" title="Close !" (click)="closeConfirmSave()"></button>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template #alertQuitWithoutSaving>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col">
+                    <font color="red">
+                        <label>Are you sure you want to quit ? All unsaved progress will be lost.</label>
+                    </font>
+                </div>
+                <div class="col">
+                    <button class="btn action yes" data-toggle="tooltip" title="Yes !" (click)="quitWithoutSaving(true)"></button>
+                </div>
+                <div class="col">
+                    <button class="btn action no" data-toggle="tooltip" title="No !" (click)="quitWithoutSaving(false)"></button>
+                </div>
+            </div>
+        </div>
+    </ng-template>

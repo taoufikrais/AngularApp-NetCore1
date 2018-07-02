@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85676D70-3AEC-428D-9477-41B26E56CFFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FXWIN.Data.Provider</RootNamespace>
+    <AssemblyName>FXWIN.Data.Provider</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.1.0.0\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core, Version=7.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.OData.Core.7.2.0\lib\portable-net45+win8+wpa81\Microsoft.OData.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm, Version=7.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.OData.Edm.7.2.0\lib\portable-net45+win8+wpa81\Microsoft.OData.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Spatial, Version=7.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Spatial.7.2.0\lib\portable-net45+win8+wpa81\Microsoft.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RefactorThis.GraphDiff, Version=3.0.0.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\packages\RefactorThis.GraphDiff.3.0.0\lib\RefactorThis.GraphDiff.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Http, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.OData, Version=6.1.0.10907, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.OData.6.1.0\lib\net45\System.Web.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TypeLite, Version=1.8.2.0, Culture=neutral, PublicKeyToken=8cd4b9c9ac23d744, processorArchitecture=MSIL">
+      <HintPath>..\packages\TypeLite.1.8.4\lib\net4\TypeLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TypeLite.Net4, Version=1.8.2.0, Culture=neutral, PublicKeyToken=8cd4b9c9ac23d744, processorArchitecture=MSIL">
+      <HintPath>..\packages\TypeLite.1.8.4\lib\net4\TypeLite.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseService.cs" />
+    <Compile Include="Book.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cargo.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CargoState.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CargoType.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cargo_AuditTrail.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\OperationsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Constantes.cs" />
+    <Compile Include="DataContextExtensions.cs" />
+    <Compile Include="FXWinV2Entities.cs" />
+    <Compile Include="OperationBusiness.cs" />
+    <Compile Include="Partial class\AuditTrail.cs" />
+    <Compile Include="Partial class\CommodityHedge.cs" />
+    <Compile Include="Partial class\ExportPomax.cs" />
+    <Compile Include="Partial class\FxwinTrade.cs" />
+    <Compile Include="Partial class\Operation.cs" />
+    <Compile Include="DateTimeKindAttribute.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="Partial class\OperationSynthesis.cs" />
+    <Compile Include="Partial class\Port.cs" />
+    <Compile Include="Partial class\SubjacentSynthesis.cs" />
+    <Compile Include="Partial class\SubjacentView.cs" />
+    <Compile Include="Partial class\Vessel.cs" />
+    <Compile Include="Partial class\VW_CargoView.cs" />
+    <Compile Include="CommodityHedge.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CommodityHedge_AuditTrail.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContractExpositionByDateAndSide.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContractExposure.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContractNotCoveredExpositionDateAndAmount.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContractType.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Currency.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExecutionFX.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExecutionFX_AuditTrail.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formula.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FxContract.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FXHedge.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FxHedge_AuditTrail.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FxParameter.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FxRole.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FxUser.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FXWinEntityDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FXWinEntityDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FXWinEntityDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FXWinEntityDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FXWinEntityDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllFXHedgeSynthesis_Result.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetReportingView_Result.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HedgeCommoMaturity.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HedgeCommoMaturity_AuditTrail.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HedgeLeg.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HedgeLeg_AuditTrail.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HedgeType.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IBaseService.cs" />
+    <Compile Include="Incoterm.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InternalState.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LastUsedExportPomaxParameter.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LastUsedFxImportSignalDataParameter.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LastUsedFxValuationParameter.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LinkFxContractFormula.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LinkFxContractSignalContract.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LinkLegHedgeCommoHedge.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LinkType.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementIntent.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Operation.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperationExpositionByDateAndSide.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperationNotCoveredExpositionDateAndAmount.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperationType.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Operation_AuditTrail.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Partial class\VW_ExportFxHedges.cs" />
+    <Compile Include="Partial class\VW_ExportPomax.cs" />
+    <Compile Include="Port.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PortType.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseContract.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseContractValue.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseSale.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Qualification.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SharedLayout.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SignalContractExclusion.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Subjacent.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubjacentType.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Subjacent_AuditTrail.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupplyContract.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempSicav.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TermType.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeSerie.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeSerieValue.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnderlyingTerm.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnderlyingTermNotCoveredExpositionDateAndAmount.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnderlyingTerm_AuditTrail.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Unit.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitType.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_GetErrorInfo_Result.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vessel.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_CargoView.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_CommoHedgeWithMaturity.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_Cube.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_CubeCommodity.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_CubeFXHedge.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_CubeOperation.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_ExportFxHedges.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_ExportPomax.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_FXHedgeSynthesis.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_FxWinUnits.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_LinkFxContractSignalContract.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_Reporting.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_SignalContract.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_UsersView.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkflowState.cs">
+      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="FXWinEntityDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FXWinEntityDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="Connected Services\OperationsService\AdministrationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OperationsService\FXWIN.Data.Provider.OperationsService.GetListOperationsOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\OperationsService\OperationsServiceDefinitions.wsdl" />
+    <None Include="Connected Services\OperationsService\ReturnCode-V1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OperationsService\XML-SIGNAL-Principal-V1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FXWinEntityDataModel.edmx.diagram">
+      <DependentUpon>FXWinEntityDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="package.json" />
+    <None Include="packages.config" />
+    <None Include="Scripts\Manager.ttinclude" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQL\VW_ExportFxHedges.sql" />
+    <None Include="Connected Services\OperationsService\configuration91.svcinfo" />
+    <None Include="Connected Services\OperationsService\configuration.svcinfo" />
+    <None Include="Connected Services\OperationsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="FXWinEntityDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FXWinEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>FXWinEntityDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="FXWinEntityDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FXWinEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>FXWinEntityDataModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\TypeLite.Net4.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TypeLite.Net4.d.ts</LastGenOutput>
+    </Content>
+    <Content Include="SQL\Fxcontract.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\Enums.ts">
+      <DependentUpon>TypeLite.Net4.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Scripts\TypeLite.Net4.d.ts">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TypeLite.Net4.tt</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FXWIN.Common\FXWIN.Common.csproj">
+      <Project>{5DF0FD71-0E60-4B49-A3F5-6E4A227152C8}</Project>
+      <Name>FXWIN.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FXWIN.ConnectionHubs\FXWIN.ConnectionHubs.csproj">
+      <Project>{C9004DD0-67A8-4CCF-A899-11642B792045}</Project>
+      <Name>FXWIN.ConnectionHubs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\OperationsService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

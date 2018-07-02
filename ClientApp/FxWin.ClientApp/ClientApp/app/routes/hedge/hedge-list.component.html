@@ -1,0 +1,115 @@
+﻿<div class="content-heading">
+    GNL Hedge List
+    <small></small>
+</div>
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading clearfix">
+            <!-- <h4 class="panel-title pull-right"></h4> -->
+            <div class="btn-group pull-left" style="width:auto; border-right: 1px !important; border-color: white !important">
+                    <div class="col">
+                        <span class="fa fa-university" style="color: white;display: none"></span>
+                    </div>
+                    <div class="col">
+                        <a href="#">
+                            <span class="fa fa-plus" style="color: white" (click)="addHedge()" data-toggle="tooltip" title="Add hedge"></span>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#">
+                            <span class="fa fa-download" style="color: white" 
+                              [ngStyle]= "{'pointer-events': (this.currentUser.FxRoleId != enumUserRole.ADMIN && this.currentUser.FxRoleId != enumUserRole.BO)  ? 'none' :''  }"
+                              (click)="openModalImportKtp()" data-toggle="tooltip" title="import Ktp"></span>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#">
+                            <span class="fa fa-refresh" style="color: white" (click)="refresh()" data-toggle="tooltip" title="refresh"></span>
+                        </a>
+                    </div>
+                    <!--<label>Layout</label>-->
+                    <div class="col">
+                        <select>
+                            <option>Default Layout</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="btn-group pull-right">
+                    <!-- <input #searchTxt placeholder="Filter..." type="text" (keyup)="onFilterChanged($event)" /> -->
+                    <a href="#">
+                        <span class="fa fa-file-excel-o" style="color: white" (click)="exportgridData()" data-toggle="tooltip" title="export to csv !"></span>
+                    </a>
+                </div>
+        </div>
+        <div class="panel-heading">
+        </div>
+        <div class="panel-body" style="padding:0px !important;">
+            <ag-grid-angular #agGrid class="ag-blue" [gridOptions]="gridOptions" (gridReady)="onReady($event)" style="padding: 0px !important">
+            </ag-grid-angular>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #modalImportKtp>
+        <div class="modal-header">
+            <h5 class="modal-title pull-left">Import Ktp</h5>
+            <button class="btn action exit pull-right" (click)="closeModalImportKtp()"></button>
+        </div>
+        <div class="modal-body">
+                <div class="row">
+               <div class=" col-xs-10">
+               <input type="file" ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)" />
+              </div>
+              <div class=" col-xs-2">
+               <p *ngFor="let item of uploader.queue;let i = index; trackBy: trackByFn">
+                    <!-- {{item?.file?.name}}  -->
+                  <button  *ngIf="!loading" type="button" class="btn btn-success btn-xs" (click)="upload(item)" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                   <span class="glyphicon glyphicon-upload"></span> Upload
+                   </button> 
+             
+                </p>
+                   <div class="ball-pulse" *ngIf="loading">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                   </div>
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="progress">
+                        <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+                </div>
+            </div> -->
+             <!-- <h1>Send some basic messages</h1>
+    <div class="row">
+        <form class="form-inline" (ngSubmit)="sendMessage()" #messageForm="ngForm">
+            <div class="form-group">
+                <label class="sr-only" for="message">Message</label>
+                <input type="text" class="form-control" id="message" placeholder="your message..." name="message" [(ngModel)]="message" required>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!messageForm.valid">Send SignalR Message</button>
+        </form>
+    </div> -->
+    <div class="row" *ngIf="messages.length > 0" style="height: 200px; overflow-y: scroll;">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Logs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let message of messages; let i = index; trackBy: trackByFn">
+                        <td>{{i + 1}}</td>
+                        <td>{{message}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+   
+        </div>
+</ng-template>

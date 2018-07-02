@@ -1,0 +1,186 @@
+﻿<div class="content-heading">
+    Signal Contracts
+</div>
+
+<div class="col-lg-4">
+    <fieldset>
+        <legend>
+            Purchase Contracts
+            &nbsp;&nbsp;&nbsp;
+            <!--<button class="btn action add" data-toggle="tooltip" title="Add purchase contract !"
+                    (click)="addPurchase()"></button>-->
+            <button class="btn action save" data-toggle="tooltip" title="Save changes !"
+                    (click)="saveGridPurchase()"></button>
+        </legend>
+        <div class="row-fluid">
+            <ag-grid-angular #agGrid
+                             class="ag-blue agridHeight1"
+                             [gridOptions]="gridPurchase"
+                             [rowData]="fxsignalContractPurchase"
+                             (gridReady)="onReadyGridPurchase($event)"
+                             [rowSelection]="rowSelectionPurchase"
+                             (rowClicked)="onRowClickedPurchase($event)">
+            </ag-grid-angular>
+        </div>
+    </fieldset>
+</div>
+<div class="col-lg-4">
+    <fieldset>
+        <legend>
+            Sale Contracts
+            &nbsp;&nbsp;&nbsp;
+            <!--<button class="btn action add" data-toggle="tooltip" title="Add sale contract !"
+                    (click)="addSupply()"></button>-->
+            <button class="btn action save" data-toggle="tooltip" title="Save changes !"
+                    (click)="saveGridSupply()"></button>
+        </legend>
+        <div class="row-fluid">
+            <ag-grid-angular #agGrid
+                             class="ag-blue agridHeight1"
+                             [gridOptions]="gridSupply"
+                             [rowData]="fxsignalContractSupply"
+                             (gridReady)="onReadyGridSupply($event)"
+                             [rowSelection]="rowSelectionSupply"
+                             (rowClicked)="onRowClickedSupply($event)">
+            </ag-grid-angular>
+        </div>
+    </fieldset>
+</div>
+<div class="col-lg-4">
+    <fieldset>
+        <legend>
+            Exclusions&nbsp;&nbsp;&nbsp;
+            <button class="btn action add" data-toggle="tooltip" title="Add exclusion !"
+                    (click)="addExclusion()"></button>
+            <button class="btn action save" data-toggle="tooltip" title="Save changes !"
+                    (click)="saveGridExclusion()"></button>
+        </legend>
+        <div class="row-fluid">
+            <ag-grid-angular #agGrid
+                             class="ag-blue agridHeight1"
+                             [gridOptions]="gridExclusion"
+                             [rowData]="fxsignalContractExclusion"
+                             (gridReady)="onReadyGridExclusion($event)"
+                             [rowSelection]="rowSelectionExclusion"
+                             (rowClicked)="onRowClickedExclusion($event)">
+            </ag-grid-angular>
+        </div>
+    </fieldset>
+</div>
+
+<ng-template #modalContractPurchase *ngIf="newSignalContractPurchase$ | async as newSignalContractPurchase">
+    <div class="modal-header">
+        <h5 class="modal-title pull-left">New purchase signal contract</h5>
+        <button class="btn action exit pull-right"
+                (click)="close()"></button>
+        <button class="btn action save pull-right"
+                (click)="addNewSignalContract(newSignalContractPurchase, 1)"></button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <label class="col-lg-3 control-label">Signal Contract</label>
+            <select class="form-control col-lg-3"
+                    [(ngModel)]="newSignalContractPurchase.PurchaseContract"
+                    [compareWith]="comparator"
+                    [ngModelOptions]="{standalone: true}"
+                    (ngModelChange)="signalContractPurchaseChange(newSignalContractPurchase)"
+                    style="width:130px">
+                <option *ngFor="let purchaseContractItem of listPurchaseContracts$" [ngValue]="purchaseContractItem">
+                    {{purchaseContractItem.Code}}
+                </option>
+            </select>
+        </div>
+        <br />
+        <div class="row">
+            <label class="col-lg-3 control-label">FxWinn Contract</label>
+            <select class="form-control col-lg-3"
+                    [(ngModel)]="newSignalContractPurchase.FxContract"
+                    [compareWith]="comparator"
+                    [ngModelOptions]="{standalone: true}"
+                    (ngModelChange)="signalContractFxWinChange(newSignalContractPurchase)"
+                    style="width:130px">
+                <option *ngFor="let fxWinContractItem of listFxWinContracts$" [ngValue]="fxWinContractItem">
+                    {{fxWinContractItem.Code}}
+                </option>
+            </select>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #modalContractSupply *ngIf="newSignalContractSupply$ | async as newSignalContractSupply">
+    <div class="modal-header">
+        <h5 class="modal-title pull-left">New sale signal contract</h5>
+        <button class="btn action exit pull-right"
+                (click)="close()"></button>
+        <button class="btn action save pull-right"
+                (click)="addNewSignalContract(newSignalContractSupply, 1)"></button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <label class="col-lg-3 control-label">Signal Contract</label>
+            <select class="form-control col-lg-3"
+                    [(ngModel)]="newSignalContractSupply.SupplyContract"
+                    [compareWith]="comparator"
+                    [ngModelOptions]="{standalone: true}"
+                    (ngModelChange)="signalContractSupplyChange(newSignalContractSupply)"
+                    style="width:130px">
+                <option *ngFor="let supplyContractItem of listSupplyContracts$" [ngValue]="supplyContractItem">
+                    {{supplyContractItem.Code}}
+                </option>
+            </select>
+        </div>
+        <br />
+        <div class="row">
+            <label class="col-lg-3 control-label">FxWinn Contract</label>
+            <select class="form-control col-lg-3"
+                    [(ngModel)]="newSignalContractSupply.FxContract"
+                    [compareWith]="comparator"
+                    [ngModelOptions]="{standalone: true}"
+                    (ngModelChange)="signalContractFxWinChange(newSignalContractSupply)"
+                    style="width:130px">
+                <option *ngFor="let fxWinContractItem of listFxWinContracts$" [ngValue]="fxWinContractItem">
+                    {{fxWinContractItem.Code}}
+                </option>
+            </select>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #modalContractExclusion *ngIf="newSignalContractExclusion$ | async as newSignalContractExclusion">
+    <div class="modal-header">
+        <h5 class="modal-title pull-left">New signal contract exclusion</h5>
+        <button class="btn action exit pull-right"
+                (click)="close()"></button>
+        <button class="btn action save pull-right"
+                (click)="addNewExclusion(newSignalContractExclusion)"></button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <label class="col-lg-3 control-label">Purchase Contract</label>
+            <select class="form-control col-lg-3"
+                    [(ngModel)]="newSignalContractExclusion.PurchaseContract"
+                    [compareWith]="comparator"
+                    [ngModelOptions]="{standalone: true}"
+                    (ngModelChange)="exclusionPurchaseContractChange(newSignalContractExclusion)"
+                    style="width:175px">
+                <option *ngFor="let purchaseContractItem of listPurchaseContracts$" [ngValue]="purchaseContractItem">
+                    {{purchaseContractItem.Code}}
+                </option>
+            </select>
+        </div>
+        <br />
+        <div class="row">
+            <label class="col-lg-3 control-label">Sale Contract</label>
+            <select class="form-control col-lg-3"
+                    [(ngModel)]="newSignalContractExclusion.SupplyContract"
+                    [compareWith]="comparator"
+                    [ngModelOptions]="{standalone: true}"
+                    (ngModelChange)="exclusionSupplyContractChange(newSignalContractExclusion)"
+                    style="width:175px">
+                <option *ngFor="let supplyContractItem of listSupplyContracts$" [ngValue]="supplyContractItem">
+                    {{supplyContractItem.Code}}
+                </option>
+            </select>
+        </div>
+    </div>
+</ng-template>

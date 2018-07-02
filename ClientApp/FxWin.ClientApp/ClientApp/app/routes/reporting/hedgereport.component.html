@@ -1,0 +1,35 @@
+<div class="content-heading">
+    Hedge Reports
+    <small></small>
+</div>
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading clearfix">
+            <div class="btn-group pull-left" style="width:auto; border-right: 1px !important; border-color: white !important">
+                    <div class="col">
+                        <span class="fa fa-university" style="color: white;display: none"></span>
+                    </div>
+                    <div class="col">
+                         <a href="#">
+                            <span class="fa fa-plus" style="color: white" (click)="addHedge()" data-toggle="tooltip" title="Add hedge"></span>
+                        </a> 
+                    </div>
+                </div>
+                <div class="btn-group pull-right">
+                    <!-- <input #searchTxt placeholder="Filter..." type="text" (keyup)="onFilterChanged($event)" /> -->
+                    <a href="#">
+                        <span class="fa fa-file-excel-o" style="color: white" (click)="exportgridData()" data-toggle="tooltip" title="export to csv !"></span>
+                    </a>
+                </div>
+        </div>
+        <div class="panel-heading">
+        </div>
+        <div class="panel-body" style="padding:0px !important;">
+            <ag-grid-angular #agGrid class="ag-blue" [gridOptions]="gridOptions" 
+                    (gridReady)="onGridReady($event)"
+                     style="padding: 0px !important">
+            </ag-grid-angular>
+            <input type="checkbox" title="filter" />
+        </div>
+    </div>
+</div>

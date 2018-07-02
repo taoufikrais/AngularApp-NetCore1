@@ -1,0 +1,35 @@
+﻿{
+  "@odata.context": "http://localhost:60257/api/$metadata#HedgeLegs",
+  "value": [
+    {
+      "Id": 8,
+      "FXHedgeId": 4,
+      "PurchaseSaleId": 2,
+      "Maturity": "2015-01-01T00:00:00+01:00",
+      "Amount": 2171800.000000000000000000,
+      "FxContractId": 1,
+      "UnderlyingMonth": "2016-01-01T00:00:00+01:00",
+      "OperationId": null,
+      "CreationDate": "2016-05-30T10:30:08.467+02:00",
+      "ModificationDate": null,
+      "CreationUser": "L",
+      "ModificationUser": null,
+      "UnderlyingTermId": null,
+      "MultipleCargoes": true,
+      "BookCode": "FX hedge Cameron",
+      "FxContract": {
+        "Id": 1,
+        "Code": "ELNG",
+        "ContractTypeId": 2,
+        "IncotermId": 1,
+        "PaymentOffset": 15,
+        "MarginSharingBEE": true,
+        "IsFiftyFifty": true,
+        "IsSpotContract": false,
+        "IsMTContract": true,
+        "OrderNumberPrefix": "EG",
+        "CurrencyId": 2
+      }
+    }
+  ]
+}

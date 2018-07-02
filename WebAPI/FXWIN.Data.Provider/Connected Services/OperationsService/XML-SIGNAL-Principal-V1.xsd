@@ -1,0 +1,1771 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:xb.signal" xmlns:pp="urn:xb.signal" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:xb.signal" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="codeDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="dateDomaine">
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  <xs:simpleType name="dureeDomaine">
+    <xs:restriction base="xs:duration" />
+  </xs:simpleType>
+  <xs:simpleType name="heureDomaine">
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  <xs:simpleType name="dateheureDomaine">
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  <xs:simpleType name="nomDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="descriptionDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="commentDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="statutDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="mesureDomaine">
+    <xs:restriction base="xs:float" />
+  </xs:simpleType>
+  <xs:simpleType name="mesureDblDomaine">
+    <xs:restriction base="xs:double" />
+  </xs:simpleType>
+  <xs:simpleType name="valeurDomaine">
+    <xs:restriction base="xs:float" />
+  </xs:simpleType>
+  <xs:simpleType name="quantiteParcelleDomaine">
+    <xs:restriction base="xs:double" />
+  </xs:simpleType>
+  <xs:simpleType name="uniteDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="mesureBigDecDomaine">
+    <xs:restriction base="xs:decimal" />
+  </xs:simpleType>
+  <xs:simpleType name="cardDomaine">
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+  <xs:simpleType name="typeContrepartieDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="typeDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="cardODomaine">
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+  <xs:simpleType name="codeODomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="commentODomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="dateODomaine">
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  <xs:simpleType name="dateheureODomaine">
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  <xs:simpleType name="descriptionODomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="heureODomaine">
+    <xs:restriction base="xs:dateTime" />
+  </xs:simpleType>
+  <xs:simpleType name="mesureODomaine">
+    <xs:restriction base="xs:float" />
+  </xs:simpleType>
+  <xs:simpleType name="nomODomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="statutODomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="typeODomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="uniteODomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="valeurODomaine">
+    <xs:restriction base="xs:decimal" />
+  </xs:simpleType>
+  <xs:simpleType name="nomMDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="statutPortDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="typePortDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="natureContratDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="typeContratDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="booleen1Domaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="statutContratDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="statutNavireDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="statutAffretementDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="charteGDFDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="natureIndispoDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="statutAuthPortDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="statutAuthContreDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="modePropulsion">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="propulsion">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="idDomaine">
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+  <xs:simpleType name="unitM_JDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitMDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitM3Domaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitTDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitNoeudDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitHDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitM3_HDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitPCTDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitMWATTDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitMWH_JDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitKPADomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitDEGREDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitKWH_M3Domaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitMILLEDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitKG_HDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="evtAffDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="disponibiliteDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="statutMaintenanceDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitTWH_ANDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="unitM3gaz_M3gnlDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="contrepartieDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="statutAuthContratPortDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="typeUniteDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="coeffConvDomaine">
+    <xs:restriction base="xs:decimal" />
+  </xs:simpleType>
+  <xs:simpleType name="groupeObjetsDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="typeDroitDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="couleurDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="clauseDestDomaine">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="boolean">
+    <xs:restriction base="xs:boolean" />
+  </xs:simpleType>
+  <xs:simpleType name="typeCall">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNLOADING" />
+      <xs:enumeration value="LOADING" />
+      <xs:enumeration value="MISCELLANEOUS_CALL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="typeTugs">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INBOUND" />
+      <xs:enumeration value="OUTBOUND" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="blob">
+    <xs:restriction base="xs:base64Binary" />
+  </xs:simpleType>
+  <xs:simpleType name="abattement">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OUI" />
+      <xs:enumeration value="NON" />
+      <xs:enumeration value="PREVU" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Config_Navire">
+    <xs:sequence>
+      <xs:element name="id_Config" type="pp:idDomaine" />
+      <xs:element name="vitesse_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="conso_GNL_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="conso_Carburant_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="conso_Carb_Contrat" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="conso_Carb_Constate" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="conso_Carb_Commentaire" nillable="true" type="pp:commentDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Unite_Mesure">
+    <xs:sequence>
+      <xs:element name="code_Unit" type="pp:codeODomaine" />
+      <xs:element name="nom_Unit" type="pp:nomDomaine" />
+      <xs:element name="libelle_Unit" type="pp:descriptionDomaine" />
+      <xs:element name="unite_Volume" type="pp:uniteDomaine" />
+      <xs:element name="unite_Energie" type="pp:uniteDomaine" />
+      <xs:element name="code_unite_Volume" type="pp:uniteDomaine" />
+      <xs:element name="code_unite_Energie" type="pp:uniteDomaine" />
+      <xs:element name="type_Unit" type="pp:descriptionDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Uni_Mes">
+    <xs:sequence>
+      <xs:element name="code_Unit" type="pp:codeODomaine" />
+      <xs:element name="nom_Unit" type="pp:nomDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Droit">
+    <xs:sequence>
+      <xs:element name="id_Droit" type="pp:idDomaine" />
+      <xs:element name="type_Droit">
+        <xs:simpleType>
+          <xs:restriction base="pp:typeDroitDomaine" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="idProfil" type="pp:idDomaine" />
+      <xs:element name="idObjet" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Objet_Applicatif">
+    <xs:sequence>
+      <xs:element name="id_Objet" type="pp:idDomaine" />
+      <xs:element name="libelle" type="pp:nomDomaine" />
+      <xs:element name="groupe_Objets" type="pp:groupeObjetsDomaine" />
+      <xs:element name="droit" type="pp:Droit" />
+      <xs:element name="affichage" type="pp:nomDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Utilisateurs">
+    <xs:sequence>
+      <xs:element name="id_Utilisateur" type="pp:idDomaine" />
+      <xs:element name="login" type="pp:nomDomaine" />
+      <xs:element name="idGaia" type="pp:nomDomaine" />
+      <xs:element name="nom" type="pp:nomDomaine" />
+      <xs:element name="prenom" type="pp:nomDomaine" />
+      <xs:element name="telephone" type="pp:nomDomaine" />
+      <xs:element name="mail" type="pp:nomDomaine" />
+      <xs:element name="idProfil" type="pp:idDomaine" />
+      <xs:element name="type" type="pp:nomDomaine" />
+      <xs:element name="division" type="pp:nomDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Correspondances_Unites">
+    <xs:sequence>
+      <xs:element name="id_Correspondance" type="pp:idDomaine" />
+      <xs:element name="type_Unite">
+        <xs:simpleType>
+          <xs:restriction base="pp:typeUniteDomaine" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="coefficient" nillable="true" type="pp:coeffConvDomaine" />
+      <xs:element name="code_Conv" type="pp:codeODomaine" />
+      <xs:element name="umInitiale" type="pp:Unite_Mesure" />
+      <xs:element name="umConvertie" type="pp:Unite_Mesure" />
+      <xs:element name="uniteMesInit" type="pp:codeODomaine" />
+      <xs:element name="uniteMesConv" type="pp:codeODomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Identifiant_Gene">
+    <xs:sequence>
+      <xs:element name="id" type="pp:idDomaine" />
+      <xs:element name="code" type="pp:codeDomaine" />
+      <xs:element name="type" type="pp:typeDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractContrepartie">
+    <xs:sequence>
+      <xs:element name="typeCP" type="pp:descriptionDomaine" />
+      <xs:element name="nomCP" type="pp:nomDomaine" />
+      <xs:element name="libelleCP" type="pp:descriptionDomaine" />
+      <xs:element name="nomPortCP" type="pp:descriptionDomaine" />
+      <xs:element name="adresseCP" type="pp:descriptionDomaine" />
+      <xs:element name="telCP" type="pp:descriptionDomaine" />
+      <xs:element name="siteCP" type="pp:descriptionDomaine" />
+      <xs:element name="commentaireCP" type="pp:descriptionDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Contrepartie">
+    <xs:sequence>
+      <xs:element name="id_Cp" type="pp:idDomaine" />
+      <xs:element name="nom_Cp" type="pp:nomDomaine" />
+      <xs:element name="type_Cp">
+        <xs:simpleType>
+          <xs:restriction base="pp:typeContrepartieDomaine" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="libelle_Cp" type="pp:descriptionDomaine" />
+      <xs:element name="couleur_Cp" type="pp:couleurDomaine" />
+      <xs:element name="adresse_Cp" type="pp:descriptionDomaine" />
+      <xs:element name="tel_Cp" type="pp:descriptionDomaine" />
+      <xs:element name="site_Cp" type="pp:descriptionDomaine" />
+      <xs:element name="commentaire_Cp" type="pp:descriptionDomaine" />
+      <xs:element name="nom_port_cp" type="pp:descriptionDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Pays">
+    <xs:sequence>
+      <xs:element name="code_Pays" type="pp:codeDomaine" />
+      <xs:element name="nom_Pays" type="pp:nomDomaine" />
+      <xs:element name="region" type="pp:nomDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Mesure">
+    <xs:sequence>
+      <xs:element name="valeur" nillable="true" type="pp:valeurDomaine" />
+      <xs:element name="unite" type="pp:uniteDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Aut_Contrat_Port">
+    <xs:sequence>
+      <xs:element name="id_Aut_Contrat_Port" type="pp:idDomaine" />
+      <xs:element name="statut_Aut_CP">
+        <xs:simpleType>
+          <xs:restriction base="pp:statutAuthContratPortDomaine" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="idContrat" type="pp:idDomaine" />
+      <xs:element name="idPort" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Contrat">
+    <xs:sequence>
+      <xs:element name="idContrat" type="pp:idDomaine" />
+      <xs:element name="codeContrat" type="pp:codeODomaine" />
+      <xs:element name="codeMiddleOffice" type="pp:codeDomaine" />
+      <xs:element name="codeSAP" type="pp:codeDomaine" />
+      <xs:element name="libelleContrat" type="pp:descriptionDomaine" />
+      <xs:element name="flagList" type="pp:idDomaine" />
+      <xs:element name="flagBookDefault" type="pp:idDomaine" />
+      <xs:element name="natureContrat" type="pp:natureContratDomaine" />
+      <xs:element name="typeContrat" type="pp:typeContratDomaine" />
+      <xs:element name="dateDebut" type="pp:dateDomaine" />
+      <xs:element name="dateFin" type="pp:dateDomaine" />
+      <xs:element name="clauseDestination" type="pp:typeDomaine" />
+      <xs:element name="commentaireContrat" type="pp:commentDomaine" />
+      <xs:element name="statutContrat" type="pp:statutContratDomaine" />
+      <xs:element name="paysSourceContrat" nillable="true" type="pp:Pays" />
+      <xs:element name="vendeurContrat" type="pp:Contrepartie" />
+      <xs:element name="acheteurContrat" type="pp:Contrepartie" />
+      <xs:element name="portDefautContrat" nillable="true" type="pp:Port" />
+      <xs:element name="nomenCargaison" type="pp:nomDomaine" />
+      <xs:element name="nomenAttribut" type="pp:nomDomaine" />
+      <xs:element name="uniteDefaut" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="dureeContrat" type="pp:typeContratDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Report_Nav">
+    <xs:sequence>
+      <xs:element name="idNoonReport" type="pp:idDomaine" />
+      <xs:element name="idNavire" type="pp:idDomaine" />
+      <xs:element name="nomNavire" type="pp:codeDomaine" />
+      <xs:element name="voyageNumber" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="dateReport" type="pp:dateheureDomaine" />
+      <xs:element name="heureReportLT" type="pp:heureDomaine" />
+      <xs:element name="heureReportUTC" type="pp:heureDomaine" />
+      <xs:element name="latitude" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="longitude" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="distanceParcourueSinceLastReport" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tempsPasseSinceLastReport" nillable="true" type="pp:dureeDomaine" />
+      <xs:element name="bspDistanceParcourue" type="pp:mesureDomaine" />
+      <xs:element name="distanceToGoToDestination" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="course" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="vitesseMoySinceLastReport" type="pp:mesureDomaine" />
+      <xs:element name="vitesseMoyBSP" type="pp:mesureDomaine" />
+      <xs:element name="vitesseMoyETA" type="pp:mesureDomaine" />
+      <xs:element name="rpmMoy" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="slip" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="midDraft" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="condition" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="consoHFOBSP" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="consoLSFOBSP" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="consoDOBSP" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="consoLSGOBSP" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="consoGOBSP" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="consoGNLBSP" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="consoHFOROB" type="pp:mesureDomaine" />
+      <xs:element name="consoLSFOROB" type="pp:mesureDomaine" />
+      <xs:element name="consoDOROB" type="pp:mesureDomaine" />
+      <xs:element name="consoLSGOROB" type="pp:mesureDomaine" />
+      <xs:element name="consoGOROB" type="pp:mesureDomaine" />
+      <xs:element name="consoGNLROB" type="pp:mesureDomaine" />
+      <xs:element name="lrConsoFoVal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="lrConsoLsfoVal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="lrConsoDoVal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="lrConsoLsgoVal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="lrConsoGnlgoVal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="directionVent" type="pp:codeDomaine" />
+      <xs:element name="forceVent" type="pp:mesureDomaine" />
+      <xs:element name="etatMer" type="pp:statutDomaine" />
+      <xs:element name="dureePersistanceMeteoBf5" nillable="true" type="pp:dureeDomaine" />
+      <xs:element name="airTemp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="airPres" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="currentDir" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="curSpeed" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="swell" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="swellDir" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="seaTemp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="seaDir" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="bf5PersistanceDVal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="dateETAVitesseCharte" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="dateETAVitesseCourante" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="dateETAFinalDestination" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="deviations" nillable="true" type="pp:dureeDomaine" />
+      <xs:element name="remarques" nillable="true" type="pp:commentDomaine" />
+      <xs:element name="infosComplementaires" nillable="true" type="pp:commentDomaine" />
+      <xs:element maxOccurs="unbounded" name="reportCuve" type="pp:Report_Cuve" />
+      <xs:element maxOccurs="unbounded" name="reportBruleur" type="pp:Report_Bruleur" />
+      <xs:element name="commentaires" nillable="true" type="pp:commentDomaine" />
+      <xs:element name="valide" type="pp:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Port_Log">
+    <xs:sequence>
+      <xs:element name="idPortLog" type="pp:idDomaine" />
+      <xs:element name="idNavire" type="pp:idDomaine" />
+      <xs:element name="vesselName" type="pp:codeDomaine" />
+      <xs:element name="typeCall" type="pp:typeCall" />
+      <xs:element name="cargoNumb" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="voyNumb" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="portAct" type="pp:codeDomaine" />
+      <xs:element name="berthNumb" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="portPrev" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="portNext" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="timeZone" type="pp:codeDomaine" />
+      <xs:element name="datePortLog" type="pp:dateDomaine" />
+      <xs:element name="master" type="pp:codeDomaine" />
+      <xs:element name="loadMaster" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="eosp" type="pp:dateheureDomaine" />
+      <xs:element name="noa" type="pp:dateheureDomaine" />
+      <xs:element name="norT" type="pp:dateheureDomaine" />
+      <xs:element name="norR" type="pp:dateheureDomaine" />
+      <xs:element name="pobI" type="pp:dateheureDomaine" />
+      <xs:element name="praGan" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="tugAlong" type="pp:dateheureDomaine" />
+      <xs:element name="firstLine" type="pp:dateheureDomaine" />
+      <xs:element name="affFast" type="pp:dateheureDomaine" />
+      <xs:element name="gangwayRig" type="pp:dateheureDomaine" />
+      <xs:element name="safetyCheck" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="preopMeet" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="conArmsStartV" type="pp:dateheureDomaine" />
+      <xs:element name="conArmsEndV" type="pp:dateheureDomaine" />
+      <xs:element name="n2TestStart" type="pp:dateheureDomaine" />
+      <xs:element name="n2TestEnd" type="pp:dateheureDomaine" />
+      <xs:element name="ctsopenStart" type="pp:dateheureDomaine" />
+      <xs:element name="ctsopenCounter" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="esdwarmStart" type="pp:dateheureDomaine" />
+      <xs:element name="coolarmLStart" type="pp:dateheureDomaine" />
+      <xs:element name="coolarmLEnd" type="pp:dateheureDomaine" />
+      <xs:element name="esdcoldStart" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="tankcoolStart" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="tankcoolEnd" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="transfStart" type="pp:dateheureDomaine" />
+      <xs:element name="fullRate" type="pp:dateheureDomaine" />
+      <xs:element name="transfSlow" type="pp:dateheureDomaine" />
+      <xs:element name="transfEnd" type="pp:dateheureDomaine" />
+      <xs:element name="armpurgVStart" type="pp:dateheureDomaine" />
+      <xs:element name="armpurgVEnd" type="pp:dateheureDomaine" />
+      <xs:element name="ctscloseStart" type="pp:dateheureDomaine" />
+      <xs:element name="ctscloseCounter" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="hfoStart" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="doStart" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="hfoEnd" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="doEnd" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="discArmsStartV" type="pp:dateheureDomaine" />
+      <xs:element name="discArmsEndV" type="pp:dateheureDomaine" />
+      <xs:element name="papers" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="pilotOrd" type="pp:dateheureDomaine" />
+      <xs:element name="pobO" type="pp:dateheureDomaine" />
+      <xs:element name="docClear" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="gangwayRemov" type="pp:dateheureDomaine" />
+      <xs:element name="linesGo" type="pp:dateheureDomaine" />
+      <xs:element name="tugsAway" type="pp:dateheureDomaine" />
+      <xs:element name="pilotAway" type="pp:dateheureDomaine" />
+      <xs:element name="bsp" type="pp:dateheureDomaine" />
+      <xs:element name="commentsOps" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="commentsCargo" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="commentsSafety" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="agentTime" type="pp:heureDomaine" />
+      <xs:element name="agentComments" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="inspectorTime" type="pp:heureDomaine" />
+      <xs:element name="inspComments" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="lop" nillable="true" type="pp:boolean" />
+      <xs:element name="tugsComments" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="draftFwdA" type="pp:mesureDomaine" />
+      <xs:element name="draftFwdD" type="pp:mesureDomaine" />
+      <xs:element name="draftAftA" type="pp:mesureDomaine" />
+      <xs:element name="draftAftD" type="pp:mesureDomaine" />
+      <xs:element maxOccurs="unbounded" name="cuve" nillable="true" type="pp:Report_Cuve" />
+      <xs:element name="robLngEosp" type="pp:mesureDomaine" />
+      <xs:element name="robLngBsp" type="pp:mesureDomaine" />
+      <xs:element name="consoLng" type="pp:mesureDomaine" />
+      <xs:element name="robHfoEosp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robHfoOpencts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robHfoClosects" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robHfoReceived" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robHfoBsp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="consoHfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLsfoEosp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLsfoOpencts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLsfoClosects" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLsfoReceived" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLsfoBsp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="consoLsfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robDoEosp" type="pp:mesureDomaine" />
+      <xs:element name="robDoOpencts" type="pp:mesureDomaine" />
+      <xs:element name="robDoClosects" type="pp:mesureDomaine" />
+      <xs:element name="robDoReceived" type="pp:mesureDomaine" />
+      <xs:element name="robDoBsp" type="pp:mesureDomaine" />
+      <xs:element name="consoDo" type="pp:mesureDomaine" />
+      <xs:element name="robLsgoEosp" type="pp:mesureDomaine" />
+      <xs:element name="robLsgoOpencts" type="pp:mesureDomaine" />
+      <xs:element name="robLsgoClosects" type="pp:mesureDomaine" />
+      <xs:element name="robLsgoReceived" type="pp:mesureDomaine" />
+      <xs:element name="robLsgoBsp" type="pp:mesureDomaine" />
+      <xs:element name="consoLsgo" type="pp:mesureDomaine" />
+      <xs:element name="heelInstr" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="heelEffect" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="letterOfProtest" nillable="true" type="pp:blob" />
+      <xs:element name="nameLop" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="tugsLetgoA" type="pp:dateheureDomaine" />
+      <xs:element name="tugsMakefastD" type="pp:dateheureDomaine" />
+      <xs:element name="tugsInboundNb" type="pp:mesureDomaine" />
+      <xs:element name="tugsOutboundNb" type="pp:mesureDomaine" />
+      <xs:element name="lop2" nillable="true" type="pp:boolean" />
+      <xs:element name="letterOfProtest2" nillable="true" type="pp:blob" />
+      <xs:element name="nameLop2" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="lop3" nillable="true" type="pp:boolean" />
+      <xs:element name="letterOfProtest3" nillable="true" type="pp:blob" />
+      <xs:element name="nameLop3" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="cargoOperator" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="inspector" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="draftMidA" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="draftMidD" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="draftMeanA" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="draftMeanD" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="windEospKts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="windEospDir" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="currentEospKts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="currentEospDir" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="seaEospM" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="seaEospDir" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="windNorKts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="windNorDir" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="currentNorKts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="currentNorDir" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="seaNorM" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="seaNorDir" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="windEndKts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="windEndDir" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="currentEndKts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="currentEndDir" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="seaEndM" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="seaEndDir" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="windBspDir" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="windBspKts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="currentBspKts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="currentBspDir" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="seaBspM" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="seaBspDir" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robGoEosp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robGoOpencts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robGoClosects" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robGoReceived" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robGoBsp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="consoGo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robN2Eosp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robN2Opencts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robN2Closects" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robN2Received" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robN2Bsp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="consoN2" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="valide" type="pp:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Extract_Port_Log">
+    <xs:sequence>
+      <xs:element name="affFast" type="pp:dateheureDomaine" />
+      <xs:element name="agentComments" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="agentTime" type="pp:heureDomaine" />
+      <xs:element name="armpurgVEnd" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="armpurgVStart" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="berthNumb" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="bsp" type="pp:dateheureDomaine" />
+      <xs:element name="cargoNumb" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="codeNavire" type="pp:codeDomaine" />
+      <xs:element name="commentsCargo" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="commentsOps" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="commentsSafety" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="conArmsEndV" type="pp:dateheureDomaine" />
+      <xs:element name="conArmsStartV" type="pp:dateheureDomaine" />
+      <xs:element name="consoDo" type="pp:mesureDomaine" />
+      <xs:element name="consoHfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="consoLng" type="pp:mesureDomaine" />
+      <xs:element name="consoLsfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="consoLsgo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="coolarmLEnd" type="pp:dateheureDomaine" />
+      <xs:element name="coolarmLStart" type="pp:dateheureDomaine" />
+      <xs:element name="ctscloseCounter" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="ctscloseStart" type="pp:dateheureDomaine" />
+      <xs:element name="ctsopenCounter" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="ctsopenStart" type="pp:dateheureDomaine" />
+      <xs:element name="datePortLog" type="pp:dateDomaine" />
+      <xs:element name="discArmsEndV" type="pp:dateheureDomaine" />
+      <xs:element name="discArmsStartV" type="pp:dateheureDomaine" />
+      <xs:element name="docClear" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="doEnd" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="doStart" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="draftAftA" type="pp:mesureDomaine" />
+      <xs:element name="draftAftD" type="pp:mesureDomaine" />
+      <xs:element name="draftFwdA" type="pp:mesureDomaine" />
+      <xs:element name="draftFwdD" type="pp:mesureDomaine" />
+      <xs:element name="eosp" type="pp:dateheureDomaine" />
+      <xs:element name="esdcoldStart" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="esdwarmStart" type="pp:dateheureDomaine" />
+      <xs:element name="firstLine" type="pp:dateheureDomaine" />
+      <xs:element name="fullRate" type="pp:dateheureDomaine" />
+      <xs:element name="gangwayRemov" type="pp:dateheureDomaine" />
+      <xs:element name="gangwayRig" type="pp:dateheureDomaine" />
+      <xs:element name="heelEffect" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="heelInstr" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="hfoEnd" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="hfoStart" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="inspComments" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="inspectorTime" type="pp:heureDomaine" />
+      <xs:element name="linesGo" type="pp:dateheureDomaine" />
+      <xs:element name="loadMaster" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="master" type="pp:codeDomaine" />
+      <xs:element name="n2TestEnd" type="pp:dateheureDomaine" />
+      <xs:element name="n2TestStart" type="pp:dateheureDomaine" />
+      <xs:element name="noa" type="pp:dateheureDomaine" />
+      <xs:element name="norR" type="pp:dateheureDomaine" />
+      <xs:element name="norT" type="pp:dateheureDomaine" />
+      <xs:element name="papers" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="pilotAway" type="pp:dateheureDomaine" />
+      <xs:element name="pilotOrd" type="pp:dateheureDomaine" />
+      <xs:element name="pobI" type="pp:dateheureDomaine" />
+      <xs:element name="pobO" type="pp:dateheureDomaine" />
+      <xs:element name="portAct" type="pp:codeDomaine" />
+      <xs:element name="portNext" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="portPrev" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="praGan" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="preopMeet" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="robDoBsp" type="pp:mesureDomaine" />
+      <xs:element name="robDoClosects" type="pp:mesureDomaine" />
+      <xs:element name="robDoEosp" type="pp:mesureDomaine" />
+      <xs:element name="robDoOpencts" type="pp:mesureDomaine" />
+      <xs:element name="robDoReceived" type="pp:mesureDomaine" />
+      <xs:element name="robHfoBsp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robHfoClosects" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robHfoEosp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robHfoOpencts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robHfoReceived" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLngBsp" type="pp:mesureDomaine" />
+      <xs:element name="robLngEosp" type="pp:mesureDomaine" />
+      <xs:element name="robLsfoBsp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLsfoClosects" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLsfoEosp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLsfoOpencts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLsfoReceived" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLsgoBsp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLsgoClosects" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLsgoEosp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLsgoOpencts" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLsgoReceived" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="safetyCheck" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="tank1Liquid" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank1Pressure" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank1Temp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank2Liquid" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank2Pressure" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank2Temp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank3Liquid" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank3Pressure" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank3Temp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank4Liquid" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank4Pressure" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank4Temp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank5Liquid" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank5Pressure" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank5Temp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank6Liquid" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank6Pressure" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tank6Temp" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tankcoolEnd" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="tankcoolStart" nillable="true" type="pp:dateheureDomaine" />
+      <xs:element name="timeZone" type="pp:codeDomaine" />
+      <xs:element name="transfEnd" type="pp:dateheureDomaine" />
+      <xs:element name="transfSlow" type="pp:dateheureDomaine" />
+      <xs:element name="transfStart" type="pp:dateheureDomaine" />
+      <xs:element name="tugAlong" type="pp:dateheureDomaine" />
+      <xs:element name="tugsAway" type="pp:dateheureDomaine" />
+      <xs:element name="tugsComments" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="tugsInboundNb" type="pp:mesureDomaine" />
+      <xs:element name="tugsLetgoA" type="pp:dateheureDomaine" />
+      <xs:element name="tugsMakefastD" type="pp:dateheureDomaine" />
+      <xs:element name="tugsOutboundNb" type="pp:mesureDomaine" />
+      <xs:element name="vesselName" type="pp:codeDomaine" />
+      <xs:element name="voyNumb" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="typeCall" type="pp:typeCall" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Cmd_Carburant">
+    <xs:sequence>
+      <xs:element name="id_Commande" type="pp:idDomaine" />
+      <xs:element name="navire" type="pp:Navire" />
+      <xs:element name="cp" type="pp:Contrepartie" />
+      <xs:element name="port" type="pp:Port" />
+      <xs:element name="idNavire" type="pp:idDomaine" />
+      <xs:element name="idCp" type="pp:idDomaine" />
+      <xs:element name="idPortLiv" type="pp:idDomaine" />
+      <xs:element name="num_Cmd" type="pp:codeODomaine" />
+      <xs:element name="num_Cmd_Ext" type="pp:codeDomaine" />
+      <xs:element name="date_Creation" type="pp:dateODomaine" />
+      <xs:element name="date_Livraison" type="pp:dateDomaine" />
+      <xs:element name="qte_Carburant_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="prix_Carburant_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="prix_Carburant_Unit" type="pp:uniteDomaine" />
+      <xs:element name="typeCarburant" type="pp:codeDomaine" />
+      <xs:element name="commentaire" nillable="true" type="pp:commentDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AutorisationNavireContrepartie">
+    <xs:sequence>
+      <xs:element name="id_Aut_Navire_Cp" type="pp:idDomaine" />
+      <xs:element name="nom_Contrepartie" type="pp:contrepartieDomaine" />
+      <xs:element name="statut_Aut_NC" type="pp:statutAuthContreDomaine" />
+      <xs:element name="commentaire_Aut" type="pp:commentDomaine" />
+      <xs:element name="date_Debut" type="pp:dateDomaine" />
+      <xs:element name="date_Fin" type="pp:dateDomaine" />
+      <xs:element name="idNavire" type="pp:idDomaine" />
+      <xs:element name="idCp" type="pp:idDomaine" />
+      <xs:element name="cp" type="pp:Contrepartie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AutorisationNavireContrepartieNom">
+    <xs:sequence>
+      <xs:element name="statut_Aut_NC" type="pp:statutAuthContreDomaine" />
+      <xs:element name="commentaire_Aut" type="pp:commentDomaine" />
+      <xs:element name="date_Debut" type="pp:dateDomaine" />
+      <xs:element name="date_Fin" type="pp:dateDomaine" />
+      <xs:element name="nom_Navire" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="code_Navire" nillable="true" type="pp:codeODomaine" />
+      <xs:element name="nom_Cp" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="libelle_Cp" nillable="true" type="pp:descriptionDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Affretement">
+    <xs:sequence>
+      <xs:element name="id_Affr" type="pp:idDomaine" />
+      <xs:element name="date_Debut" type="pp:dateODomaine" />
+      <xs:element name="heure_Debut" type="pp:heureDomaine" />
+      <xs:element name="date_Fin" type="pp:dateDomaine" />
+      <xs:element name="heure_Fin" type="pp:heureDomaine" />
+      <xs:element name="loyer_J_Val" type="pp:mesureDomaine" />
+      <xs:element name="loyer_J_Unit" type="pp:uniteDomaine" />
+      <xs:element name="frais_R_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="frais_R_Unit" type="pp:uniteDomaine" />
+      <xs:element name="statut_Affr">
+        <xs:simpleType>
+          <xs:restriction base="pp:statutAffretementDomaine" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="commentaire_Affr" type="pp:commentDomaine" />
+      <xs:element name="msg_Alarme" type="pp:descriptionDomaine" />
+      <xs:element name="periode_Alarme" nillable="true" type="pp:cardDomaine" />
+      <xs:element name="portRest" type="pp:nomODomaine" />
+      <xs:element name="portLiv" type="pp:nomODomaine" />
+      <xs:element name="idNavire" type="pp:idDomaine" />
+      <xs:element name="affreteur" type="pp:nomDomaine" />
+      <xs:element name="capex" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="opex" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="other" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="refContrat" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="robLivGnl" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLivHfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLivLsfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLivDogo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLivLsgo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestGnl" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestHfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestLsfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestDogo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestLsgo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="invoicingParty" type="pp:nomDomaine" />
+      <xs:element name="frais_P_Val" nillable="true" type="pp:mesureDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListStatut">
+    <xs:sequence>
+      <xs:element name="status" type="pp:nomDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListOperations">
+    <xs:sequence>
+      <xs:element name="dateOperation" type="pp:dateDomaine" />
+      <xs:element name="codeCargaison" type="pp:codeDomaine" />
+      <xs:element name="codeNavire" type="pp:codeDomaine" />
+      <xs:element name="codeTerminal" type="pp:codeDomaine" />
+      <xs:element name="typeCargaison" type="pp:descriptionDomaine" />
+      <xs:element name="typeOperation" type="pp:descriptionDomaine" />
+      <xs:element name="typeElementOperation" type="pp:descriptionDomaine" />
+      <xs:element name="codeContrat" type="pp:codeDomaine" />
+      <xs:element name="codeCpVendeuse" type="pp:codeDomaine" />
+      <xs:element name="codeCpAcheteuse" type="pp:codeDomaine" />
+      <xs:element name="codeMiddleOffice" type="pp:codeDomaine" />
+      <xs:element name="volumeOperation" type="pp:mesureDomaine" />
+      <xs:element name="quantiteOperation" type="pp:mesureDomaine" />
+      <xs:element name="volumePertes" type="pp:mesureDomaine" />
+      <xs:element name="quantitePertes" type="pp:mesureDomaine" />
+      <xs:element name="codeAbattement" type="pp:codeDomaine" />
+      <xs:element name="portChargement" type="pp:codeDomaine" />
+      <xs:element name="idCargaison" type="pp:idDomaine" />
+      <xs:element name="heureOperation" type="pp:dateDomaine" />
+      <xs:element name="qteOperationBigDec" type="pp:mesureBigDecDomaine" />
+      <xs:element name="qtePertesBigDec" type="pp:mesureBigDecDomaine" />
+      <xs:element name="mef" type="pp:cardDomaine" />
+      <xs:element name="tpsMefMeg" type="pp:codeDomaine" />
+      <xs:element name="volMefMeg" type="pp:mesureDomaine" />
+      <xs:element name="qteMefMeg" type="pp:mesureDomaine" />
+      <xs:element name="qteMefMegBigDec" type="pp:mesureBigDecDomaine" />
+      <xs:element name="codeBook" type="pp:codeDomaine" />
+      <xs:element name="remport" type="pp:mesureDomaine" />
+      <xs:element name="consoGNL" type="pp:mesureDomaine" />
+      <xs:element name="consoCarb" type="pp:mesureDomaine" />
+      <xs:element name="quantiteMax" type="pp:mesureDomaine" />
+      <xs:element name="robUAC" type="pp:mesureDomaine" />
+      <xs:element name="robUAD" type="pp:mesureDomaine" />
+      <xs:element name="robUDC" type="pp:mesureDomaine" />
+      <xs:element name="quantiteC" type="pp:mesureDomaine" />
+      <xs:element name="remportC" type="pp:mesureDomaine" />
+      <xs:element name="consoGNLC" type="pp:mesureDomaine" />
+      <xs:element name="consoCarbC" type="pp:mesureDomaine" />
+      <xs:element name="quantiteMaxC" type="pp:mesureDomaine" />
+      <xs:element name="robUACC" type="pp:mesureDomaine" />
+      <xs:element name="robUADC" type="pp:mesureDomaine" />
+      <xs:element name="robUDCC" type="pp:mesureDomaine" />
+      <xs:element name="quantiteM" type="pp:mesureDomaine" />
+      <xs:element name="remportM" type="pp:mesureDomaine" />
+      <xs:element name="consoGNLM" type="pp:mesureDomaine" />
+      <xs:element name="consoCarbM" type="pp:mesureDomaine" />
+      <xs:element name="quantiteMaxM" type="pp:mesureDomaine" />
+      <xs:element name="robUACM" type="pp:mesureDomaine" />
+      <xs:element name="robUADM" type="pp:mesureDomaine" />
+      <xs:element name="robUDCM" type="pp:mesureDomaine" />
+      <xs:element name="canalSuez" type="pp:codeDomaine" />
+      <xs:element name="canalPanama" type="pp:codeDomaine" />
+      <xs:element name="canalMagellan" type="pp:codeDomaine" />
+      <xs:element name="dateSuez" type="pp:dateDomaine" />
+      <xs:element name="datePanama" type="pp:dateDomaine" />
+      <xs:element name="dateMagellan" type="pp:dateDomaine" />
+      <xs:element name="idPositionCtrm" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AffretementNav">
+    <xs:sequence>
+      <xs:element name="date_Debut" type="pp:dateODomaine" />
+      <xs:element name="heure_Debut" type="pp:heureDomaine" />
+      <xs:element name="date_Fin" type="pp:dateDomaine" />
+      <xs:element name="heure_Fin" type="pp:heureDomaine" />
+      <xs:element name="loyer_J_Val" type="pp:mesureDomaine" />
+      <xs:element name="loyer_J_Unit" type="pp:uniteDomaine" />
+      <xs:element name="capex" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="opex" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="other" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="frais_R_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="frais_R_Unit" type="pp:uniteDomaine" />
+      <xs:element name="statut_Affr">
+        <xs:simpleType>
+          <xs:restriction base="pp:statutAffretementDomaine" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="commentaire_Affr" type="pp:commentDomaine" />
+      <xs:element name="msg_Alarme" type="pp:descriptionDomaine" />
+      <xs:element name="periode_Alarme" nillable="true" type="pp:cardDomaine" />
+      <xs:element name="portRest" type="pp:nomODomaine" />
+      <xs:element name="portLiv" type="pp:nomODomaine" />
+      <xs:element name="affreteur" type="pp:nomDomaine" />
+      <xs:element name="nom_Navire" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="code_Navire" nillable="true" type="pp:codeODomaine" />
+      <xs:element name="contre_partie" type="pp:nomODomaine" />
+      <xs:element name="type_evt" type="pp:nomODomaine" />
+      <xs:element name="charte_gdf" type="pp:nomODomaine" />
+      <xs:element name="nature_indisponibilite" type="pp:nomDomaine" />
+      <xs:element name="Ref_contrat" type="pp:nomDomaine" />
+      <xs:element name="robLivGnl" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLivHfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLivLsfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLivDogo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLivLsgo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestGnl" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestHfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestLsfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestDogo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestLsgo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="invoicingParty" type="pp:nomDomaine" />
+      <xs:element name="frais_P_Val" nillable="true" type="pp:mesureDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InspectionNavPort">
+    <xs:sequence>
+      <xs:element name="code_Navire" type="pp:codeODomaine" />
+      <xs:element name="nom_Navire" type="pp:nomDomaine" />
+      <xs:element name="type" type="pp:nomDomaine" />
+      <xs:element name="date_inspection" type="pp:dateODomaine" />
+      <xs:element name="date_fin_inspection" type="pp:dateODomaine" />
+      <xs:element name="commanditaire" type="pp:nomDomaine" />
+      <xs:element name="inspecteur" type="pp:nomDomaine" />
+      <xs:element name="code_port" type="pp:nomDomaine" />
+      <xs:element name="nom_port" type="pp:nomDomaine" />
+      <xs:element name="commantaire" type="pp:nomDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Evenement">
+    <xs:sequence>
+      <xs:element name="id_Evt" type="pp:idDomaine" />
+      <xs:element name="type_Evt" type="pp:evtAffDomaine" />
+      <xs:element name="date_Debut" type="pp:dateODomaine" />
+      <xs:element name="heure_Debut" type="pp:heureDomaine" />
+      <xs:element name="date_Fin" type="pp:dateDomaine" />
+      <xs:element name="heure_Fin" type="pp:heureDomaine" />
+      <xs:element name="commentaire_Evt" type="pp:commentDomaine" />
+      <xs:element name="charte_GDF">
+        <xs:simpleType>
+          <xs:restriction base="pp:charteGDFDomaine" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="natureINDISPO">
+        <xs:simpleType>
+          <xs:restriction base="pp:natureIndispoDomaine" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="loyer_J_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="loyer_J_Unit" type="pp:uniteDomaine" />
+      <xs:element name="frais_R_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="frais_R_Unit" type="pp:uniteDomaine" />
+      <xs:element name="msg_Alarme" type="pp:descriptionDomaine" />
+      <xs:element name="periode_Alarme" nillable="true" type="pp:cardDomaine" />
+      <xs:element name="capex" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="opex" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="other" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="portRest" type="pp:nomODomaine" />
+      <xs:element name="portLiv" type="pp:nomODomaine" />
+      <xs:element name="idNavire" type="pp:idDomaine" />
+      <xs:element name="idCp" type="pp:idDomaine" />
+      <xs:element name="idAffretement" type="pp:idDomaine" />
+      <xs:element name="robLivGnl" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLivHfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLivLsfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLivDogo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robLivLsgo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestGnl" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestHfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestLsfo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestDogo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="robRestLsgo" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="frais_P_Val" nillable="true" type="pp:mesureDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loyer">
+    <xs:sequence>
+      <xs:element name="id_Loyer" type="pp:idDomaine" />
+      <xs:element name="date_Debut" type="pp:dateODomaine" />
+      <xs:element name="heure_Debut" type="pp:heureDomaine" />
+      <xs:element name="date_Fin" type="pp:dateDomaine" />
+      <xs:element name="heure_Fin" type="pp:heureDomaine" />
+      <xs:element name="loyer_J" type="pp:mesureDomaine" />
+      <xs:element name="capex" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="opex" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="other" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="loyer_Unit" type="pp:uniteDomaine" />
+      <xs:element name="affretement" nillable="true" type="pp:Affretement" />
+      <xs:element name="evenement" nillable="true" type="pp:Evenement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Position">
+    <xs:sequence>
+      <xs:element name="id_Position" type="pp:idDomaine" />
+      <xs:element name="id_Position_Ctrm" type="pp:mesureDomaine" />
+      <xs:element name="name_Position_Ctrm" type="pp:nomDomaine" />
+      <xs:element name="year_Position_Ctrm" type="pp:mesureDomaine" />
+      <xs:element name="flag_Position_Ctrm" type="pp:boolean" />
+      <xs:element name="contrat" type="pp:Contrat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Inspection">
+    <xs:sequence>
+      <xs:element name="id_Inspection" type="pp:idDomaine" />
+      <xs:element name="TypeInspec" type="pp:idDomaine" />
+      <xs:element name="date_Inspection" type="pp:dateODomaine" />
+      <xs:element name="date_FinInsp" type="pp:dateDomaine" />
+      <xs:element name="commanditaire" type="pp:nomODomaine" />
+      <xs:element name="inspecteur" type="pp:nomDomaine" />
+      <xs:element name="date_Debut_Alarme" type="pp:dateDomaine" />
+      <xs:element name="date_Fin_Alarme" type="pp:dateDomaine" />
+      <xs:element name="message_Alarme" type="pp:descriptionDomaine" />
+      <xs:element name="idPort" type="pp:idDomaine" />
+      <xs:element name="idNavire" type="pp:idDomaine" />
+      <xs:element name="commentaire" type="pp:commentDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Capa_Terminal">
+    <xs:sequence>
+      <xs:element name="id_Capacite" type="pp:idDomaine" />
+      <xs:element name="date_Deb_Per" type="pp:dateDomaine" />
+      <xs:element name="date_Fin_Per" type="pp:dateDomaine" />
+      <xs:element name="nb_Anuelle_Slots" type="pp:cardODomaine" />
+      <xs:element name="qte_Anuelle_Energie_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="niv_Stock_Min" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="niv_Stock_Max" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="emis_Max" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="emis_Garantie" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="id_Port" type="pp:idDomaine" />
+      <xs:element name="cuStockMin" type="pp:unitTDomaine" />
+      <xs:element name="cuEmisMin" type="pp:unitTDomaine" />
+      <xs:element name="cuEmisMax" type="pp:unitTDomaine" />
+      <xs:element name="cuStockMax" type="pp:unitTDomaine" />
+      <xs:element name="cuEmisGarantie" type="pp:unitTDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Souscr_Plur">
+    <xs:sequence>
+      <xs:element name="id_Souscription" type="pp:idDomaine" />
+      <xs:element name="id_Port" type="pp:idDomaine" />
+      <xs:element name="date_Deb_Per" type="pp:dateDomaine" />
+      <xs:element name="date_Fin_Per" type="pp:dateDomaine" />
+      <xs:element name="nb_Annuel_Slots" type="pp:cardODomaine" />
+      <xs:element name="qte_Anuelle_Energie_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="qte_Anuelle_Energie_Unit" type="pp:unitTWH_ANDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Distancier">
+    <xs:sequence>
+      <xs:element name="id_Distancier" type="pp:idDomaine" />
+      <xs:element name="id_Port_Arrivee" type="pp:idDomaine" />
+      <xs:element name="id_Port_Depart" type="pp:idDomaine" />
+      <xs:element name="distance_Val" type="pp:mesureODomaine" />
+      <xs:element name="distance_retour_Val" type="pp:mesureODomaine" />
+      <xs:element name="correction_val" type="pp:mesureODomaine" />
+      <xs:element name="correction_retour_val" type="pp:mesureODomaine" />
+      <xs:element name="canalSuez" type="pp:boolean" />
+      <xs:element name="canalPanama" type="pp:boolean" />
+      <xs:element name="canalMagellan" type="pp:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DistancierPourWS">
+    <xs:sequence>
+      <xs:element name="codePortDepart" type="pp:nomDomaine" />
+      <xs:element name="codePortArrivee" type="pp:nomDomaine" />
+      <xs:element name="nomPortDepart" type="pp:nomDomaine" />
+      <xs:element name="nomPortArrivee" type="pp:nomDomaine" />
+      <xs:element name="distanceMilles" type="pp:mesureODomaine" />
+      <xs:element name="distanceRetourMilles" type="pp:mesureODomaine" />
+      <xs:element name="correction" type="pp:mesureODomaine" />
+      <xs:element name="correctionRetour" type="pp:mesureODomaine" />
+      <xs:element name="canalSuez" type="pp:boolean" />
+      <xs:element name="canalPanama" type="pp:boolean" />
+      <xs:element name="canalMagellan" type="pp:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Maintenance">
+    <xs:sequence>
+      <xs:element name="id_Maintenance" type="pp:idDomaine" />
+      <xs:element name="id_Port" type="pp:idDomaine" />
+      <xs:element name="libelle_Travaux" type="pp:descriptionODomaine" />
+      <xs:element name="fiche_Travaux" type="pp:codeDomaine" />
+      <xs:element name="statut_Maintenance" type="pp:statutMaintenanceDomaine" />
+      <xs:element name="date_Debut_Travaux" type="pp:dateODomaine" />
+      <xs:element name="date_Fin_Travaux" type="pp:dateODomaine" />
+      <xs:element name="reduction_Emission_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="nb_Appontements_Dispo" type="pp:cardODomaine" />
+      <xs:element name="heure_Debut_Travaux" type="pp:descriptionODomaine" />
+      <xs:element name="heure_Fin_Travaux" type="pp:descriptionODomaine" />
+      <xs:element name="commentaire" type="pp:descriptionODomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Stock_GNL">
+    <xs:sequence>
+      <xs:element name="id_Stock" type="pp:idDomaine" />
+      <xs:element name="qte_Acht_Ven_Stock" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="date_Mesure" type="pp:dateODomaine" />
+      <xs:element name="emiss_J_GDFN" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="niv_Stock_GDFN" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="qte_J_Dechargee_Tiers" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="emiss_J_Tiers" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="niv_Stock_Terminal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="qte_Acht_Vendue_Stock" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="commentaire" type="pp:commentDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Port">
+    <xs:sequence>
+      <xs:element name="idPort" type="pp:idDomaine" />
+      <xs:element name="codePays" type="pp:codeDomaine" />
+      <xs:element name="codePort" type="pp:codeODomaine" />
+      <xs:element name="identPort" type="pp:codeODomaine" />
+      <xs:element name="nomPort" type="pp:nomODomaine" />
+      <xs:element name="operateur" type="pp:codeODomaine" />
+      <xs:element name="fuseauHoraire" type="pp:mesureODomaine" />
+      <xs:element name="dateMes" type="pp:dateDomaine" />
+      <xs:element name="maxTirantEauVal" type="pp:mesureODomaine" />
+      <xs:element name="maxTonnageVal" type="pp:mesureODomaine" />
+      <xs:element name="maxCapaVal" type="pp:mesureODomaine" />
+      <xs:element name="nbAppontements" type="pp:cardODomaine" />
+      <xs:element name="heureEntreeDefaut" type="pp:heureDomaine" />
+      <xs:element name="heureSortieDefaut" type="pp:heureDomaine" />
+      <xs:element name="normeDureeEscaleVal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="normeDureeEscaleUnit" type="pp:unitHDomaine" />
+      <xs:element name="prelevEnNatureVal" type="pp:mesureODomaine" />
+      <xs:element name="talonGnlOpVal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="statutPort" type="pp:statutPortDomaine" />
+      <xs:element name="agentDefaut" type="pp:nomDomaine" />
+      <xs:element name="typePort" type="pp:typePortDomaine" />
+      <xs:element name="debitNormatifChgtVal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="debitNormatifDechgtVal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="normeDureePbsDebutVal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="normeDureePbsFinVal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="uniteDefaut" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="idContratDefaut" nillable="true" type="pp:idDomaine" />
+      <xs:element name="idContrepartieDefaut" nillable="true" type="pp:idDomaine" />
+      <xs:element name="gazAutorise" type="pp:boolean" />
+      <xs:element name="rechargePossible" type="pp:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Usine">
+    <xs:sequence>
+      <xs:element name="id_Usine" type="pp:idDomaine" />
+      <xs:element name="code_Usine" type="pp:codeODomaine" />
+      <xs:element name="prod_Max" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="stock_Max" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="cuStockMax" type="pp:codeODomaine" />
+      <xs:element name="cuProdMax" type="pp:codeODomaine" />
+      <xs:element name="id_Port" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Pcs">
+    <xs:sequence>
+      <xs:element name="id_PCS" type="pp:idDomaine" />
+      <xs:element name="id_Port" type="pp:idDomaine" />
+      <xs:element name="cu_pcs_gaz" type="pp:unitTDomaine" />
+      <xs:element name="pcs_Gaz_Chgt_Dechgt" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="date_Debut_Validite" type="pp:dateODomaine" />
+      <xs:element name="date_Fin_Validite" type="pp:dateDomaine" />
+      <xs:element name="coef_Expansion_Val" nillable="true" type="pp:mesureDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Navire">
+    <xs:sequence>
+      <xs:element name="id_Navire" type="pp:idDomaine" />
+      <xs:element name="propulsion" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="pp:propulsion" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="code_Navire" type="pp:codeODomaine" />
+      <xs:element name="nom_Navire" type="pp:nomODomaine" />
+      <xs:element name="libelle_Navire" type="pp:descriptionDomaine" />
+      <xs:element name="armateur" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="gerant" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="date_Mes" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="longueur_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="largeur_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tirant_Eau_Max_Val" type="pp:mesureODomaine" />
+      <xs:element name="tonnage_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="capa_100_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="capa_985_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="capa_Usuelle_Val" type="pp:mesureODomaine" />
+      <xs:element name="nb_Cuves" nillable="true" type="pp:cardDomaine" />
+      <xs:element name="mode_Propulsion" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="pp:modePropulsion" />
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="boil_Off_Charge_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="boil_Off_Lege_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="vol_Mise_En_Gaz_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="trechauffeCuvesVal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tmiseEnFroidCuvesVal" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="debit_Max_Pompes_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="niv_Min_Jauge_GNL_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="talon_GNL_Defaut_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="commentaire_Navire" nillable="true" type="pp:commentDomaine" />
+      <xs:element name="statut_Navire" type="pp:statutNavireDomaine" />
+      <xs:element name="configEco" type="pp:Config_Navire" />
+      <xs:element name="configMax" type="pp:Config_Navire" />
+      <xs:element name="configCharte" type="pp:Config_Navire" />
+      <xs:element name="codePaysPavillon" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="codePays" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="configEcoLaden" nillable="true" type="pp:Config_Navire" />
+      <xs:element name="configMini" nillable="true" type="pp:Config_Navire" />
+      <xs:element name="configPort" nillable="true" type="pp:Config_Navire" />
+      <xs:element name="boilOffAttenteBallast" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="boilOffAttenteLaden" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="coefCarbGnl" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="boilOffForce" nillable="true" type="pp:boolean" />
+      <xs:element name="nonOccupeGNL" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="consoFuelChmt" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="consoFuelDchmt" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="volMEG" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="tmpMEG" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="srv" nillable="true" type="pp:boolean" />
+      <xs:element name="dispoAnnuelMoy" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="adresseNav" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="boilOffAttenteBallastContrat" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="boilOffAttenteBallastConstate" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="boilOffAttenteBallastCommentaire" nillable="true" type="pp:commentDomaine" />
+      <xs:element name="boilOffAttenteLadenContrat" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="boilOffAttenteLadenConstate" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="boilOffAttenteLadenCommentaire" nillable="true" type="pp:commentDomaine" />
+      <xs:element name="boilOffNaturelLadenContrat" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="boilOffNaturelLadenConstate" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="boilOffNaturelLadenCommentaire" nillable="true" type="pp:commentDomaine" />
+      <xs:element name="boilOffNaturelBallastContrat" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="boilOffNaturelBallastConstate" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="boilOffNaturelBallastCommentaire" nillable="true" type="pp:commentDomaine" />
+      <xs:element name="txUtilExShip" type="pp:boolean" />
+      <xs:element name="northAmerica" nillable="true" type="pp:boolean" />
+      <xs:element name="delegation" nillable="true" type="pp:boolean" />
+      <xs:element name="seuil" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="affichageEcran" nillable="true" type="pp:boolean" />
+      <xs:element name="flagSaisiMiniJaugeManuel" nillable="true" type="pp:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DureeNormWS">
+    <xs:sequence>
+      <xs:element name="code_Navire" type="pp:nomDomaine" />
+      <xs:element name="nom_Navire" type="pp:nomDomaine" />
+      <xs:element name="code_port_depart" type="pp:nomDomaine" />
+      <xs:element name="nom_port_depart" type="pp:nomDomaine" />
+      <xs:element name="code_port_arrivee" type="pp:nomDomaine" />
+      <xs:element name="nom_port_arrivee" type="pp:nomDomaine" />
+      <xs:element name="duree_alerte" type="pp:mesureDomaine" />
+      <xs:element name="flag_duree_alerte" type="pp:nomDomaine" />
+      <xs:element name="duree_tx_util" type="pp:mesureDomaine" />
+      <xs:element name="flag_duree_tx_util" type="pp:nomDomaine" />
+      <xs:element name="canal_suez" type="pp:nomDomaine" />
+      <xs:element name="canal_panama" type="pp:nomDomaine" />
+      <xs:element name="duree_escale_port_depart" type="pp:mesureDomaine" />
+      <xs:element name="unite_escale_port_depart" type="pp:nomDomaine" />
+      <xs:element name="duree_escale_port_arrivee" type="pp:mesureDomaine" />
+      <xs:element name="unite_escale_port_arrivee" type="pp:nomDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Report_Tug">
+    <xs:sequence>
+      <xs:element name="idTug" type="pp:idDomaine" />
+      <xs:element name="name" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="typeTugs" type="pp:typeTugs" />
+      <xs:element name="numero" type="pp:cardDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Report_Cuve">
+    <xs:sequence>
+      <xs:element name="id_Cuve" type="pp:idDomaine" />
+      <xs:element name="temper_Moy_Lege_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="temp_Moy_Charge_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="pression_Moy_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="liquidLevel" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="temperaturePortLog" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="numero" type="pp:cardDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Report_Bruleur">
+    <xs:sequence>
+      <xs:element name="id_Bruleur" type="pp:idDomaine" />
+      <xs:element name="flux_Gas_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="flux_FO_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="numero" type="pp:cardDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QAC">
+    <xs:sequence>
+      <xs:element name="id_QAC" type="pp:idDomaine" />
+      <xs:element name="date_Debut" type="pp:dateODomaine" />
+      <xs:element name="date_Fin" type="pp:dateDomaine" />
+      <xs:element name="valeur_QAC" nillable="true" type="pp:mesureDblDomaine" />
+      <xs:element name="idContrat" type="pp:idDomaine" />
+      <xs:element name="uniteMesure" type="pp:codeODomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Duree_Norm">
+    <xs:sequence>
+      <xs:element name="id_Duree_Norm" type="pp:idDomaine" />
+      <xs:element name="duree_Val" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="commentaire" type="pp:commentDomaine" />
+      <xs:element name="idPortArrivee" type="pp:idDomaine" />
+      <xs:element name="idPortDepart" type="pp:idDomaine" />
+      <xs:element name="idNavire" type="pp:idDomaine" />
+      <xs:element name="portDepart" type="pp:Port" />
+      <xs:element name="portArrivee" type="pp:Port" />
+      <xs:element name="dureeTxUtilVal" type="pp:mesureDomaine" />
+      <xs:element name="flagDureeVal" type="pp:boolean" />
+      <xs:element name="flagTxUtilVal" type="pp:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DureeNormDTO">
+    <xs:sequence>
+      <xs:element name="idDureeNormative" type="pp:idDomaine" />
+      <xs:element name="idNavire" type="pp:idDomaine" />
+      <xs:element name="dureeNormative" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="dureeNormativeTauxUtilisation" type="pp:mesureDomaine" />
+      <xs:element name="nomPortDepart" type="pp:nomDomaine" />
+      <xs:element name="nomPortArrivee" type="pp:nomDomaine" />
+      <xs:element name="flagDureeVal" type="pp:boolean" />
+      <xs:element name="flagTxUtilVal" type="pp:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AutorisationNavirePort">
+    <xs:sequence>
+      <xs:element name="id_Aut_Nav_Port" type="pp:idDomaine" />
+      <xs:element name="statut_Aut_Np" type="pp:statutAuthPortDomaine" />
+      <xs:element name="commentaire_Aut" type="pp:commentDomaine" />
+      <xs:element name="date_Debut" type="pp:dateDomaine" />
+      <xs:element name="date_Fin" type="pp:dateDomaine" />
+      <xs:element name="idNavire" type="pp:idDomaine" />
+      <xs:element name="idPort" type="pp:idDomaine" />
+      <xs:element name="port" type="pp:Port" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AutorisationNavirePortNom">
+    <xs:sequence>
+      <xs:element name="code_Navire" nillable="true" type="pp:codeODomaine" />
+      <xs:element name="nom_Navire" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="codePort" nillable="true" type="pp:codeODomaine" />
+      <xs:element name="nomPort" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="statut_Aut_Np" type="pp:statutAuthPortDomaine" />
+      <xs:element name="commentaire_Aut" type="pp:commentDomaine" />
+      <xs:element name="date_Debut" type="pp:dateDomaine" />
+      <xs:element name="date_Fin" type="pp:dateDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Profil">
+    <xs:sequence>
+      <xs:element name="id_Profil" type="pp:idDomaine" />
+      <xs:element name="nom_Profil" type="pp:nomDomaine" />
+      <xs:element name="droit_Profil" type="pp:Droit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ElementReferentiel">
+    <xs:sequence>
+      <xs:element name="id" type="pp:idDomaine" />
+      <xs:element name="code" type="pp:codeDomaine" />
+      <xs:element name="libelle" type="pp:nomDomaine" />
+      <xs:element name="type" type="pp:typeDomaine" />
+      <xs:element name="nomCourt" type="pp:nomDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ElementDroitObjet">
+    <xs:sequence>
+      <xs:element name="objetApplicatif" type="pp:Objet_Applicatif" />
+      <xs:element name="droit" type="pp:Droit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RapportChgDechgt">
+    <xs:sequence>
+      <xs:element name="id" nillable="true" type="pp:idDomaine" />
+      <xs:element name="codeCargaison" type="pp:codeDomaine" />
+      <xs:element name="codeContrat" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="type" type="pp:typePortDomaine" />
+      <xs:element name="methane" type="pp:valeurODomaine" />
+      <xs:element name="ethane" type="pp:valeurODomaine" />
+      <xs:element name="propane" type="pp:valeurODomaine" />
+      <xs:element name="isobutane" type="pp:valeurODomaine" />
+      <xs:element name="normalButane" type="pp:valeurODomaine" />
+      <xs:element name="isopentane" type="pp:valeurODomaine" />
+      <xs:element name="normalPentane" type="pp:valeurODomaine" />
+      <xs:element name="normalHexane" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="azote" type="pp:valeurODomaine" />
+      <xs:element name="co2" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="mercure" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="H2s" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="mercapten" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="soufreTotal" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseVolumiqueTM" type="pp:valeurODomaine" />
+      <xs:element name="tempMoy" type="pp:valeurODomaine" />
+      <xs:element name="pcsMassiqueGnl" type="pp:valeurODomaine" />
+      <xs:element name="pcsVolumiqueGaz" type="pp:valeurODomaine" />
+      <xs:element name="indiceWobbe" type="pp:valeurODomaine" />
+      <xs:element name="volAvant" type="pp:valeurODomaine" />
+      <xs:element name="volApres" type="pp:valeurODomaine" />
+      <xs:element name="volBrutDelivre" type="pp:valeurODomaine" />
+      <xs:element name="energieGazUContract" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieGazUFacturation" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseBrute" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseNette" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieNetteUContract" type="pp:valeurODomaine" />
+      <xs:element name="energieNetteUFacturation" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="dateFinRouteLibre" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="dateArriveeRade" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="datePiloteBord" type="pp:dateDomaine" />
+      <xs:element name="dateFinAmarrage" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="norTransmis" type="pp:dateDomaine" />
+      <xs:element name="norAccept" type="pp:dateDomaine" />
+      <xs:element name="dateMesCustoTransfert" type="pp:dateDomaine" />
+      <xs:element name="dateDebutOperation" type="pp:dateDomaine" />
+      <xs:element name="dateFinOperation" type="pp:dateDomaine" />
+      <xs:element name="dateMesureCustTransfert" type="pp:dateDomaine" />
+      <xs:element name="dateRemiseDoc" type="pp:dateDomaine" />
+      <xs:element name="dateDepartRade" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="volGNLMEGMEF" type="pp:valeurODomaine" />
+      <xs:element name="energieMEGMEFUContract" type="pp:valeurODomaine" />
+      <xs:element name="energieMEGMEFUFacturation" type="pp:valeurODomaine" />
+      <xs:element name="numOrdreCargaison" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="pcsMassiqueUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="pcsVolumiqueUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="masseVolumiqueUnit" type="pp:unitMDomaine" />
+      <xs:element name="indiceWobbeUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="uniteContractuelle" type="pp:unitMDomaine" />
+      <xs:element name="uniteFacturation" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="codeUsine" nillable="true" type="pp:codeODomaine" />
+      <xs:element name="uniteEnergieRetourGazUContract" type="pp:unitMDomaine" />
+      <xs:element name="uniteEnergieRetourGazUFacturation" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="uniteEnergieMEGMEFUContract" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="uniteEnergieMEGMEFUFacturation" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="neopentane" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="o2" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="cosh2s" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="coefExpansion" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseVolumiqueGaz" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseVolumiqueGazUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="densiteGaz" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="methaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="ethaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="propaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="isobutaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="normalButaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="isopentaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="normalPentaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="neopentaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="normalHexaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="azoteRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="co2Rg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="tempMoyRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="pressionMoyRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="pcsMassiqueRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="pcsMassiqueRgUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="pcsVolumiqueRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="pcsVolumiqueRgUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="indiceWobbeRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="indiceWobbeRgUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="densiteRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseVolumiqueRgEq160" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseVolumiqueRgEq160Unit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="coefExpansionRgEq160" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="volRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="volMachine" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseMachine" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="volNetDelivre" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieBruteUContract" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieBruteUContractUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="energieBruteUFact" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieBruteUFactUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="energieMachineUContract" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieMachineUContractUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="energieMachineUFact" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieMachineUFactUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="volumeMeg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieMegUContract" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieMegUContractUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="energieMegUFact" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieMegUFactUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="masseVolumiqueRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseVolumiqueRgUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="colibriURL" nillable="true" type="pp:descriptionDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DateValeurUnite">
+    <xs:sequence>
+      <xs:element name="date" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="valeur" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="unite" nillable="true" type="pp:unitMDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DateValeurUniteAchat">
+    <xs:sequence>
+      <xs:element name="dateDechargement" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="codeContratAchat" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="energieAchete" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="typeContratAchat" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="unite" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="dateAchat" nillable="true" type="pp:dateDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Operation">
+    <xs:sequence>
+      <xs:element name="numeroCargaison" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="dateOperationChargement" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="nomNavire" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="noa" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="quantiteM3Gnl" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="quantiteEnergie" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="uniteEnergie" nillable="true" type="pp:uniteDomaine" />
+      <xs:element name="nomPortChargement" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="nomPortDechargement" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="agent" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="flagMEF" nillable="true" type="pp:statutDomaine" />
+      <xs:element name="tpsMEF" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="flagPrevuRealise" nillable="true" type="pp:statutDomaine" />
+      <xs:element name="dateOperationDechargement" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="contratAchat" type="pp:nomDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OperationDechargement">
+    <xs:sequence>
+      <xs:element name="numeroCargaison" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="dateOperationChargement" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="dateOperationDechargement" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="nomNavire" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="noa" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="quantiteM3Gnl" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="quantiteEnergie" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="uniteEnergie" nillable="true" type="pp:uniteDomaine" />
+      <xs:element name="nomPortChargement" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="nomPortDechargement" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="agent" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="flagPrevuRealise" nillable="true" type="pp:statutDomaine" />
+      <xs:element maxOccurs="unbounded" name="contratAchat" nillable="true" type="pp:nomDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RapportChgDechgtFull">
+    <xs:sequence>
+      <xs:element name="rapport" nillable="true" type="pp:RapportChgDechgt" />
+      <xs:element name="codeNavire" nillable="true" type="pp:codeODomaine" />
+      <xs:element name="codePort" nillable="true" type="pp:codeODomaine" />
+      <xs:element name="codeContrat" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="uniteEnergieRetourGazUC" nillable="true" type="pp:uniteDomaine" />
+      <xs:element name="uniteEnergieRetourGazUF" nillable="true" type="pp:uniteDomaine" />
+      <xs:element name="uniteEnergieNetDelivreeUC" nillable="true" type="pp:uniteDomaine" />
+      <xs:element name="uniteEnergieNetDelivreeUF" nillable="true" type="pp:uniteDomaine" />
+      <xs:element name="uniteEnergieUtiliseeMegMefUC" nillable="true" type="pp:uniteDomaine" />
+      <xs:element name="uniteEnergieUitiliseeMegMefUF" nillable="true" type="pp:uniteDomaine" />
+      <xs:element name="neopentane" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="o2" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="cosh2s" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="coefExpansion" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseVolumiqueGaz" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseVolumiqueGazUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="densiteGaz" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="methaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="ethaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="propaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="isobutaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="normalButaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="isopentaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="normalPentaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="neopentaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="normalHexaneRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="azoteRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="co2Rg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="tempMoyRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="pressionMoyRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="pcsMassiqueRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="pcsMassiqueRgUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="pcsVolumiqueRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="pcsVolumiqueRgUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="indiceWobbeRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="indiceWobbeRgUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="densiteRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseVolumiqueRgEq160" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseVolumiqueRgEq160Unit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="coefExpansionRgEq160" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="volRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="volMachine" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseMachine" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="volNetDelivre" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieBruteUContract" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieBruteUContractUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="energieBruteUFact" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieBruteUFactUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="energieMachineUContract" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieMachineUContractUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="energieMachineUFact" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieMachineUFactUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="volumeMeg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieMegUContract" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieMegUContractUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="energieMegUFact" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="energieMegUFactUnit" nillable="true" type="pp:unitMDomaine" />
+      <xs:element name="masseVolumiqueRg" nillable="true" type="pp:valeurODomaine" />
+      <xs:element name="masseVolumiqueRgUnit" nillable="true" type="pp:unitMDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VisitesPort">
+    <xs:sequence>
+      <xs:element name="codePort" type="pp:codeDomaine" />
+      <xs:element name="moisVisite" type="pp:dateDomaine" />
+      <xs:element name="nbVisitesPort" type="pp:cardDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListePort">
+    <xs:sequence>
+      <xs:element name="codePort" nillable="true" type="pp:codeODomaine" />
+      <xs:element name="nomPort" nillable="true" type="pp:nomODomaine" />
+      <xs:element name="typePort" nillable="true" type="pp:typePortDomaine" />
+      <xs:element name="rechargement" nillable="true" type="pp:boolean" />
+      <xs:element name="nomPays" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="statut" nillable="true" type="pp:statutPortDomaine" />
+      <xs:element name="dateMes" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="gazAutorise" nillable="true" type="pp:boolean" />
+      <xs:element name="fuseauHoraire" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="dureeEscale" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="agentDefault" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="contratDefault" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="uniteDefault" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="contrepartieDefault" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="pcs" nillable="true" type="pp:mesureDomaine" />
+      <xs:element name="unitePcs" nillable="true" type="pp:nomDomaine" />
+      <xs:element name="coeffExpansion" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="uniteCoeffExp" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="dateDebutVal" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="dateFinVal" nillable="true" type="pp:dateDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PassageCargaisonsCanal">
+    <xs:sequence>
+      <xs:element name="moisPassage" type="pp:dateDomaine" />
+      <xs:element name="nbPassageLadenSuez" type="pp:cardDomaine" />
+      <xs:element name="nbPassageBallastSuez" type="pp:cardDomaine" />
+      <xs:element name="nbPassageLadenPanama" type="pp:cardDomaine" />
+      <xs:element name="nbPassageBallastPanama" type="pp:cardDomaine" />
+      <xs:element name="nbPassageLadenMagellan" type="pp:cardDomaine" />
+      <xs:element name="nbPassageBallastMagellan" type="pp:cardDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Parcelle">
+    <xs:sequence>
+      <xs:element name="codeCargaison" type="pp:codeDomaine" />
+      <xs:element name="codeContratAchat" type="pp:codeDomaine" />
+      <xs:element name="codePortAchat" type="pp:codeDomaine" />
+      <xs:element name="dateOperationAchat" type="pp:dateDomaine" />
+      <xs:element name="type" type="pp:codeDomaine" />
+      <xs:element name="codeNavire" type="pp:codeDomaine" />
+      <xs:element name="codeTerminalVente" type="pp:codeDomaine" />
+      <xs:element name="dateOperationVente" type="pp:dateDomaine" />
+      <xs:element name="codeContratVente" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="codeMiddleOfficeVente" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="quantite" type="pp:quantiteParcelleDomaine" />
+      <xs:element name="abattement" type="pp:codeDomaine" />
+      <xs:element name="heureOperationAchat" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="heureOperationVente" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="codeOperationInterneAchat" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="codeOperationInterneVente" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="codeBookChargement" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="codeBookDechargement" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="suezChargement" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="panamaChargement" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="magellanChargement" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="suezDechargement" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="panamaDechargement" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="magellanDechargement" nillable="true" type="pp:codeDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TypeContrepartie">
+    <xs:sequence>
+      <xs:element name="idTypeCp" type="pp:idDomaine" />
+      <xs:element name="typeCp" type="pp:nomDomaine" />
+      <xs:element name="libelleCp" type="pp:nomDomaine" />
+      <xs:element name="flagModifCp" type="pp:mesureDomaine" />
+      <xs:element name="libelleIS" type="pp:nomDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModeleInspection">
+    <xs:sequence>
+      <xs:element name="idModeleInspection" type="pp:idDomaine" />
+      <xs:element name="nomModeleInspection" type="pp:nomDomaine" />
+      <xs:element name="idPort" type="pp:idDomaine" />
+      <xs:element name="backOffice" type="pp:contrepartieDomaine" />
+      <xs:element name="caseInspecteur" type="xs:boolean" />
+      <xs:element name="inspecteurType" type="pp:typeContrepartieDomaine" />
+      <xs:element name="listeInspecteur">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="item" type="pp:contrepartieDomaine" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="caseDepartement" type="xs:boolean" />
+      <xs:element name="departementType" type="pp:typeContrepartieDomaine" />
+      <xs:element name="listeDepartement">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="item" type="pp:contrepartieDomaine" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="listeContrepartie" type="pp:ModeleInspectionContrepartie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModeleInspectionContrepartie">
+    <xs:sequence>
+      <xs:element name="nomContrepartie" type="pp:contrepartieDomaine" />
+      <xs:element name="pourcentage" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

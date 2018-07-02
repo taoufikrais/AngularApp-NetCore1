@@ -1,0 +1,60 @@
+﻿.topnavbar .navbar-header {
+    background-color: yellow !important;
+}
+
+.agridHeight1 {
+    height: 127px !important;
+}
+
+.agridHeight2 {
+    height: 15vh !important;
+}
+
+.row.equal {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.panel-primary > .panel-heading {
+    color: #fff;
+    background-color: #4b5a6e;
+    border-color: #cfdbe2;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    font-size: 16px;
+    height: 15px;
+}
+
+.input-group-addon{
+    //color:#3e9c46;
+    padding: 0px 5px 0px 5px;
+    margin: 0px !important;
+    background-color: #87ceeb ;
+    border-color:  #1f89ce !important; 
+    min-width: 26px;
+}
+
+//   .panel-body {
+//     background-color:yellow !important;
+//   }
+//   .panel-body > [class*='row'] //only first row class in the panel-body
+//   {
+//     background-color: red !important;
+//     padding: 0px !important;
+//   }
+
+    .Exposition{
+     fieldset .row {
+        padding: 0px !important;
+        line-height: 1 !important;
+    }
+    .row .col-md-8 {
+        padding-left: 0px;
+    }
+}
+.CargoExposureHeigth {
+    height: 165px !important;
+}
+.ContractExposureHeigth {
+    height: 185px !important;
+}

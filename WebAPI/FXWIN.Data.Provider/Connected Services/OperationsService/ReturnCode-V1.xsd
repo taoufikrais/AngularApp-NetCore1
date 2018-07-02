@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:dvt="urn:dvt.com" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:dvt.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="RC_LEVEL">
+    <xs:annotation>
+      <xs:documentation>
+				-N: Normal, return this level if all is OK
+				-W: Warning, return this level if a warning (non bloquant) is to be notified
+				-C: Critical, return this level if a critical errors occurs, user must manage the errors
+			</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="N" />
+      <xs:enumeration value="W" />
+      <xs:enumeration value="C" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ReturnCodeItem">
+    <xs:sequence>
+      <xs:element name="level" type="dvt:RC_LEVEL" />
+      <xs:element name="message" type="xs:string" />
+      <xs:element name="code" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReturnCodeList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReturnCode" nillable="true" type="dvt:ReturnCodeItem" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

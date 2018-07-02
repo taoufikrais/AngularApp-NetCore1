@@ -1,0 +1,241 @@
+﻿<div class="content-heading">
+    Contract view
+</div>
+<div class="container-fluid">
+
+    <fieldset>
+        <legend>
+            Contracts list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn action add" data-toggle="tooltip" title="Add new contract !"
+                    (click)="initNewContract()"></button>
+            <button class="btn action reset" data-toggle="tooltip" title="Refresh data !"
+                    (click)="reloadFirstContract()"></button>
+        </legend>
+        <ag-grid-angular #agGrid
+                         class="ag-blue agridHeight1"
+                         [gridOptions]="gridContracts"
+                         (rowClicked)="onRowClicked($event)"
+                         (gridReady)="onReadyGridContracts($event)"
+                         [rowSelection]="rowSelection"
+                         (cellFocused)="onCellFocused($event)"
+                         [rowData]="listContracts"
+                         (modelUpdated)="modelUpdated()">
+        </ag-grid-angular>
+    </fieldset>
+
+    <div *ngIf="contract$ | async as contract">
+        <form (ngSubmit)="onSubmit(contract,contractForm)" #contractForm="ngForm" id="contractForm" name="contractForm" ngNativeValidate>
+            <fieldset>
+                <legend>
+                    Contract detail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button class="btn action save" data-toggle="tooltip" title="Save changes !"
+                            type="submit"></button>
+                    <!--<button class="btn action reset" data-toggle="tooltip" title="reset data !"
+                            (click)="reset()"></button>-->
+                </legend>
+                <div class="minHeight-ContractDetail">
+                    <div class="row-fluid">
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label class="control-label">Code</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <input class="form-control"
+                                           type="text"
+                                           [(ngModel)]="contract.Code"
+                                           name="Code"
+                                           required #Code="ngModel" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label class="control-label">Type</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <select class="form-control"
+                                            [(ngModel)]="contract.ContractType"
+                                            [compareWith]="comparator"
+                                            [ngModelOptions]="{standalone: true}"
+                                            (ngModelChange)="contractTypeChange(contract)"
+                                            required #ContractType="ngModel">
+                                        <option value="">-- select --</option>
+                                        <option *ngFor="let contractTypeItem of contractTypes$" [ngValue]="contractTypeItem">
+                                            {{contractTypeItem.Code}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label class="control-label">Nature</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <select class="form-control"
+                                            [(ngModel)]="contract.Incoterm"
+                                            [compareWith]="comparator"
+                                            [ngModelOptions]="{standalone: true}"
+                                            (ngModelChange)="incotermChange(contract)"
+                                            required #Incoterm="ngModel">
+                                        <option value="">-- select --</option>
+                                        <option *ngFor="let incotermItem of incoterms$" [ngValue]="incotermItem">
+                                            {{incotermItem.Code}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label class="control-label">Book</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <select class="form-control"
+                                            [(ngModel)]="contract.Book"
+                                            [compareWith]="comparator"
+                                            [ngModelOptions]="{standalone: true}"
+                                            (ngModelChange)="bookChange(contract)"
+                                            required #Book="ngModel">
+                                        <option value="">-- select --</option>
+                                        <option *ngFor="let bookItem of books$" [ngValue]="bookItem">
+                                            {{bookItem.Code}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label class="control-label">Currency</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <select class="form-control"
+                                            [(ngModel)]="contract.Currency"
+                                            [compareWith]="comparator"
+                                            [ngModelOptions]="{standalone: true}"
+                                            (ngModelChange)="currencyChange(contract)"
+                                            required #Currency="ngModel">
+                                        <option value="">-- select --</option>
+                                        <option *ngFor="let currencyItem of currencies$" [ngValue]="currencyItem">
+                                            {{currencyItem.Code}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label class="control-label">Payment Offset (days)</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input class="form-control"
+                                           type="number"
+                                           [(ngModel)]="contract.PaymentOffset"
+                                           name="PaymentOffset"
+                                           #PaymentOffset="ngModel" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label class="control-label">Order Number Prefix</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <input class="form-control"
+                                           type="text"
+                                           [(ngModel)]="contract.OrderNumberPrefix"
+                                           name="OrderNumberPrefix"
+                                           #OrderNumberPrefix="ngModel" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label class="control-label">Contract Type</label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label>
+                                        <input type="checkbox" [(ngModel)]="contract.IsSpotContract" name="IsSpotContract" (change)="contract.IsMTContract = !contract.IsSpotContract" />
+                                        Spot
+                                    </label>
+                                </div>
+                                <div class="col-lg4">
+                                    <label>
+                                        <input type="checkbox" [(ngModel)]="contract.IsMTContract" name="IsMTContract" (change)="contract.IsSpotContract = !contract.IsMTContract" />
+                                        MT
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <label class="control-label">BEE Margin Sharing (50/50)</label>
+                                </div>
+                                <div class="col-lg-2">
+                                    <input type="checkbox" [(ngModel)]="contract.MarginSharingBEE" name="IsBEEMarginSharing" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid" *ngIf="showSignalGrid==true && associatedSignalContracts$ | async as associatedSignalContracts">
+                        <ag-grid-angular #agGrid
+                                         class="ag-blue agridHeight2"
+                                         [gridOptions]="gridAssociatedSignalContracts"
+                                         (gridReady)="onReadyGridSignalContracts($event)"
+                                         [rowData]="associatedSignalContracts"
+                                         [rowSelection]="rowSelection">
+                        </ag-grid-angular>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<ng-template #deleteYesNo>
+    <div class="modal-body">
+        <div class="col">
+            <font color="red">
+                <label>Are you sure you want to delete this item ?</label>
+            </font>
+        </div>
+        <div class="col">
+            <button class="btn action yes"
+                    (click)="confirmation(true)"></button>
+        </div>
+        <div class="col">
+            <button class="btn action no"
+                    (click)="confirmation(false)"></button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #alertCannotDelete>
+    <div class="modal-body">
+        <div class="col">
+            <font color="red">
+                <label>{{cannotDeleteMessage}}</label>
+            </font>
+        </div>
+        <div class="col">
+            <button class="btn action exit"
+                    data-toggle="tooltip"
+                    title="Close !"
+                    (click)="closeAlertCannotDelete()"></button>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,2078 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ws="urn:ws.xb.signal" xmlns:pp="urn:xb.signal" xmlns:dvt="urn:dvt.com" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ws.xb.signal" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://signal.gdfsuez.net:8001/SignalWebServices/ExtractionOperationsWS?xsd=schemas/ReturnCode-V1.0.xsd" namespace="urn:dvt.com" />
+  <xs:import schemaLocation="https://signal.gdfsuez.net:8001/SignalWebServices/ExtractionOperationsWS?xsd=schemas/XML-SIGNAL-Principal-V1.0.4.xsd" namespace="urn:xb.signal" />
+  <xs:complexType name="ListStatutBatchRecalculInput" />
+  <xs:complexType name="ListStatutBatchRecalculOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="listStatut" nillable="true" type="pp:ListStatut" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListCorrespondancesInput" />
+  <xs:complexType name="ListCorrespondancesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="correspondances" nillable="true" type="pp:Correspondances_Unites" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetCorrespondancesInput">
+    <xs:sequence>
+      <xs:element name="correspondances" type="pp:Correspondances_Unites" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetCorrespondancesOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCorrespondancesInput">
+    <xs:sequence>
+      <xs:element name="correspondances" type="pp:Correspondances_Unites" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCorrespondancesOutput">
+    <xs:sequence>
+      <xs:element name="correspondances" type="pp:Correspondances_Unites" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteCorrespondancesInput">
+    <xs:sequence>
+      <xs:element name="correspondances" type="pp:Correspondances_Unites" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteCorrespondancesOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListUniteMesureInput" />
+  <xs:complexType name="ListUniteMesureOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="uniteMesure" nillable="true" type="pp:Unite_Mesure" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetUniteMesureInput">
+    <xs:sequence>
+      <xs:element name="uniteMesure" type="pp:Unite_Mesure" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetUniteMesureOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetUniteMesureInput">
+    <xs:sequence>
+      <xs:element name="uniteMesure" type="pp:Unite_Mesure" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetUniteMesureOutput">
+    <xs:sequence>
+      <xs:element name="uniteMesure" type="pp:Unite_Mesure" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteUniteMesureInput">
+    <xs:sequence>
+      <xs:element name="uniteMesure" type="pp:Unite_Mesure" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteUniteMesureOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateNavireInput">
+    <xs:sequence>
+      <xs:element name="navire" type="pp:Navire" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateNavireOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetNavireInput">
+    <xs:sequence>
+      <xs:element name="idNavire" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetNavireOutput">
+    <xs:sequence>
+      <xs:element name="navire" type="pp:Navire" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyNavireInput">
+    <xs:sequence>
+      <xs:element name="navire" type="pp:Navire" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyNavireOutput">
+    <xs:sequence>
+      <xs:element name="navire" type="pp:Navire" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListNavireInput" />
+  <xs:complexType name="ListNavireOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="navires" nillable="true" type="pp:Navire" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreatePortInput">
+    <xs:sequence>
+      <xs:element name="port" type="pp:Port" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreatePortOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetPortInput">
+    <xs:sequence>
+      <xs:element name="idPort" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetPortOutput">
+    <xs:sequence>
+      <xs:element name="port" type="pp:Port" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeletePortInput">
+    <xs:sequence>
+      <xs:element name="idPort" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeletePortOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyPortInput">
+    <xs:sequence>
+      <xs:element name="port" type="pp:Port" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyPortOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListPortsInput" />
+  <xs:complexType name="ListPortsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ports" nillable="true" type="pp:Port" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListOperateursInput" />
+  <xs:complexType name="ListOperateursOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="operateur" nillable="true" type="xs:string" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListAgentsDefautsInput" />
+  <xs:complexType name="ListAgentsDefautsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="agentDefaut" nillable="true" type="xs:string" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListDistancierInput">
+    <xs:sequence>
+      <xs:element name="idPort" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListDistancierOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="distanciers" nillable="true" type="pp:Distancier" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDistancierInput">
+    <xs:sequence>
+      <xs:element name="idDistancier" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListIdDistancierInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="idDistancier" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDistancierOutput">
+    <xs:sequence>
+      <xs:element name="distancier" type="pp:Distancier" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyDistancierInput">
+    <xs:sequence>
+      <xs:element name="distancier" type="pp:Distancier" />
+      <xs:element name="majCanalRetour" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyDistancierOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteDistancierInput">
+    <xs:sequence>
+      <xs:element name="idDistancier" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteDistancierOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateDistancierInput">
+    <xs:sequence>
+      <xs:element name="distancier" type="pp:Distancier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateDistancierOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListMaintenanceInput">
+    <xs:sequence>
+      <xs:element name="idPort" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListMaintenanceOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="maintenances" nillable="true" type="pp:Maintenance" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetMaintenanceInput">
+    <xs:sequence>
+      <xs:element name="idMaintenance" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetMaintenanceOutput">
+    <xs:sequence>
+      <xs:element name="maintenance" type="pp:Maintenance" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyMaintenanceInput">
+    <xs:sequence>
+      <xs:element name="maintenance" type="pp:Maintenance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyMaintenanceOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteMaintenanceInput">
+    <xs:sequence>
+      <xs:element name="idMaintenance" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteMaintenanceOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateMaintenanceInput">
+    <xs:sequence>
+      <xs:element name="maintenance" type="pp:Maintenance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateMaintenanceOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListUsineInput">
+    <xs:sequence>
+      <xs:element name="idPort" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListUsineOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="usines" nillable="true" type="pp:Usine" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetUsineInput">
+    <xs:sequence>
+      <xs:element name="idUsine" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetUsineOutput">
+    <xs:sequence>
+      <xs:element name="usine" type="pp:Usine" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyUsineInput">
+    <xs:sequence>
+      <xs:element name="usine" type="pp:Usine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyUsineOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteUsineInput">
+    <xs:sequence>
+      <xs:element name="idUsine" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteUsineOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateUsineInput">
+    <xs:sequence>
+      <xs:element name="usine" type="pp:Usine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateUsineOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListPcsByPortInput">
+    <xs:sequence>
+      <xs:element name="idPort" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListPcsByPortOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pcss" nillable="true" type="pp:Pcs" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListPcsInput">
+    <xs:sequence>
+      <xs:element name="idPort" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListPcsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pcss" nillable="true" type="pp:Pcs" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetPcsInput">
+    <xs:sequence>
+      <xs:element name="idPcs" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetPcsOutput">
+    <xs:sequence>
+      <xs:element name="pcs" type="pp:Pcs" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyPcsInput">
+    <xs:sequence>
+      <xs:element name="pcs" type="pp:Pcs" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyPcsOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeletePcsInput">
+    <xs:sequence>
+      <xs:element name="idPcs" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeletePcsOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreatePcsInput">
+    <xs:sequence>
+      <xs:element name="pcs" type="pp:Pcs" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreatePcsOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListAffretementInput">
+    <xs:sequence>
+      <xs:element name="idNavire" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListAffretementOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="affretements" nillable="true" type="pp:Affretement" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetAffretementInput">
+    <xs:sequence>
+      <xs:element name="idAffretement" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetAffretementOutput">
+    <xs:sequence>
+      <xs:element name="affretement" type="pp:Affretement" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyAffretementInput">
+    <xs:sequence>
+      <xs:element name="affretement" type="pp:Affretement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyAffretementOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteAffretementInput">
+    <xs:sequence>
+      <xs:element name="idAffretement" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteAffretementOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateAffretementInput">
+    <xs:sequence>
+      <xs:element name="affretement" type="pp:Affretement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateAffretementOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListAftInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeNavire" type="xs:string" />
+      <xs:element name="dateDebut" nillable="true" type="xs:dateTime" />
+      <xs:element name="dateFin" nillable="true" type="xs:dateTime" />
+      <xs:element name="ctrm" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListAftOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="affretementNav" nillable="true" type="pp:AffretementNav" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListInspectionInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeNavire" type="xs:string" />
+      <xs:element name="dateDebut" nillable="true" type="xs:dateTime" />
+      <xs:element name="dateFin" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListInspectionOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="inspection" nillable="true" type="pp:InspectionNavPort" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListOperationsInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeProgramme" type="xs:string" />
+      <xs:element name="dateDebut" nillable="true" type="xs:dateTime" />
+      <xs:element name="dateFin" nillable="true" type="xs:dateTime" />
+      <xs:element name="codeNavire" type="xs:string" />
+      <xs:element name="operationsInternes" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListOperationsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="listOperations" nillable="true" type="pp:ListOperations" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListEvenementInput">
+    <xs:sequence>
+      <xs:element name="idAffretement" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListEvenementOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="evenements" nillable="true" type="pp:Evenement" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetEvenementInput">
+    <xs:sequence>
+      <xs:element name="idEvenement" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetEvenementOutput">
+    <xs:sequence>
+      <xs:element name="evenement" type="pp:Evenement" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyEvenementInput">
+    <xs:sequence>
+      <xs:element name="evenement" type="pp:Evenement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyEvenementOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteEvenementInput">
+    <xs:sequence>
+      <xs:element name="idEvenement" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteEvenementOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateEvenementInput">
+    <xs:sequence>
+      <xs:element name="evenement" type="pp:Evenement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateEvenementOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListCommandeInput">
+    <xs:sequence>
+      <xs:element name="idNavire" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListCommandeOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Commandes" nillable="true" type="pp:Cmd_Carburant" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCommandeInput">
+    <xs:sequence>
+      <xs:element name="idCommande" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCommandeOutput">
+    <xs:sequence>
+      <xs:element name="commande" type="pp:Cmd_Carburant" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyCommandeInput">
+    <xs:sequence>
+      <xs:element name="commande" type="pp:Cmd_Carburant" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyCommandeOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteCommandeInput">
+    <xs:sequence>
+      <xs:element name="idCommande" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteCommandeOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateCommandeInput">
+    <xs:sequence>
+      <xs:element name="commande" type="pp:Cmd_Carburant" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateCommandeOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListDureeNormInput">
+    <xs:sequence>
+      <xs:element name="idNavire" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListDureeNormOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dureeNorms" nillable="true" type="pp:Duree_Norm" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListDureeNormDTOInput">
+    <xs:sequence>
+      <xs:element name="idPort" type="pp:idDomaine" />
+      <xs:element name="idNavire" type="pp:idDomaine" />
+      <xs:element name="pageIndex" type="pp:idDomaine" />
+      <xs:element name="nbItemPerPage" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListDureeNormDTOOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dureeNorms" nillable="true" type="pp:DureeNormDTO" />
+      <xs:element name="nbrResultTotal" type="pp:idDomaine" />
+      <xs:element name="rowNumDureeNormPortNavire" type="pp:idDomaine" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDureeNormInput">
+    <xs:sequence>
+      <xs:element name="idDureeNorm" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDureeNormOutput">
+    <xs:sequence>
+      <xs:element name="dureeNorm" type="pp:Duree_Norm" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDureeNormPourNavireDepartArriveeInput">
+    <xs:sequence>
+      <xs:element name="idNavire" type="pp:idDomaine" />
+      <xs:element name="idPortDepart" type="pp:idDomaine" />
+      <xs:element name="idPortArrivee" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDureeNormPourNavireDepartArriveeOutput">
+    <xs:sequence>
+      <xs:element name="dureeNorm" type="pp:Duree_Norm" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyDureeNormInput">
+    <xs:sequence>
+      <xs:element name="dureeNorm" type="pp:Duree_Norm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyDureeNormOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteDureeNormInput">
+    <xs:sequence>
+      <xs:element name="idDureeNorm" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteDureeNormOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateDureeNormInput">
+    <xs:sequence>
+      <xs:element name="dureeNorm" type="pp:Duree_Norm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateDureeNormOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListInspectionInput">
+    <xs:sequence>
+      <xs:element name="idNavire" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListInspectionOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="inspections" nillable="true" type="pp:Inspection" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetInspectionInput">
+    <xs:sequence>
+      <xs:element name="idInspection" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetInspectionOutput">
+    <xs:sequence>
+      <xs:element name="inspection" type="pp:Inspection" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyInspectionInput">
+    <xs:sequence>
+      <xs:element name="inspection" type="pp:Inspection" />
+      <xs:element name="forceCreation" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyInspectionOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteInspectionInput">
+    <xs:sequence>
+      <xs:element name="idInspection" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteInspectionOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateInspectionInput">
+    <xs:sequence>
+      <xs:element name="inspection" type="pp:Inspection" />
+      <xs:element name="forceCreation" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateInspectionOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListAutNavPortInput">
+    <xs:sequence>
+      <xs:element name="idNavire" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListAutNavPortOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="autNavPorts" nillable="true" type="pp:AutorisationNavirePort" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetAutNavPortInput">
+    <xs:sequence>
+      <xs:element name="idAutNavPort" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetAutNavPortOutput">
+    <xs:sequence>
+      <xs:element name="autNavPort" type="pp:AutorisationNavirePort" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyAutNavPortInput">
+    <xs:sequence>
+      <xs:element name="autNavPort" type="pp:AutorisationNavirePort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyAutNavPortOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteAutNavPortInput">
+    <xs:sequence>
+      <xs:element name="idAutNavPort" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteAutNavPortOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateAutNavPortInput">
+    <xs:sequence>
+      <xs:element name="autNavPort" type="pp:AutorisationNavirePort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateAutNavPortOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListAutNavPortsInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeNavire" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="codePort" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="dateDebut" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="dateFin" nillable="true" type="pp:dateDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListAutNavPortsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="autNavPortsNom" nillable="true" type="pp:AutorisationNavirePortNom" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractContrepartieInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="typeCP" type="xs:string" />
+      <xs:element name="nomCP" type="xs:string" />
+      <xs:element name="libelleCP" type="xs:string" />
+      <xs:element name="portCP" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractContrepartieOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contrepartie" type="pp:ExtractContrepartie" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListContrepartieInput" />
+  <xs:complexType name="ListContrepartieOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contrepartie" nillable="true" type="pp:Contrepartie" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FindContrepartiesInput">
+    <xs:sequence>
+      <xs:element name="nomCp" type="pp:nomDomaine" />
+      <xs:element name="typeCp" type="pp:nomDomaine" />
+      <xs:element name="libelleCp" type="pp:nomDomaine" />
+      <xs:element name="nomPortCp" type="pp:nomDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FindContrepartiesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contrepartie" nillable="true" type="pp:Contrepartie" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyContrepartieInput">
+    <xs:sequence>
+      <xs:element name="contrepartie" type="pp:Contrepartie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyContrepartieOutput">
+    <xs:sequence>
+      <xs:element name="contrepartie" type="pp:Contrepartie" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetContrepartieInput">
+    <xs:sequence>
+      <xs:element name="idContrepartie" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetContrepartieOutput">
+    <xs:sequence>
+      <xs:element name="contrepartie" type="pp:Contrepartie" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteContrepartieInput">
+    <xs:sequence>
+      <xs:element name="idContrepartie" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteContrepartieOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateContrepartieInput">
+    <xs:sequence>
+      <xs:element name="contrepartie" type="pp:Contrepartie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateContrepartieOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListAutNavCpInput">
+    <xs:sequence>
+      <xs:element name="idNavire" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListAutNavCpOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="autNavCps" nillable="true" type="pp:AutorisationNavireContrepartie" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetAutNavCpInput">
+    <xs:sequence>
+      <xs:element name="idAutNavCp" type="pp:idDomaine" />
+      <xs:element name="idNavire" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetAutNavCpOutput">
+    <xs:sequence>
+      <xs:element name="autNavCp" type="pp:AutorisationNavireContrepartie" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyAutNavCpInput">
+    <xs:sequence>
+      <xs:element name="autNavCp" type="pp:AutorisationNavireContrepartie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyAutNavCpOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteAutNavCpInput">
+    <xs:sequence>
+      <xs:element name="idAutNavCp" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteAutNavCpOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateAutNavCpInput">
+    <xs:sequence>
+      <xs:element name="autNavCp" type="pp:AutorisationNavireContrepartie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateAutNavCpOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListAutNavCpsInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeNavire" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="codeContrepartie" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="dateDebut" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="dateFin" nillable="true" type="pp:dateDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListAutNavCpsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="autNavCpsNom" nillable="true" type="pp:AutorisationNavireContrepartieNom" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListContratInput" />
+  <xs:complexType name="ListContratOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contrat" nillable="true" type="pp:Contrat" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyContratInput">
+    <xs:sequence>
+      <xs:element name="contrat" type="pp:Contrat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyContratOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetContratInput">
+    <xs:sequence>
+      <xs:element name="idContrat" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetContratOutput">
+    <xs:sequence>
+      <xs:element name="contrat" type="pp:Contrat" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteContratInput">
+    <xs:sequence>
+      <xs:element name="idContrat" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteContratOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateContratInput">
+    <xs:sequence>
+      <xs:element name="contrat" type="pp:Contrat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateContratOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetContratByCodeInput">
+    <xs:sequence>
+      <xs:element name="codeContrat" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetContratByCodeOutput">
+    <xs:sequence>
+      <xs:element name="contrat" type="pp:Contrat" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FindAllContratsVenteActifFlagListInput" />
+  <xs:complexType name="FindAllContratsVenteActifFlagListOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="listContrats" nillable="true" type="pp:Contrat" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListQacInput">
+    <xs:sequence>
+      <xs:element name="idContrat" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListQacOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Qac" nillable="true" type="pp:QAC" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyQacInput">
+    <xs:sequence>
+      <xs:element name="qac" type="pp:QAC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyQacOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetQacInput">
+    <xs:sequence>
+      <xs:element name="idQac" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetQacOutput">
+    <xs:sequence>
+      <xs:element name="qac" type="pp:QAC" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteQacInput">
+    <xs:sequence>
+      <xs:element name="idQac" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteQacOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateQacInput">
+    <xs:sequence>
+      <xs:element name="qac" type="pp:QAC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateQacOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListCapaTerminalInput">
+    <xs:sequence>
+      <xs:element name="idPort" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListCapaTerminalOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CapaTerminal" nillable="true" type="pp:Capa_Terminal" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyCapaTerminalInput">
+    <xs:sequence>
+      <xs:element name="capaTerminal" type="pp:Capa_Terminal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyCapaTerminalOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCapaTerminalInput">
+    <xs:sequence>
+      <xs:element name="idCapaTerminal" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCapaTerminalOutput">
+    <xs:sequence>
+      <xs:element name="capaTerminal" type="pp:Capa_Terminal" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteCapaTerminalInput">
+    <xs:sequence>
+      <xs:element name="idCapaTerminal" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteCapaTerminalOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateCapaTerminalInput">
+    <xs:sequence>
+      <xs:element name="capaTerminal" type="pp:Capa_Terminal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateCapaTerminalOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListRefNaviresInput" />
+  <xs:complexType name="ListRefPortsInput">
+    <xs:sequence>
+      <xs:element name="order" type="pp:codeDomaine" />
+      <xs:element name="onlyActifs" type="pp:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListRefContrepartiesInput">
+    <xs:sequence>
+      <xs:element name="type" type="pp:typeContrepartieDomaine" />
+      <xs:element name="tri" type="pp:codeDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListRefPaysInput" />
+  <xs:complexType name="ListRefZonesInput" />
+  <xs:complexType name="ListRefContratsInput" />
+  <xs:complexType name="ListRefUnitesInput">
+    <xs:sequence>
+      <xs:element name="type" type="pp:typeUniteDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListRefOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="elementRef" nillable="true" type="pp:ElementReferentiel" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListReportNavsInput">
+    <xs:sequence>
+      <xs:element name="idNavire" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListReportNavsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="reportNavs" nillable="true" type="pp:Report_Nav" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateReportNavInput">
+    <xs:sequence>
+      <xs:element name="reportNav" type="pp:Report_Nav" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateReportNavOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyReportNavInput">
+    <xs:sequence>
+      <xs:element name="reportNav" type="pp:Report_Nav" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyReportNavOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetReportNavInput">
+    <xs:sequence>
+      <xs:element name="idReportNav" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetReportNavOutput">
+    <xs:sequence>
+      <xs:element name="reportNav" type="pp:Report_Nav" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteReportNavInput">
+    <xs:sequence>
+      <xs:element name="idReportNav" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteReportNavOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SaveOrUpdatePortLogInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeDomaine" />
+      <xs:element name="codeNavire" type="xs:string" />
+      <xs:element name="codePortActuel" type="xs:string" />
+      <xs:element name="codePortPrecedent" nillable="true" type="xs:string" />
+      <xs:element name="codePortSuivant" nillable="true" type="xs:string" />
+      <xs:element name="portLog" type="pp:Port_Log" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SaveOrUpdatePortLogOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractPortLogInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeNavire" type="xs:string" />
+      <xs:element name="codeCargaison" type="xs:string" />
+      <xs:element name="codePort" type="xs:string" />
+      <xs:element name="typeOperation" type="xs:string" />
+      <xs:element name="dateDebut" nillable="true" type="xs:dateTime" />
+      <xs:element name="dateFin" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractPortLogOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="portLog" type="pp:Extract_Port_Log" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListSouscrPlursInput">
+    <xs:sequence>
+      <xs:element name="idPort" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListSouscrPlursOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="souscrPlurs" nillable="true" type="pp:Souscr_Plur" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateSouscrPlurInput">
+    <xs:sequence>
+      <xs:element name="souscrPlur" type="pp:Souscr_Plur" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateSouscrPlurOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifySouscrPlurInput">
+    <xs:sequence>
+      <xs:element name="souscrPlur" type="pp:Souscr_Plur" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifySouscrPlurOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetSouscrPlurInput">
+    <xs:sequence>
+      <xs:element name="idSouscrPlur" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetSouscrPlurOutput">
+    <xs:sequence>
+      <xs:element name="souscrPlur" type="pp:Souscr_Plur" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteSouscrPlurInput">
+    <xs:sequence>
+      <xs:element name="idSouscrPlur" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteSouscrPlurOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListProfilInput" />
+  <xs:complexType name="ListProfilOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Profil" nillable="true" type="pp:Profil" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetProfilInput">
+    <xs:sequence>
+      <xs:element name="profil" type="pp:Profil" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="droits" nillable="true" type="pp:Droit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetProfilOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetProfilInput">
+    <xs:sequence>
+      <xs:element name="idProfil" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetProfilOutput">
+    <xs:sequence>
+      <xs:element name="profil" type="pp:Profil" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteProfilInput">
+    <xs:sequence>
+      <xs:element name="idProfil" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteProfilOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateProfilInput">
+    <xs:sequence>
+      <xs:element name="profil" type="pp:Profil" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateProfilOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListDroitParObjetApplicatifInput">
+    <xs:sequence>
+      <xs:element name="idProfil" type="pp:idDomaine" />
+      <xs:element name="idObjetApplicatif" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListDroitParObjetApplicatifOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="droits" nillable="true" type="pp:Droit" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListObjetApplicatifInput" />
+  <xs:complexType name="ListObjetApplicatifOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="objetsApplicatif" nillable="true" type="pp:Objet_Applicatif" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListUtilisateursInput" />
+  <xs:complexType name="ListUtilisateursOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="utilisateurs" nillable="true" type="pp:Utilisateurs" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetUtilisateurInput">
+    <xs:sequence>
+      <xs:element name="utilisateur" type="pp:Utilisateurs" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetUtilisateurOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetUniMeInput">
+    <xs:sequence>
+      <xs:element name="uniMe" type="pp:Uni_Mes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetuniMeOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetUtilisateurInput">
+    <xs:sequence>
+      <xs:element name="id" type="pp:idDomaine" />
+      <xs:element name="isUserProgrammeTmp" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetUtilisateurOutput">
+    <xs:sequence>
+      <xs:element name="utilisateur" type="pp:Utilisateurs" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetUtilisateurByLoginInput">
+    <xs:sequence>
+      <xs:element name="login" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetUtilisateurByLoginOutput">
+    <xs:sequence>
+      <xs:element name="utilisateur" type="pp:Utilisateurs" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteUtilisateurInput">
+    <xs:sequence>
+      <xs:element name="idUtilisateur" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteUtilisateurOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteAutContratPortInput">
+    <xs:sequence>
+      <xs:element name="idContrat" type="pp:idDomaine" />
+      <xs:element name="idPort" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteAutContratPortOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetAutContratPortInput">
+    <xs:sequence>
+      <xs:element name="autContratPort" type="pp:Aut_Contrat_Port" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetAutContratPortOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PortsAutorisesInput">
+    <xs:sequence>
+      <xs:element name="idContrat" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PortsAutorisesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ports" nillable="true" type="pp:ElementReferentiel" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PortsNonAutorisesInput">
+    <xs:sequence>
+      <xs:element name="idContrat" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PortsNonAutorisesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ports" nillable="true" type="pp:ElementReferentiel" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetPortByNameInput">
+    <xs:sequence>
+      <xs:element name="namePort" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetPortByNameOutput">
+    <xs:sequence>
+      <xs:element name="port" type="pp:Port" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetPortByCodeInput">
+    <xs:sequence>
+      <xs:element name="codePort" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetPortByCodeOutput">
+    <xs:sequence>
+      <xs:element name="port" type="pp:Port" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetNavireByCodeInput">
+    <xs:sequence>
+      <xs:element name="codeNavire" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetNavireByCodeOutput">
+    <xs:sequence>
+      <xs:element name="navire" type="pp:Navire" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractListVisitesPortInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeDomaine" />
+      <xs:element name="codeProgramme" type="xs:string" />
+      <xs:element name="abattement" type="pp:abattement" />
+      <xs:element name="dateDebut" nillable="true" type="xs:dateTime" />
+      <xs:element name="dateFin" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractListVisitesPortOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="visitesPort" type="pp:VisitesPort" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractListPortInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeDomaine" />
+      <xs:element name="codePort" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractListPortOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="listePort" type="pp:ListePort" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetUsineByCPandCUInput">
+    <xs:sequence>
+      <xs:element name="codePort" type="xs:string" />
+      <xs:element name="codeUsine" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetUsineByCPandCUOutput">
+    <xs:sequence>
+      <xs:element name="usine" type="pp:Usine" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetQacsByCodeContratAndDatesInput">
+    <xs:sequence>
+      <xs:element name="codeContrat" type="xs:string" />
+      <xs:element name="dateDebut" type="xs:dateTime" />
+      <xs:element name="dateFin" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetQacsByCodeContratAndDatesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="qacs" nillable="true" type="pp:QAC" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetAffretementByCodeNavireAndDatesInput">
+    <xs:sequence>
+      <xs:element name="codeNavire" type="xs:string" />
+      <xs:element name="dateDebut" type="xs:dateTime" />
+      <xs:element name="dateFin" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetAffretementByCodeNavireAndDatesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="affretements" nillable="true" type="pp:Affretement" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetEvenementByCodeNavireAndDatesInput">
+    <xs:sequence>
+      <xs:element name="codeNavire" type="xs:string" />
+      <xs:element name="dateDebut" type="xs:dateTime" />
+      <xs:element name="dateFin" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetEvenementByCodeNavireAndDatesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="evenements" nillable="true" type="pp:Evenement" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCommandeByCodeNavireAndDatesInput">
+    <xs:sequence>
+      <xs:element name="codeNavire" type="xs:string" />
+      <xs:element name="dateDebut" type="xs:dateTime" />
+      <xs:element name="dateFin" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCommandeByCodeNavireAndDatesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="commandes" nillable="true" type="pp:Cmd_Carburant" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractCommandeByCodeNavireAndDatesInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeNavire" nillable="true" type="xs:string" />
+      <xs:element name="dateDebut" nillable="true" type="xs:dateTime" />
+      <xs:element name="dateFin" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractCommandeByCodeNavireAndDatesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="commandes" nillable="true" type="pp:Cmd_Carburant" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListDistancierByCodePortInput">
+    <xs:sequence>
+      <xs:element name="codePort" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListDistancierByCodePortOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="distanciers" nillable="true" type="pp:Distancier" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListMaintenanceByCodePortInput">
+    <xs:sequence>
+      <xs:element name="codePort" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListMaintenanceByCodePortOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="maintenances" nillable="true" type="pp:Maintenance" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListPcsByCodePortInput">
+    <xs:sequence>
+      <xs:element name="codePort" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListPcsByCodePortOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pcss" nillable="true" type="pp:Pcs" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListPcsByDateInput">
+    <xs:sequence>
+      <xs:element name="date" type="xs:string" />
+      <xs:element name="codePort" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListPcsByDateOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pcss" nillable="true" type="pp:Pcs" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListCapaTerminalByCodePortInput">
+    <xs:sequence>
+      <xs:element name="codePort" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListCapaTerminalByCodePortOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="capaTerminals" nillable="true" type="pp:Capa_Terminal" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListDureeNormByCodeNavireInput">
+    <xs:sequence>
+      <xs:element name="codeNavire" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListDureeNormByCodeNavireOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dureeNorms" nillable="true" type="pp:Duree_Norm" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListInspectionByCodeNavireInput">
+    <xs:sequence>
+      <xs:element name="codeNavire" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListInspectionByCodeNavireOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="inspections" nillable="true" type="pp:Inspection" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListAutNavPortByCodeNavireInput">
+    <xs:sequence>
+      <xs:element name="codeNavire" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListAutNavPortByCodeNavireOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="autNavPort" nillable="true" type="pp:AutorisationNavirePort" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListAutNavCpByCodeNavireInput">
+    <xs:sequence>
+      <xs:element name="codeNavire" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListAutNavCpByCodeNavireOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="autNavCps" nillable="true" type="pp:AutorisationNavireContrepartie" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListReportNavByCodeNavireInput">
+    <xs:sequence>
+      <xs:element name="codeNavire" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListReportNavByCodeNavireOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="reports" nillable="true" type="pp:Report_Nav" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListSouscriptionByCodePortInput">
+    <xs:sequence>
+      <xs:element name="codePort" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListSouscriptionByCodePortOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="souscriptions" nillable="true" type="pp:Souscr_Plur" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetRapportChgDechgtInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeNavire" type="xs:string" />
+      <xs:element name="codePort" type="xs:string" />
+      <xs:element name="rapport" type="pp:RapportChgDechgt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetRapportChgDechgtOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListEmissionsInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeProgramme" type="pp:codeDomaine" />
+      <xs:element name="codePort" type="pp:codeDomaine" />
+      <xs:element name="dateDebut" type="pp:dateDomaine" />
+      <xs:element name="dateFin" type="pp:dateDomaine" />
+      <xs:element name="pasTemps" type="pp:codeDomaine" />
+      <xs:element name="unite" nillable="true" type="pp:uniteDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListEmissionsOutput">
+    <xs:sequence>
+      <xs:element name="codeProgramme" type="pp:codeDomaine" />
+      <xs:element name="codePort" type="pp:codeDomaine" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="emissions" nillable="true" type="pp:DateValeurUnite" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListNiveauStockGDFInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeProgramme" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="codePort" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="dateDebut" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="dateFin" nillable="true" type="xs:dateTime" />
+      <xs:element name="pasTemps" nillable="true" type="xs:string" />
+      <xs:element name="unite" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListNiveauStockGDFOutput">
+    <xs:sequence>
+      <xs:element name="codeProgramme" type="xs:string" />
+      <xs:element name="codePort" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="niveauxStock" nillable="true" type="pp:DateValeurUnite" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListOperationsChargementInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeProgramme" type="xs:string" />
+      <xs:element maxOccurs="unbounded" name="codeContrat" type="xs:string" />
+      <xs:element name="dateDebut" type="xs:dateTime" />
+      <xs:element name="dateFin" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListOperationsChargementOutput">
+    <xs:sequence>
+      <xs:element name="codeProgramme" type="xs:string" />
+      <xs:element name="codeContrat" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="operations" nillable="true" type="pp:Operation" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListOperationsDechargementInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeProgramme" type="xs:string" />
+      <xs:element name="codePort" type="xs:string" />
+      <xs:element name="dateDebut" type="xs:dateTime" />
+      <xs:element name="dateFin" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListOperationsDechargementOutput">
+    <xs:sequence>
+      <xs:element name="codeProgramme" type="xs:string" />
+      <xs:element name="codePort" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="operations" nillable="true" type="pp:OperationDechargement" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListRapportsInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeCargaison" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="typeOperation" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="dateDebut" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="dateFin" nillable="true" type="pp:dateDomaine" />
+      <xs:element name="operationsInternes" nillable="true" type="pp:codeDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetListRapportsOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="rapports" nillable="true" type="pp:RapportChgDechgtFull" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateNoticeNavInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeNavire" type="xs:string" />
+      <xs:element name="noticeNav" type="pp:Report_Nav" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateNoticeNavOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractPassagesCanalInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeDomaine" />
+      <xs:element name="codeProgramme" type="pp:codeDomaine" />
+      <xs:element name="abattement" type="pp:abattement" />
+      <xs:element name="dateDebut" nillable="true" type="xs:dateTime" />
+      <xs:element name="dateFin" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractPassagesCanalOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="passageCargaisonsCanal" type="pp:PassageCargaisonsCanal" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractParcellesInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeDomaine" />
+      <xs:element name="codeProgramme" type="pp:codeDomaine" />
+      <xs:element name="dateDebut" nillable="true" type="xs:dateTime" />
+      <xs:element name="dateFin" nillable="true" type="xs:dateTime" />
+      <xs:element name="unite" type="xs:string" />
+      <xs:element name="abattement" type="pp:abattement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractParcellesOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="parcelle" type="pp:Parcelle" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractListDistanciersInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeDomaine" />
+      <xs:element name="codePortDepart" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="codePortArrive" nillable="true" type="pp:codeDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractListDistanciersOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="distanciers" nillable="true" type="pp:DistancierPourWS" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractListNaviresInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeDomaine" />
+      <xs:element name="codeNavire" nillable="true" type="pp:codeDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractListNaviresOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="navires" type="pp:Navire" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetConsultationAchatsDechargementInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeODomaine" />
+      <xs:element name="codeProgramme" type="pp:codeDomaine" />
+      <xs:element name="codePort" type="pp:codeDomaine" />
+      <xs:element name="dateDebut" type="xs:dateTime" />
+      <xs:element name="dateFin" type="xs:dateTime" />
+      <xs:element name="unite" nillable="true" type="pp:uniteDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetConsultationAchatsDechargementOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dateValeurUniteAchat" nillable="true" type="pp:DateValeurUniteAchat" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractListDureeNormInput">
+    <xs:sequence>
+      <xs:element name="principal" type="pp:codeDomaine" />
+      <xs:element name="subject" type="pp:codeDomaine" />
+      <xs:element name="codeNavire" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="codePortDepart" type="pp:codeDomaine" />
+      <xs:element name="codePortArrivee" type="pp:codeDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtractListDureeNormOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dureeNorms" type="pp:DureeNormWS" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetMessageInput">
+    <xs:sequence>
+      <xs:element name="langue" nillable="true" type="pp:codeDomaine" />
+      <xs:element name="codeMessage" type="pp:codeDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetMessageOutput">
+    <xs:sequence>
+      <xs:element name="message" type="xs:string" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListTypeContrepartieInput" />
+  <xs:complexType name="ListTypeContrepartieOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="typeContrepartie" nillable="true" type="pp:TypeContrepartie" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetTypeContrepartieInput">
+    <xs:sequence>
+      <xs:element name="idTypeContrepartie" type="pp:idDomaine" />
+      <xs:element name="typeCp" type="pp:codeDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetTypeContrepartieOutput">
+    <xs:sequence>
+      <xs:element name="typeContrepartie" type="pp:TypeContrepartie" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteTypeContrepartieInput">
+    <xs:sequence>
+      <xs:element name="typeContrepartie" type="pp:TypeContrepartie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteTypeContrepartieOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EnregistrerTypeContrepartieInput">
+    <xs:sequence>
+      <xs:element name="typeContrepartie" type="pp:TypeContrepartie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EnregistrerTypeContrepartieOutput">
+    <xs:sequence>
+      <xs:element name="idTypeContrepartie" type="pp:idDomaine" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListModeleInspectionInput">
+    <xs:sequence>
+      <xs:element name="idPort" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListModeleInspectionOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="modeleInspection" nillable="true" type="pp:ModeleInspection" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyModeleInspectionInput">
+    <xs:sequence>
+      <xs:element name="modeleInspection" type="pp:ModeleInspection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyModeleInspectionOutput">
+    <xs:sequence>
+      <xs:element name="modeleInspection" type="pp:ModeleInspection" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetModeleInspectionInput">
+    <xs:sequence>
+      <xs:element name="idModeleInspection" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetModeleInspectionOutput">
+    <xs:sequence>
+      <xs:element name="modeleInspection" type="pp:ModeleInspection" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteModeleInspectionInput">
+    <xs:sequence>
+      <xs:element name="idModeleInspection" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteModeleInspectionOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateModeleInspectionInput">
+    <xs:sequence>
+      <xs:element name="modeleInspection" type="pp:ModeleInspection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateModeleInspectionOutput">
+    <xs:sequence>
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CheckModeleInspectionIsAssociateInput">
+    <xs:sequence>
+      <xs:element name="idModeleInspection" type="pp:idDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CheckModeleInspectionIsAssociateOutput">
+    <xs:sequence>
+      <xs:element name="associate" type="xs:boolean" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CheckModeleInspectionIsUniqueInput">
+    <xs:sequence>
+      <xs:element name="idPort" type="pp:idDomaine" />
+      <xs:element name="nomModeleInspection" type="pp:nomDomaine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CheckModeleInspectionIsUniqueOutput">
+    <xs:sequence>
+      <xs:element name="unique" type="xs:boolean" />
+      <xs:element name="returnCodes" type="dvt:ReturnCodeList" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

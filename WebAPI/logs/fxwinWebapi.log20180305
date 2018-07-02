@@ -1,0 +1,9 @@
+2018-03-05 17:25:04,641 INFO  - Start import ktp 
+2018-03-05 17:25:05,053 INFO  - Executions in Error : 1
+2018-03-05 17:25:05,055 INFO  - [FX hedge status in FX-Win is not "En cours d'exécution"] [1104114A] – [GLA-ARB-110825-2-110825] – [2598177,000000000000000000]
+
+2018-03-05 17:25:05,076 INFO  - Ignored Execution : 0
+2018-03-05 17:25:05,076 INFO  - Successfully updated execution : 0
+2018-03-05 17:25:05,076 INFO  - Successfully newly imported execution : 0
+2018-03-05 17:25:05,076 INFO  - Successfully updated Fx Hedge : 0
+2018-03-05 17:25:05,078 INFO  - End import ktp 

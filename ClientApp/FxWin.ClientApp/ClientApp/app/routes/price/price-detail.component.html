@@ -1,0 +1,58 @@
+﻿<div class="container-fluid">
+        <div *ngIf="timeSerie$ | async as timeSerie">
+          <div class="modal-header">
+             <h5 class="modal-title pull-left">Price detail</h5>
+             <button class="btn action exit pull-right" (click)="close()"></button>
+             <button class="btn action save pull-right" (click)="save(timeSerie)"></button>
+          </div>
+          <div class="modal-body">
+                <div class="panel">
+                  <div class="panel-heading align-top"></div>
+                  <div class="panel-body">
+                <div class="row-fluid" >
+                <div class="row">
+                    <label class="col-lg-2 control-label">Code</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" type="text" [(ngModel)]="timeSerie.Code" name="Code" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-lg-2 control-label">Comment</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" type="text" [(ngModel)]="timeSerie.Comment"   name="Comment"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-lg-2 control-label">Currency</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" type="text" [(ngModel)]="timeSerie.Currency.Code" name="Currency" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-lg-2 control-label">Unit</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" type="text" [(ngModel)]="timeSerie.Unit.Code" name="Unit" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-lg-2 control-label">To be imported</label>
+                    <div class="col-lg-10">
+                        <input class="form-control" type="checkbox" [(ngModel)]="timeSerie.IsToBeImported" name="IsToBeImported" />
+                    </div>
+                </div>
+                 </div>
+             </div>
+           </div>
+           <!-- <div class="modal-footer">
+                        <button class="btn btn-default" (click)="close()">Close</button>
+                        <button class="btn btn-default" (click)="save(price)">Save</button>
+            </div> -->
+    </div>
+
+</div>
+
+

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:s1="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s0="http://com/fr/gazdefrance/negoce/signal/ws/administration/operations" name="OperationsServiceDefinitions" targetNamespace="http://com/fr/gazdefrance/negoce/signal/ws/administration/operations" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns:ws="urn:ws.xb.signal" xmlns:pp="urn:xb.signal" xmlns:dvt="urn:dvt.com" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://com/fr/gazdefrance/negoce/signal/ws/administration/operations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import schemaLocation="https://signal.gdfsuez.net:8001/SignalWebServices/ExtractionOperationsWS?xsd=schemas/ReturnCode-V1.0.xsd" namespace="urn:dvt.com" />
+      <xs:import schemaLocation="https://signal.gdfsuez.net:8001/SignalWebServices/ExtractionOperationsWS?xsd=schemas/XML-SIGNAL-Principal-V1.0.4.xsd" namespace="urn:xb.signal" />
+      <xs:import schemaLocation="https://signal.gdfsuez.net:8001/SignalWebServices/ExtractionOperationsWS?xsd=schemas/AdministrationService.xsd" namespace="urn:ws.xb.signal" />
+      <xs:element name="getListOperations">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:urn="urn:ws.xb.signal" name="input" type="urn:GetListOperationsInput" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListOperationsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:urn="urn:ws.xb.signal" name="return" type="urn:GetListOperationsOutput" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </types>
+  <message name="getListOperationsResponse">
+    <part name="parameters" element="s0:getListOperationsResponse" />
+  </message>
+  <message name="getListOperations">
+    <part name="parameters" element="s0:getListOperations" />
+  </message>
+  <portType name="ExtractionOperationsWS">
+    <operation name="getListOperations">
+      <input message="s0:getListOperations" />
+      <output message="s0:getListOperationsResponse" />
+    </operation>
+  </portType>
+  <binding name="ExtractionOperationsWSServiceSoapBinding" type="s0:ExtractionOperationsWS">
+    <s1:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getListOperations">
+      <s1:operation soapAction="" style="document" />
+      <input>
+        <s1:body use="literal" />
+      </input>
+      <output>
+        <s1:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ExtractionOperationsWSService">
+    <port name="ExtractionOperationsWSSoapPort" binding="s0:ExtractionOperationsWSServiceSoapBinding">
+      <s1:address location="https://signal.gdfsuez.net:8001/SignalWebServices/ExtractionOperationsWS" />
+    </port>
+  </service>
+</definitions>

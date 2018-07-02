@@ -1,0 +1,112 @@
+﻿<div class="content-heading">
+    GNL Price List
+    <small>From SIGNAL service</small>
+</div>
+<div class="container-fluid">
+    <form (ngSubmit)="onSubmit(timeSeries,timeSeriesForm)" #timeSeriesForm="ngForm" id="timeSeriesForm" name="timeSeriesForm" ngNativeValidate>
+        <fieldset *ngIf="timeSeries$ | async as timeSeries">
+            <legend>
+                Price Curve&nbsp;&nbsp;&nbsp;
+                <button id="newTimeSerie" class="btn action add" data-toggle="tooltip" title="add value !"
+                        (click)="newTimeSerie()"></button>
+                <button class="btn action save"
+                        data-toggle="tooltip"
+                        title="Save changes !"
+                        (click)="save(timeSeries)"></button>
+                <button class="btn action reset"
+                        data-toggle="tooltip"
+                        title="reset data !"
+                        (click)="reset()"></button>
+            </legend>
+            <ag-grid-angular #agGrid class="ag-blue agridHeight1"
+                             [gridOptions]="gridOptionsTS"
+                             (gridReady)="onGridReadyTS($event)"
+                             (rowClicked)="onRowClickedTS($event)"
+                             (cellValueChanged)="cellValueChangedTS($event)"
+                             [rowSelection]="rowSelection"
+                             [rowData]="timeSeries"
+                             (document:click)="documentClick($event)">
+            </ag-grid-angular>
+        </fieldset>
+        <fieldset *ngIf="timeSeries$ | async as timeSeries">
+            <legend>
+                Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="newTimeSerieValue" class="btn action add" data-toggle="tooltip" title="add value !"
+                        (click)="newTimeSerieValue()"></button>
+            </legend>
+            <div class="row-fluid" *ngIf="timeSerieValues$ | async as timeSerieValues">
+                <ag-grid-angular #agGrid class="ag-blue agridHeight1"
+                                 [gridOptions]="gridOptionsTSV"
+                                 (gridReady)="onGridReadyTSV($event)"
+                                 [rowSelection]="rowSelection"
+                                 (rowClicked)="onRowClickedTSV($event)"
+                                 (cellValueChanged)="cellValueChangedTSV($event)"
+                                 [rowData]="timeSerieValues"
+                                 (document:click)="documentClick($event)">
+                </ag-grid-angular>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<ng-template #alertCannotDelete>
+    <div class="modal-body">
+        <div class="col">
+            <font color="red">
+                <label>This TimeSerie " {{selectedTimeSerie.Code}} " is associated with one or more {{cannotDeleteMessage}} !</label>
+            </font>
+        </div>
+        <div class="col">
+            <button class="btn action exit"
+                    data-toggle="tooltip"
+                    title="Close !"
+                    (click)="closeAlertCannotDelete()"></button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #alertConfirmationDelete>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col">
+                <font color="red">
+                    <label>Do you want to permanently remove this {{confirmationType}}</label>
+                </font>
+                <font color="#1ba1cb">
+                    <label> {{withoutSaveChanges}}</label>
+                </font>
+                <font color="red">
+                    <label> ?</label>
+                </font>
+            </div>
+            <div class="col">
+                <button class="btn action yes"
+                        data-toggle="tooltip"
+                        title="Yes !"
+                        (click)="confirmation(true)"></button>
+            </div>
+            <div class="col">
+                <button class="btn action no"
+                        data-toggle="tooltip"
+                        title="No !"
+                        (click)="confirmation(false)"></button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #alertCannotSave>
+    <div class="modal-body">
+        <div class="col">
+            <font color="red">
+                <label>{{MessageCannotSave}}</label>
+            </font>
+        </div>
+        <div class="col">
+            <button class="btn action exit"
+                    data-toggle="tooltip"
+                    title="Close !"
+                    (click)="closePopUp()"></button>
+        </div>
+    </div>
+</ng-template>

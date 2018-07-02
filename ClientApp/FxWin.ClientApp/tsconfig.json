@@ -1,0 +1,16 @@
+{
+  "compileOnSave": true,//si elle a false il te compile le fichier ts en JS 
+  "compilerOptions": {
+    "removeComments": true,
+    "moduleResolution": "node",
+    "target": "es5",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipDefaultLibCheck": true,
+    "lib": [ "es6", "dom" ],
+    "outDir": "./wwwroot/dist"
+  },
+  "exclude": [ "bin", "node_modules" ],
+  "atom": { "rewriteTsconfig": false }
+}

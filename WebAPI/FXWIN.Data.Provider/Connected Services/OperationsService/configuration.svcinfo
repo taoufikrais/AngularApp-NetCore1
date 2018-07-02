@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;ExtractionOperationsWSServiceSoapBinding&quot;&gt;&lt;security mode=&quot;Transport&quot; /&gt;&lt;/Data&gt;" bindingType="basicHttpBinding" name="ExtractionOperationsWSServiceSoapBinding" />
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;ExtractionOperationsWSServiceSoapBinding1&quot; /&gt;" bindingType="basicHttpBinding" name="ExtractionOperationsWSServiceSoapBinding1" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;https://signal.gdfsuez.net:8001/SignalWebServices/ExtractionOperationsWS&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;ExtractionOperationsWSServiceSoapBinding&quot; contract=&quot;OperationsService.ExtractionOperationsWS&quot; name=&quot;ExtractionOperationsWSSoapPort&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;https://signal.gdfsuez.net:8001/SignalWebServices/ExtractionOperationsWS&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;ExtractionOperationsWSServiceSoapBinding&quot; contract=&quot;OperationsService.ExtractionOperationsWS&quot; name=&quot;ExtractionOperationsWSSoapPort&quot; /&gt;" contractName="OperationsService.ExtractionOperationsWS" name="ExtractionOperationsWSSoapPort" />
+  </endpoints>
+</configurationSnapshot>

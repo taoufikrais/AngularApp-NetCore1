@@ -1,0 +1,25 @@
+2018-03-06 15:02:32,912 INFO  - Start Import Signal 
+2018-03-06 15:02:32,935 INFO  - End import ktp 
+2018-03-06 17:46:43,847 INFO  - Start Import Signal 
+2018-03-06 17:47:25,720 ERROR - Index (zero based) must be greater than or equal to zero and less than the size of the argument list.
+2018-03-06 17:47:27,131 INFO  - Index (zero based) must be greater than or equal to zero and less than the size of the argument list.
+2018-03-06 17:47:27,131 INFO  - Import signal has failed, please try again
+2018-03-06 17:47:27,133 INFO  - End import ktp 
+2018-03-06 17:47:40,382 INFO  - Start Import Signal 
+2018-03-06 17:48:32,533 ERROR - There was no endpoint listening at https://signal-pp.gdfsuez.net:8001/SignalWebServices/ExtractionOperationsWS?WSDL that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.
+2018-03-06 17:48:32,676 INFO  - Unable to connect to the remote server
+2018-03-06 17:48:32,676 INFO  - Import signal has failed, please try again
+2018-03-06 17:48:32,676 INFO  - End import ktp 
+2018-03-06 17:49:30,790 INFO  - Start Import Signal 
+2018-03-06 17:56:23,080 ERROR - There was no endpoint listening at https://signal-pp.gdfsuez.net:8001/SignalWebServices/ExtractionOperationsWS?WSDL that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.
+2018-03-06 17:56:23,267 INFO  - Unable to connect to the remote server
+2018-03-06 17:56:23,267 INFO  - Import signal has failed, please try again
+2018-03-06 17:56:23,285 INFO  - End import ktp 
+2018-03-06 17:56:27,728 INFO  - Start Import Signal 
+2018-03-06 18:00:13,723 ERROR - There was no endpoint listening at https://signal-pp.gdfsuez.net:8001/SignalWebServices/ExtractionOperationsWS?WSDL that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.
+2018-03-06 18:00:13,737 INFO  - Unable to connect to the remote server
+2018-03-06 18:00:13,737 INFO  - Import signal has failed, please try again
+2018-03-06 18:00:13,737 INFO  - End import ktp 
+2018-03-06 18:01:18,025 INFO  - Start Import Signal 
+2018-03-06 18:08:02,714 INFO  - Start Import Signal 
+2018-03-06 18:15:53,636 INFO  - Start Import Signal 

@@ -20,7 +20,6 @@
     "@angular/platform-browser-dynamic": "4.4.4",
     "@angular/platform-server": "4.4.4",
     "@angular/router": "4.4.4",
-    "@aspnet/signalr-client": "^1.0.0-alpha2-final",
     "@ngx-translate/core": "6.0.1",
     "@ngx-translate/http-loader": "0.0.3",
     "@okta/okta-auth-js": "^1.17.0",

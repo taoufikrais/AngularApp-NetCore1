@@ -3,7 +3,6 @@ import { Observable } from 'rxjs/Rx';
 import { Headers, Http, Response} from '@angular/http';
 import { User } from '../models/user.model';
 import { AppConfiguration } from '../../app.configuration';
-import { de } from 'ngx-bootstrap/locale';
 
 @Injectable()
 export class UserService {

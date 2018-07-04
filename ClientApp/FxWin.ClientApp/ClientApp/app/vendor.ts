@@ -6,7 +6,7 @@ import 'simple-line-icons/css/simple-line-icons.css';
 import 'weather-icons/css/weather-icons.css';
 import 'weather-icons/css/weather-icons-wind.css';
 
-import 'whirl/dist/whirl.css';
+//import 'whirl/dist/whirl.css';
 import 'spinkit/css/spinkit.css';
 import 'loaders.css/loaders.css';
 

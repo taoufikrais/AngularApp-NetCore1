@@ -34,6 +34,27 @@ namespace FxWin.WebApp.WebApi
 
         [HttpGet]
         [AllowAnonymous]
+        [Route("CheckDbConnexion")]
+        public async Task<IHttpActionResult> CheckDbConnexion()
+        {
+            try
+            {
+                FXWinV2Entities _db = new FXWinV2Entities();
+                _db.Books.ToList();
+                return Ok("Db connexion OK");
+            }
+            catch (Exception exp)
+            {
+                throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                {
+                    Content = new StringContent(exp.Message),
+                    ReasonPhrase = "Critical Exception : " + exp.Message
+                });
+            }
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
         [Route("GetLogs")]
         public async Task<IHttpActionResult> GetLogs()
         {

@@ -22,10 +22,10 @@ namespace FXWIN.Data.Provider
         {
         }
     
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    throw new UnintentionalCodeFirstException();
+        //}
     
         public virtual DbSet<Cargo> Cargoes { get; set; }
         public virtual DbSet<CargoState> CargoStates { get; set; }

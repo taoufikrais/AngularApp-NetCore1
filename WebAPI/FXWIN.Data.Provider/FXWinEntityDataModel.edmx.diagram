@@ -11,7 +11,6 @@
         <EntityTypeShape EntityType="FXWinV2Model.CommodityHedge" Width="1.5" PointX="11.25" PointY="24.125" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.ContractExpositionByDateAndSide" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.ContractExposure" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FXWinV2Model.ContractNotCoveredExpositionDateAndAmount" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.ContractType" Width="1.5" PointX="7" PointY="13.25" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.Currency" Width="1.5" PointX="0.75" PointY="25.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.ExecutionFX" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
@@ -36,7 +35,6 @@
         <EntityTypeShape EntityType="FXWinV2Model.ManagementIntent" Width="1.5" PointX="3.75" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.Operation" Width="1.5" PointX="9" PointY="18.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.OperationExpositionByDateAndSide" Width="1.5" PointX="11.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FXWinV2Model.OperationNotCoveredExpositionDateAndAmount" Width="1.5" PointX="11.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.OperationType" Width="1.5" PointX="6.75" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.Port" Width="1.5" PointX="6.75" PointY="36.25" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.PortType" Width="1.5" PointX="4.5" PointY="37.125" IsExpanded="true" />
@@ -55,7 +53,6 @@
         <EntityTypeShape EntityType="FXWinV2Model.TimeSerie" Width="1.5" PointX="3" PointY="19.625" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.TimeSerieValue" Width="1.5" PointX="5.25" PointY="31.125" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.UnderlyingTerm" Width="1.5" PointX="3" PointY="31.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="FXWinV2Model.UnderlyingTermNotCoveredExpositionDateAndAmount" Width="1.5" PointX="11.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.Unit" Width="1.5" PointX="0.75" PointY="20" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.UnitType" Width="1.5" PointX="13.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FXWinV2Model.Vessel" Width="1.5" PointX="6.75" PointY="49.875" IsExpanded="true" />

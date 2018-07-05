@@ -33,7 +33,6 @@ namespace FXWIN.Data.Provider
         public virtual DbSet<CommodityHedge> CommodityHedges { get; set; }
         public virtual DbSet<ContractExpositionByDateAndSide> ContractExpositionByDateAndSides { get; set; }
         public virtual DbSet<ContractExposure> ContractExposures { get; set; }
-        public virtual DbSet<ContractNotCoveredExpositionDateAndAmount> ContractNotCoveredExpositionDateAndAmounts { get; set; }
         public virtual DbSet<ContractType> ContractTypes { get; set; }
         public virtual DbSet<Currency> Currencies { get; set; }
         public virtual DbSet<ExecutionFX> ExecutionFXes { get; set; }
@@ -58,7 +57,6 @@ namespace FXWIN.Data.Provider
         public virtual DbSet<ManagementIntent> ManagementIntents { get; set; }
         public virtual DbSet<Operation> Operations { get; set; }
         public virtual DbSet<OperationExpositionByDateAndSide> OperationExpositionByDateAndSides { get; set; }
-        public virtual DbSet<OperationNotCoveredExpositionDateAndAmount> OperationNotCoveredExpositionDateAndAmounts { get; set; }
         public virtual DbSet<OperationType> OperationTypes { get; set; }
         public virtual DbSet<Port> Ports { get; set; }
         public virtual DbSet<PortType> PortTypes { get; set; }
@@ -77,7 +75,6 @@ namespace FXWIN.Data.Provider
         public virtual DbSet<TimeSerie> TimeSeries { get; set; }
         public virtual DbSet<TimeSerieValue> TimeSerieValues { get; set; }
         public virtual DbSet<UnderlyingTerm> UnderlyingTerms { get; set; }
-        public virtual DbSet<UnderlyingTermNotCoveredExpositionDateAndAmount> UnderlyingTermNotCoveredExpositionDateAndAmounts { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
         public virtual DbSet<UnitType> UnitTypes { get; set; }
         public virtual DbSet<Vessel> Vessels { get; set; }

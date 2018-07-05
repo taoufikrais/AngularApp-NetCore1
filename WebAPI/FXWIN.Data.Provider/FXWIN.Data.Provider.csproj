@@ -168,9 +168,6 @@
     <Compile Include="ContractExposure.cs">
       <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ContractNotCoveredExpositionDateAndAmount.cs">
-      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="ContractType.cs">
       <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
     </Compile>
@@ -277,9 +274,6 @@
     <Compile Include="OperationExpositionByDateAndSide.cs">
       <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OperationNotCoveredExpositionDateAndAmount.cs">
-      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="OperationType.cs">
       <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
     </Compile>
@@ -341,9 +335,6 @@
       <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UnderlyingTerm.cs">
-      <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UnderlyingTermNotCoveredExpositionDateAndAmount.cs">
       <DependentUpon>FXWinEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UnderlyingTerm_AuditTrail.cs">

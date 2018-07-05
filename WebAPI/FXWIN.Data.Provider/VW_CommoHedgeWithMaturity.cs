@@ -22,7 +22,7 @@ namespace FXWIN.Data.Provider
         public string MaturityLabel { get; set; }
         public Nullable<int> OperationId { get; set; }
         public int PurchaseSaleId { get; set; }
-        public decimal Strike { get; set; }
+        public Nullable<decimal> Strike { get; set; }
         public Nullable<int> UnderlyingTermId { get; set; }
         public int TimeSerieId { get; set; }
         public int MaturityId { get; set; }

@@ -27,7 +27,7 @@
           <Property Name="ModificationDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.Cargo_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.Cargo_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Cargo_AuditTrail">
           <Key>
             <PropertyRef Name="AuditId" />
@@ -82,7 +82,7 @@ warning 6002: The table/view 'FXwinDev.dbo.Cargo_AuditTrail' does not have a pri
           <Property Name="ModificationDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.CommodityHedge_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.CommodityHedge_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="CommodityHedge_AuditTrail">
           <Key>
             <PropertyRef Name="AuditId" />
@@ -129,17 +129,6 @@ warning 6002: The table/view 'FXwinDev.dbo.CommodityHedge_AuditTrail' does not h
           <Property Name="ContractBrouillonAmount" Type="decimal" Precision="24" Scale="5" />
           <Property Name="ContractFxExposure" Type="decimal" Precision="24" Scale="5" />
         </EntityType>
-        <EntityType Name="ContractNotCoveredExpositionDateAndAmount">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FxContractId" Type="int" />
-          <Property Name="UnderlyingMonth" Type="datetime" />
-          <Property Name="Maturity" Type="datetime" />
-          <Property Name="Amount" Type="decimal" Precision="38" Scale="18" />
-          <Property Name="PurchaseSaleId" Type="int" />
-        </EntityType>
         <EntityType Name="ContractType">
           <Key>
             <PropertyRef Name="Id" />
@@ -179,7 +168,7 @@ warning 6002: The table/view 'FXwinDev.dbo.CommodityHedge_AuditTrail' does not h
           <Property Name="ConfirmationNumber" Type="decimal" Precision="38" Scale="18" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.ExecutionFX_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.ExecutionFX_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ExecutionFX_AuditTrail">
           <Key>
             <PropertyRef Name="AuditId" />
@@ -248,7 +237,7 @@ warning 6002: The table/view 'FXwinDev.dbo.ExecutionFX_AuditTrail' does not have
           <Property Name="Mosar3rdParty" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.FxHedge_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.FxHedge_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="FxHedge_AuditTrail">
           <Key>
             <PropertyRef Name="AuditId" />
@@ -313,7 +302,7 @@ warning 6002: The table/view 'FXwinDev.dbo.FxHedge_AuditTrail' does not have a p
           <Property Name="ModificationDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.HedgeCommoMaturity_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.HedgeCommoMaturity_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="HedgeCommoMaturity_AuditTrail">
           <Key>
             <PropertyRef Name="AuditId" />
@@ -349,7 +338,7 @@ warning 6002: The table/view 'FXwinDev.dbo.HedgeCommoMaturity_AuditTrail' does n
           <Property Name="MultipleCargoes" Type="bit" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.HedgeLeg_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.HedgeLeg_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="HedgeLeg_AuditTrail">
           <Key>
             <PropertyRef Name="AuditId" />
@@ -549,7 +538,7 @@ warning 6002: The table/view 'FXwinDev.dbo.HedgeLeg_AuditTrail' does not have a 
           <Property Name="ModificationDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.Operation_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.Operation_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Operation_AuditTrail">
           <Key>
             <PropertyRef Name="AuditId" />
@@ -573,17 +562,6 @@ warning 6002: The table/view 'FXwinDev.dbo.Operation_AuditTrail' does not have a
           <Property Name="OperationId" Type="int" />
           <Property Name="UnderlyingMonth" Type="datetime" />
           <Property Name="Exposition" Type="decimal" Precision="38" Scale="18" />
-          <Property Name="PurchaseSaleId" Type="int" />
-        </EntityType>
-        <EntityType Name="OperationNotCoveredExpositionDateAndAmount">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="OperationId" Type="int" />
-          <Property Name="UnderlyingMonth" Type="datetime" />
-          <Property Name="Maturity" Type="datetime" />
-          <Property Name="Amount" Type="decimal" Precision="38" Scale="18" />
           <Property Name="PurchaseSaleId" Type="int" />
         </EntityType>
         <EntityType Name="OperationType">
@@ -693,7 +671,7 @@ warning 6002: The table/view 'FXwinDev.dbo.Operation_AuditTrail' does not have a
           <Property Name="BookId" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.Subjacent_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.Subjacent_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Subjacent_AuditTrail">
           <Key>
             <PropertyRef Name="AuditId" />
@@ -800,7 +778,7 @@ warning 6002: The table/view 'FXwinDev.dbo.Subjacent_AuditTrail' does not have a
           <Property Name="ModificationDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.UnderlyingTerm_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.UnderlyingTerm_AuditTrail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="UnderlyingTerm_AuditTrail">
           <Key>
             <PropertyRef Name="AuditId" />
@@ -815,17 +793,6 @@ warning 6002: The table/view 'FXwinDev.dbo.UnderlyingTerm_AuditTrail' does not h
           <Property Name="NewValue" Type="varchar" MaxLength="250" />
           <Property Name="Code" Type="varchar" MaxLength="100" />
           <Property Name="Object" Type="varchar" MaxLength="100" />
-        </EntityType>
-        <EntityType Name="UnderlyingTermNotCoveredExpositionDateAndAmount">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UnderlyingTermId" Type="int" />
-          <Property Name="UnderlyingMonth" Type="datetime" />
-          <Property Name="Maturity" Type="datetime" />
-          <Property Name="Amount" Type="decimal" Precision="38" Scale="18" />
-          <Property Name="PurchaseSaleId" Type="int" />
         </EntityType>
         <EntityType Name="Unit">
           <Key>
@@ -889,7 +856,7 @@ warning 6002: The table/view 'FXwinDev.dbo.UnderlyingTerm_AuditTrail' does not h
           <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.VW_CargoView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.VW_CargoView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_CargoView">
           <Key>
             <PropertyRef Name="CargoId" />
@@ -963,14 +930,13 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_CargoView' does not have a primary
           <Property Name="SaleCargoCommodityHedgeExposure" Type="decimal" Precision="24" Scale="5" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.VW_CommoHedgeWithMaturity' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.VW_CommoHedgeWithMaturity' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_CommoHedgeWithMaturity">
           <Key>
             <PropertyRef Name="CommodityHedgeId" />
             <PropertyRef Name="Code" />
             <PropertyRef Name="InternalStateId" />
             <PropertyRef Name="PurchaseSaleId" />
-            
             <PropertyRef Name="TimeSerieId" />
             <PropertyRef Name="MaturityId" />
             <PropertyRef Name="Maturity" />
@@ -984,7 +950,7 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_CommoHedgeWithMaturity' does not h
           <Property Name="MaturityLabel" Type="nvarchar" MaxLength="50" />
           <Property Name="OperationId" Type="int" />
           <Property Name="PurchaseSaleId" Type="int" Nullable="false" />
-          <Property Name="Strike" Type="money" Nullable="false" />
+          <Property Name="Strike" Type="decimal" Precision="38" Scale="18" />
           <Property Name="UnderlyingTermId" Type="int" />
           <Property Name="TimeSerieId" Type="int" Nullable="false" />
           <Property Name="MaturityId" Type="int" Nullable="false" />
@@ -995,7 +961,7 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_CommoHedgeWithMaturity' does not h
           <Property Name="Volume" Type="decimal" Precision="18" Scale="0" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.VW_Cube' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.VW_Cube' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_Cube">
           <Key>
             <PropertyRef Name="Id" />
@@ -1012,7 +978,7 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_Cube' does not have a primary key 
           <Property Name="OperationDateYear" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.VW_CubeCommodity' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.VW_CubeCommodity' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_CubeCommodity">
           <Key>
             <PropertyRef Name="Id" />
@@ -1033,7 +999,7 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_CubeCommodity' does not have a pri
           <Property Name="MtM" Type="decimal" Precision="38" Scale="18" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.VW_CubeFXHedge' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.VW_CubeFXHedge' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_CubeFXHedge">
           <Key>
             <PropertyRef Name="Id" />
@@ -1057,7 +1023,7 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_CubeFXHedge' does not have a prima
           <Property Name="PhysicalExposure" Type="decimal" Precision="24" Scale="5" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.VW_CubeOperation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.VW_CubeOperation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_CubeOperation">
           <Key>
             <PropertyRef Name="OperationId" />
@@ -1077,7 +1043,7 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_CubeOperation' does not have a pri
           <Property Name="OperationResultingExposure" Type="decimal" Precision="24" Scale="5" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.VW_ExportFxHedges' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.VW_ExportFxHedges' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_ExportFxHedges">
           <Key>
             <PropertyRef Name="Id" />
@@ -1109,7 +1075,7 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_ExportFxHedges' does not have a pr
           <Property Name="ModificationDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.VW_ExportPomax' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.VW_ExportPomax' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_ExportPomax">
           <Key>
             <PropertyRef Name="Id" />
@@ -1131,7 +1097,7 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_ExportPomax' does not have a prima
           <Property Name="Underlying" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.VW_FXHedgeSynthesis' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.VW_FXHedgeSynthesis' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_FXHedgeSynthesis">
           <Key>
             <PropertyRef Name="Id" />
@@ -1196,7 +1162,7 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_FXHedgeSynthesis' does not have a 
           <Property Name="SaleBookCode" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.VW_FxWinUnits' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.VW_FxWinUnits' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_FxWinUnits">
           <Key>
             <PropertyRef Name="Id" />
@@ -1205,7 +1171,7 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_FxWinUnits' does not have a primar
           <Property Name="Code" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.VW_LinkFxContractSignalContract' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.VW_LinkFxContractSignalContract' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_LinkFxContractSignalContract">
           <Key>
             <PropertyRef Name="Id" />
@@ -1215,7 +1181,7 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_LinkFxContractSignalContract' does
           <Property Name="FxContractId" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.VW_Reporting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.VW_Reporting' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_Reporting">
           <Key>
             <PropertyRef Name="RowId" />
@@ -1280,7 +1246,7 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_Reporting' does not have a primary
           <Property Name="ExchCurrency" Type="nvarchar" MaxLength="3" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.VW_SignalContract' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.VW_SignalContract' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_SignalContract">
           <Key>
             <PropertyRef Name="Id" />
@@ -1289,7 +1255,7 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_SignalContract' does not have a pr
           <Property Name="Code" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FXwinDev.dbo.VW_UsersView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fxwin.dbo.VW_UsersView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VW_UsersView">
           <Key>
             <PropertyRef Name="Id" />
@@ -2100,7 +2066,6 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_UsersView' does not have a primary
           <EntitySet Name="CommodityHedge" EntityType="Self.CommodityHedge" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ContractExpositionByDateAndSide" EntityType="Self.ContractExpositionByDateAndSide" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ContractExposure" EntityType="Self.ContractExposure" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ContractNotCoveredExpositionDateAndAmount" EntityType="Self.ContractNotCoveredExpositionDateAndAmount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ContractType" EntityType="Self.ContractType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ExecutionFX" EntityType="Self.ExecutionFX" Schema="dbo" store:Type="Tables" />
@@ -2125,7 +2090,6 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_UsersView' does not have a primary
           <EntitySet Name="ManagementIntent" EntityType="Self.ManagementIntent" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Operation" EntityType="Self.Operation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OperationExpositionByDateAndSide" EntityType="Self.OperationExpositionByDateAndSide" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="OperationNotCoveredExpositionDateAndAmount" EntityType="Self.OperationNotCoveredExpositionDateAndAmount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OperationType" EntityType="Self.OperationType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ports" EntityType="Self.Ports" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PortType" EntityType="Self.PortType" Schema="dbo" store:Type="Tables" />
@@ -2144,7 +2108,6 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_UsersView' does not have a primary
           <EntitySet Name="TimeSerie" EntityType="Self.TimeSerie" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TimeSerieValue" EntityType="Self.TimeSerieValue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UnderlyingTerm" EntityType="Self.UnderlyingTerm" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UnderlyingTermNotCoveredExpositionDateAndAmount" EntityType="Self.UnderlyingTermNotCoveredExpositionDateAndAmount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UnitType" EntityType="Self.UnitType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vessel" EntityType="Self.Vessel" Schema="dbo" store:Type="Tables" />
@@ -2968,17 +2931,6 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_UsersView' does not have a primary
           <Property Name="ContractBrouillonAmount" Type="Decimal" Precision="24" Scale="5" />
           <Property Name="ContractFxExposure" Type="Decimal" Precision="24" Scale="5" />
         </EntityType>
-        <EntityType Name="ContractNotCoveredExpositionDateAndAmount">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FxContractId" Type="Int32" />
-          <Property Name="UnderlyingMonth" Type="DateTime" Precision="3" />
-          <Property Name="Maturity" Type="DateTime" Precision="3" />
-          <Property Name="Amount" Type="Decimal" Precision="38" Scale="18" />
-          <Property Name="PurchaseSaleId" Type="Int32" />
-        </EntityType>
         <EntityType Name="ContractType">
           <Key>
             <PropertyRef Name="Id" />
@@ -3403,17 +3355,6 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_UsersView' does not have a primary
           <Property Name="Exposition" Type="Decimal" Precision="38" Scale="18" />
           <Property Name="PurchaseSaleId" Type="Int32" />
         </EntityType>
-        <EntityType Name="OperationNotCoveredExpositionDateAndAmount">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="OperationId" Type="Int32" />
-          <Property Name="UnderlyingMonth" Type="DateTime" Precision="3" />
-          <Property Name="Maturity" Type="DateTime" Precision="3" />
-          <Property Name="Amount" Type="Decimal" Precision="38" Scale="18" />
-          <Property Name="PurchaseSaleId" Type="Int32" />
-        </EntityType>
         <EntityType Name="OperationType">
           <Key>
             <PropertyRef Name="Id" />
@@ -3646,17 +3587,6 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_UsersView' does not have a primary
           <NavigationProperty Name="Currency" Relationship="Self.FK_UnderlyingTerm_Currency" FromRole="UnderlyingTerm" ToRole="Currency" />
           <NavigationProperty Name="HedgeLegs" Relationship="Self.FK_HedgeLeg_UnderlyingTerm" FromRole="UnderlyingTerm" ToRole="HedgeLeg" />
           <NavigationProperty Name="Subjacent" Relationship="Self.FK_UnderlyingTerm_Subjacent" FromRole="UnderlyingTerm" ToRole="Subjacent" />
-        </EntityType>
-        <EntityType Name="UnderlyingTermNotCoveredExpositionDateAndAmount">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UnderlyingTermId" Type="Int32" />
-          <Property Name="UnderlyingMonth" Type="DateTime" Precision="3" />
-          <Property Name="Maturity" Type="DateTime" Precision="3" />
-          <Property Name="Amount" Type="Decimal" Precision="38" Scale="18" />
-          <Property Name="PurchaseSaleId" Type="Int32" />
         </EntityType>
         <EntityType Name="Unit">
           <Key>
@@ -3949,7 +3879,7 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_UsersView' does not have a primary
           <Property Name="MaturityLabel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OperationId" Type="Int32" />
           <Property Name="PurchaseSaleId" Type="Int32" Nullable="false" />
-          <Property Name="Strike" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Strike" Type="Decimal" Precision="38" Scale="18" />
           <Property Name="UnderlyingTermId" Type="Int32" />
           <Property Name="TimeSerieId" Type="Int32" Nullable="false" />
           <Property Name="MaturityId" Type="Int32" Nullable="false" />
@@ -4977,7 +4907,6 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_UsersView' does not have a primary
           <EntitySet Name="CommodityHedges" EntityType="Self.CommodityHedge" />
           <EntitySet Name="ContractExpositionByDateAndSides" EntityType="Self.ContractExpositionByDateAndSide" />
           <EntitySet Name="ContractExposures" EntityType="Self.ContractExposure" />
-          <EntitySet Name="ContractNotCoveredExpositionDateAndAmounts" EntityType="Self.ContractNotCoveredExpositionDateAndAmount" />
           <EntitySet Name="ContractTypes" EntityType="Self.ContractType" />
           <EntitySet Name="Currencies" EntityType="Self.Currency" />
           <EntitySet Name="ExecutionFXes" EntityType="Self.ExecutionFX" />
@@ -5002,7 +4931,6 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_UsersView' does not have a primary
           <EntitySet Name="ManagementIntents" EntityType="Self.ManagementIntent" />
           <EntitySet Name="Operations" EntityType="Self.Operation" />
           <EntitySet Name="OperationExpositionByDateAndSides" EntityType="Self.OperationExpositionByDateAndSide" />
-          <EntitySet Name="OperationNotCoveredExpositionDateAndAmounts" EntityType="Self.OperationNotCoveredExpositionDateAndAmount" />
           <EntitySet Name="OperationTypes" EntityType="Self.OperationType" />
           <EntitySet Name="Ports" EntityType="Self.Port" />
           <EntitySet Name="PortTypes" EntityType="Self.PortType" />
@@ -5021,7 +4949,6 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_UsersView' does not have a primary
           <EntitySet Name="TimeSeries" EntityType="Self.TimeSerie" />
           <EntitySet Name="TimeSerieValues" EntityType="Self.TimeSerieValue" />
           <EntitySet Name="UnderlyingTerms" EntityType="Self.UnderlyingTerm" />
-          <EntitySet Name="UnderlyingTermNotCoveredExpositionDateAndAmounts" EntityType="Self.UnderlyingTermNotCoveredExpositionDateAndAmount" />
           <EntitySet Name="Units" EntityType="Self.Unit" />
           <EntitySet Name="UnitTypes" EntityType="Self.UnitType" />
           <EntitySet Name="Vessels" EntityType="Self.Vessel" />
@@ -5599,18 +5526,6 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_UsersView' does not have a primary
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ContractNotCoveredExpositionDateAndAmounts">
-            <EntityTypeMapping TypeName="FXWinV2Model.ContractNotCoveredExpositionDateAndAmount">
-              <MappingFragment StoreEntitySet="ContractNotCoveredExpositionDateAndAmount">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="FxContractId" ColumnName="FxContractId" />
-                <ScalarProperty Name="UnderlyingMonth" ColumnName="UnderlyingMonth" />
-                <ScalarProperty Name="Maturity" ColumnName="Maturity" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="PurchaseSaleId" ColumnName="PurchaseSaleId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ContractTypes">
             <EntityTypeMapping TypeName="FXWinV2Model.ContractType">
               <MappingFragment StoreEntitySet="ContractType">
@@ -5985,18 +5900,6 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_UsersView' does not have a primary
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="OperationNotCoveredExpositionDateAndAmounts">
-            <EntityTypeMapping TypeName="FXWinV2Model.OperationNotCoveredExpositionDateAndAmount">
-              <MappingFragment StoreEntitySet="OperationNotCoveredExpositionDateAndAmount">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="OperationId" ColumnName="OperationId" />
-                <ScalarProperty Name="UnderlyingMonth" ColumnName="UnderlyingMonth" />
-                <ScalarProperty Name="Maturity" ColumnName="Maturity" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="PurchaseSaleId" ColumnName="PurchaseSaleId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="OperationTypes">
             <EntityTypeMapping TypeName="FXWinV2Model.OperationType">
               <MappingFragment StoreEntitySet="OperationType">
@@ -6208,18 +6111,6 @@ warning 6002: The table/view 'FXwinDev.dbo.VW_UsersView' does not have a primary
                 <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
                 <ScalarProperty Name="ModificationUser" ColumnName="ModificationUser" />
                 <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="UnderlyingTermNotCoveredExpositionDateAndAmounts">
-            <EntityTypeMapping TypeName="FXWinV2Model.UnderlyingTermNotCoveredExpositionDateAndAmount">
-              <MappingFragment StoreEntitySet="UnderlyingTermNotCoveredExpositionDateAndAmount">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="UnderlyingTermId" ColumnName="UnderlyingTermId" />
-                <ScalarProperty Name="UnderlyingMonth" ColumnName="UnderlyingMonth" />
-                <ScalarProperty Name="Maturity" ColumnName="Maturity" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="PurchaseSaleId" ColumnName="PurchaseSaleId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

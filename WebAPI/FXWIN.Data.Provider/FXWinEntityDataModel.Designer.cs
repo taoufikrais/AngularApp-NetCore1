@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\SJ5382\DEV\FXWIN-Angular\FXWIN-webapp\WebAPI\FXWIN.Data.Provider\FXWinEntityDataModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\rais\Source\Repos\FxwinApp\WebAPI\FXWIN.Data.Provider\FXWinEntityDataModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

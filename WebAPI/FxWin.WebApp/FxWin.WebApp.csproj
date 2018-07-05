@@ -15,7 +15,7 @@
     <RootNamespace>FxWin.WebApp</RootNamespace>
     <AssemblyName>FxWin.WebApp</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
@@ -402,6 +402,7 @@
     <Compile Include="WebApi\PurchaseContractsController.cs" />
     <Compile Include="WebApi\referentiel\PurchaseSalesController.cs" />
     <Compile Include="WebApi\referentiel\QualificationsController.cs" />
+    <Compile Include="WebApi\SystemController.cs" />
     <Compile Include="WebApi\ReportingController.cs" />
     <Compile Include="WebApi\SignalContractExclusionsController.cs" />
     <Compile Include="WebApi\SubjacentsController.cs" />

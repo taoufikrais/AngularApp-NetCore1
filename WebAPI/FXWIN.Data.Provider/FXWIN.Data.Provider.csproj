@@ -144,6 +144,7 @@
     <Compile Include="FXWinV2Entities.cs" />
     <Compile Include="OperationBusiness.cs" />
     <Compile Include="Partial class\AuditTrail.cs" />
+    <Compile Include="Partial class\ValidationEntityModel.cs" />
     <Compile Include="Partial class\CommodityHedge.cs" />
     <Compile Include="Partial class\ExportPomax.cs" />
     <Compile Include="Partial class\FxwinTrade.cs" />

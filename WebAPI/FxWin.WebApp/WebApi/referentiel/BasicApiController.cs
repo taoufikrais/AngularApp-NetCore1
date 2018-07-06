@@ -32,17 +32,26 @@ namespace FxWin.WebApp.WebApi
         [Route("")]
         public virtual IQueryable<T> GetAll()
         {
-            var entities= _repository.GetAll();
-            var setting = new JsonSerializerSettings
+            try
             {
-                PreserveReferencesHandling = PreserveReferencesHandling.None,
-                //PreserveReferencesHandling= PreserveReferencesHandling.Objects,
-                ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
-                Formatting = Formatting.Indented
-            };
-            //return Ok(entities);
-            //return Json(entities, setting);
-            return entities;
+                var entities = _repository.GetAll();
+                var setting = new JsonSerializerSettings
+                {
+                    PreserveReferencesHandling = PreserveReferencesHandling.None,
+                    //PreserveReferencesHandling= PreserveReferencesHandling.Objects,
+                    ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+                    Formatting = Formatting.Indented
+                };
+                //return Ok(entities);
+                //return Json(entities, setting);
+                var res = entities.ToList();
+                return entities;
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+          
         }
 
         [Route("{id:int}")]

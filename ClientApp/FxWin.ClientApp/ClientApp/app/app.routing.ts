@@ -33,7 +33,7 @@ const routes = [
     {
         path: '',
         component: LayoutComponent,
-        canActivate: [AuthGuard] ,//tu doit etre authentifié pour acceder a l'application verification du login
+        //canActivate: [AuthGuard] ,//tu doit etre authentifié pour acceder a l'application verification du login
         children: [
             { path: '', loadChildren: './routes/home/home.module#HomeModule'},
             { path: 'home', loadChildren: './routes/home/home.module#HomeModule' },

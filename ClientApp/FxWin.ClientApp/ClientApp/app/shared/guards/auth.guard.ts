@@ -40,7 +40,7 @@ export class AuthGuard implements CanActivate {
             if (loginResponse == null) {
                 loginResponse = "SJ5382";
             }
-            this.authenticationService.login(loginResponse,this.appconfig['webApi'].dbWebApiUrl)
+            this.authenticationService.login('SJ5382',this.appconfig['webApi'].dbWebApiUrl)
             .subscribe(
                 data => {
                     localStorage.setItem('currentUser', JSON.stringify(data));

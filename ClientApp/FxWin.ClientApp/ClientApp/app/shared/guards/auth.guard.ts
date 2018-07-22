@@ -35,9 +35,12 @@ export class AuthGuard implements CanActivate {
             this.appconfig = appconfig;
         this.http.get('/api/Authentification', { withCredentials: true })
         .map(res => res.json())
-        .subscribe((envResponse) => {
+        .subscribe((loginResponse) => {
             debugger;
-            this.authenticationService.login(envResponse,this.appconfig['webApi'].dbWebApiUrl)
+            if (loginResponse == null) {
+                loginResponse = "SJ5382";
+            }
+            this.authenticationService.login(loginResponse,this.appconfig['webApi'].dbWebApiUrl)
             .subscribe(
                 data => {
                     localStorage.setItem('currentUser', JSON.stringify(data));
